@@ -1,22 +1,19 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Product from '../Product/Product';
 
-
 const Shop = () => {
-  const products = [
-    { name: '1 Oil', image: 'assets/1.png', description: 'description', size: 15, price: 15 },
-    { name: '2 Oil', image: 'assets/2.png', description: 'description', size: 15, price: 15 },
-    { name: '3 Oil', image: 'assets/3.png', description: 'description', size: 15, price: 15 },
-    { name: '4 Oil', image: 'assets/4.png', description: 'description', size: 15, price: 15 },
-    { name: '5 Oil', image: 'assets/5.png', description: 'description', size: 15, price: 15 },
-    { name: '6 Oil', image: 'assets/6.png', description: 'description', size: 15, price: 15 },
-    { name: '7 Oil', image: 'assets/7.png', description: 'description', size: 15, price: 15 },
-    { name: '8 Oil', image: 'assets/8.png', description: 'description', size: 15, price: 15 },
-    { name: '9 Oil', image: 'assets/9.png', description: 'description', size: 15, price: 15 },
-    { name: '10 Oil', image: 'assets/10.png', description: 1111, size: 15, price: 15 },
-    { name: '11 Oil', image: 'assets/11.png', description: 'description', size: 15, price: 15 },
-    { name: '12 Oil', image: 'assets/12.png', description: 'description', size: 15, price: 15 },
-  ]
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://localhost:3001/api/products') // Replace with your actual server API endpoint if it's different
+      .then(response => {
+        setProducts(response.data);
+      })
+      .catch(error => {
+        console.error('Error fetching data: ', error);
+      })
+  }, []); // Empty dependency array means this effect will only run once (like componentDidMount in classes)
 
   return (
     <div>
