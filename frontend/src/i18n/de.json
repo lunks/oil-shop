@@ -1,11 +1,11 @@
 {
-    "pages": {
-        "shop":"Laden",
-        "welcome":"Willkommen"
-    },
-    "appTopBar": {
-        "options": "Optionen",
-        "oils": "Öle",
-        "about": "Über uns"
-    }
+  "pages": {
+    "shop": "Laden",
+    "welcome": "Willkommen"
+  },
+  "appTopBar": {
+    "options": "Optionen",
+    "oils": "Öle",
+    "about": "Über uns"
+  }
 }

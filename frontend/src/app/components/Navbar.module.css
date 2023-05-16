@@ -1,0 +1,16 @@
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #2989d8;
+  padding: 15px 0;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.activeLink {
+  font-weight: bold;
+}
