@@ -6,14 +6,15 @@ const Shop = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/products') // Replace with your actual server API endpoint if it's different
+    axios.get('http://localhost:3001/api/products') 
       .then(response => {
+        console.log('res ', response)
         setProducts(response.data);
       })
       .catch(error => {
         console.error('Error fetching data: ', error);
       })
-  }, []); // Empty dependency array means this effect will only run once (like componentDidMount in classes)
+  }, []); 
 
   return (
     <div>
