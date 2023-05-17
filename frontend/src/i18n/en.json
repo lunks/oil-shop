@@ -12,10 +12,10 @@
         "teaser": "We are passionate about essential oils."
       }
     },
-    "topBar": {
-      "options": "options",
-      "oils": "oils",
-      "about": "about us"
+    "navbar": {
+      "home": "Home",
+      "shop": "Shop",
+      "about": "About us"
     }, 
     "products": {
         "oil": {

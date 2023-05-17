@@ -1,8 +1,11 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import styles from "./Navbar.module.css"
+import useLocaleContext from "../../context/locale.context"
 
 const Navbar = () => {
+
+  const {translate} = useLocaleContext();
   return (
     <nav className={styles.navbar}>
       <NavLink
@@ -10,21 +13,21 @@ const Navbar = () => {
         to='/'
         activeClassName={styles.activeLink}
       >
-        Home
+        {translate.navbar.home}
       </NavLink>
       <NavLink
         className={styles.navLink}
         to='/shop'
         activeClassName={styles.activeLink}
       >
-        Shop
+        {translate.navbar.shop}
       </NavLink>
       <NavLink
         className={styles.navLink}
         to='/about'
         activeClassName={styles.activeLink}
       >
-        About
+        {translate.navbar.about}
       </NavLink>
     </nav>
   )
