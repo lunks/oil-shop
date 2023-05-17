@@ -1,0 +1,30 @@
+{
+    "pages": {
+      "shop": {
+        "title":"All products"
+      },
+      "welcome": {
+        "title": "Welcome",
+        "teaser": "Explore the variety of essential oils we offer"
+      },
+      "about": {
+        "title": "about oylo",
+        "teaser": "We are passionate about essential oils."
+      }
+    },
+    "navbar": {
+      "home": "Home",
+      "shop": "Shop",
+      "about": "About us"
+    }, 
+    "products": {
+        "oil": {
+            "size": "size",
+            "price": "price"    
+        }
+    }, 
+    "footer": {
+        "copy": "Oylo Oils Online Shop. All Rights Reserved"
+    }
+}
+  
