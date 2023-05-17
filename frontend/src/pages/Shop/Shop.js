@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react"
 import axios from "axios"
 import Product from "../../components/Product/Product"
+import useLocaleContext from "../../context/locale.context"
+
 
 const Shop = () => {
   const [products, setProducts] = useState([])
@@ -17,9 +19,11 @@ const Shop = () => {
       })
   }, [])
 
+  const {translate} = useLocaleContext();
+
   return (
     <div>
-      <h1>Our Shop</h1>
+      <h1>{translate.pages.shop.title}</h1>
       {products.map((product, index) => (
         <Product
           key={index}
