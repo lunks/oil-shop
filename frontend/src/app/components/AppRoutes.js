@@ -12,6 +12,7 @@ import About from "../../pages/About/About"
 import Shop from "../../pages/Shop/Shop"
 import Navbar from "./Navbar"
 import Footer from "../../components/Footer/Footer"
+import Sidebar from "../../components/Sidebar/Sidebar"
 
 const AppRoutes = () => {
   return (
@@ -22,6 +23,7 @@ const AppRoutes = () => {
         <Route path='/about' element={<About />} />
         <Route path='/shop' element={<Shop />} />
       </Routes>
+      <Sidebar/>
       <Footer />
     </>
   )
