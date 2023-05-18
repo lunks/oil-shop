@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react"
 import axios from "axios"
 import Product from "../../components/Product/Product"
 import useLocaleContext from "../../context/locale.context"
-
-
+import Sidebar from "../../components/Sidebar/Sidebar"
+import style from "./Shop.module.css"
 const Shop = () => {
   const [products, setProducts] = useState([])
 
@@ -19,21 +19,23 @@ const Shop = () => {
       })
   }, [])
 
-  const {translate} = useLocaleContext();
+  const { translate } = useLocaleContext()
 
   return (
-    <div>
-      <h1>{translate.pages.shop.title}</h1>
-      {products.map((product, index) => (
-        <Product
-          key={index}
-          name={product.name}
-          image={process.env.PUBLIC_URL + "/" + product.image}
-          size={product.size}
-          price={product.price}
-          description={product.description}
-        />
-      ))}
+    <div className={style.content}>
+      <Sidebar />
+      <div className={style.mainContent}>
+        {products.map((product, index) => (
+          <Product
+            key={index}
+            name={product.name}
+            image={process.env.PUBLIC_URL + "/" + product.image}
+            size={product.size}
+            price={product.price}
+            description={product.description}
+          />
+        ))}
+      </div>
     </div>
   )
 }

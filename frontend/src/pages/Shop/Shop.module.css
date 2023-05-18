@@ -1,0 +1,9 @@
+.content {
+  display: flex;
+}
+
+.mainContent {
+  display: flex;
+  overflow-y: auto;
+  flex-flow: wrap;
+}
