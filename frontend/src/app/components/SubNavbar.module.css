@@ -1,15 +1,26 @@
 .navbarContainer {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  background-color: #b5cfaa;
-  height: 80px;
+  justify-content: center;  
+  background-color: white;
+  height: 60px;
+  color: grey;
+
+}
+
+.navbar {
+  width: 440px;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 .navLink {
   color: grey;
   text-decoration: none;
+  text-align: center;
   font-size: 18px;
+  width: 120px;
 }
 
 .activeLink {

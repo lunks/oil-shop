@@ -1,11 +1,13 @@
-import React from "react"
-import { NavLink } from "react-router-dom"
+import React, { Fragment } from "react"
 import styles from "./Navbar.module.css"
+import SubNavbar from "./SubNavbar"
 import useLocaleContext from "../../context/locale.context"
+
 
 const Navbar = () => {
   const { translate } = useLocaleContext()
   return (
+    <div className={styles.container}>
     <div className={styles.navbarContainer}>
       <div className={styles.menuContainer}>
       <span class='material-symbols-outlined'>menu</span>
@@ -29,6 +31,8 @@ const Navbar = () => {
           <span class='material-symbols-outlined'>language</span>
         </nav>
       </div>
+    </div>
+    <SubNavbar />
     </div>
   )
 }

@@ -7,13 +7,6 @@ const SubNavbar = () => {
   const { translate } = useLocaleContext()
   return (
     <div className={styles.navbarContainer}>
-      <div>hamb</div>
-      <div>
-        <img
-          className={styles.logo}
-          src={process.env.PUBLIC_URL + "/assets/" + "logo.png"}
-        />
-      </div>
       <div>
         <nav className={styles.navbar}>
           <NavLink
