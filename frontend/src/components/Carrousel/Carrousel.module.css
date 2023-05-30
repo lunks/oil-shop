@@ -1,0 +1,23 @@
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 560px;
+    width: 80vw;
+  }
+  
+  .carousel img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+ 
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+  

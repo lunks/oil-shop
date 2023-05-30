@@ -1,30 +1,37 @@
 .product {
   border: 1px solid #ccc;
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 300px;
+  width: 180px;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 26px 26px;
+  padding: 16px;
 }
 
-.product-name {
+.productName {
   margin: 0;
   font-size: 20px;
-  color: #3f51b5; /* this color is used in Material UI */
+  color: #3f51b5;
 }
 
-.product-image {
+.productImage {
   width: 80px;
-  height: auto;
+  height: 180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.product-size,
-.product-price {
+.productSize,
+.productPrice {
   margin: 0;
   font-size: 16px;
 }
 
-.product-description {
+.productDescription {
   margin-top: 10px;
   font-size: 14px;
   color: #757575;
@@ -43,4 +50,13 @@
   margin-top: 10px;
   cursor: pointer;
   border-radius: 4px;
+  width: 66px;
+}
+
+.button-hidden {
+  opacity: 0;
+}
+
+.product:hover .product-button {
+  opacity: 1;
 }
