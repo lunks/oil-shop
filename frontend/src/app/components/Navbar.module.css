@@ -1,9 +1,9 @@
-.navbar {
+.navbarContainer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  background-color: #B5CFAA;
-  height: 80px;
+  background-color: #b5cfaa;
+  height: 84px;
 }
 
 .navLink {
@@ -12,6 +12,34 @@
   font-size: 18px;
 }
 
-.activeLink {
-  font-weight: bold;
+.logoContainer,
+.menuContainer,
+.inputIconContainer  {
+  width: 33.33%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textInput {
+  margin-right: 8px;
+}
+
+.logo {
+  height: 68px;
+  width: 116px;
+}
+
+.iconsNav {
+  width: 120px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
+
+.gap {
+  width: 40px;
 }

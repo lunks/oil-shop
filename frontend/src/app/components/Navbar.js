@@ -6,30 +6,30 @@ import useLocaleContext from "../../context/locale.context"
 const Navbar = () => {
   const { translate } = useLocaleContext()
   return (
-    <nav className={styles.navbar}>
-      {}
-      <NavLink
-        className={styles.navLink}
-        to='/'
-        activeClassName={styles.activeLink}
-      >
-        {translate.navbar.home}
-      </NavLink>
-      <NavLink
-        className={styles.navLink}
-        to='/shop'
-        activeClassName={styles.activeLink}
-      >
-        {translate.navbar.shop}
-      </NavLink>
-      <NavLink
-        className={styles.navLink}
-        to='/about'
-        activeClassName={styles.activeLink}
-      >
-        {translate.navbar.about}
-      </NavLink>
-    </nav>
+    <div className={styles.navbarContainer}>
+      <div className={styles.menuContainer}>
+      <span class='material-symbols-outlined'>menu</span>
+      </div>
+      <div className={styles.logoContainer}>
+        <img
+          className={styles.logo}
+          src={process.env.PUBLIC_URL + "/assets/" + "logo.png"}
+        />
+      </div>
+
+      <div className={styles.logoContainer}>
+        <div className={styles.inputIconContainer}>
+          <input className={styles.textInput}></input>
+          <span class='material-symbols-outlined'>search</span>
+        </div>
+        <div className={styles.gap}></div>
+        <nav className={styles.iconsNav}>
+          <span class='material-symbols-outlined'>shopping_cart</span>
+          <span class='material-symbols-outlined'>account_circle</span>
+          <span class='material-symbols-outlined'>language</span>
+        </nav>
+      </div>
+    </div>
   )
 }
 
