@@ -22,7 +22,6 @@
   transition: background-color 0.3s ease;
   list-style-type: none;
   cursor: pointer;
-  
 }
 
 .sidebarItem:hover {

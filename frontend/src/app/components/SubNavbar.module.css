@@ -1,0 +1,33 @@
+.navbarContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  background-color: white;
+  height: 60px;
+  color: grey;
+
+}
+
+.navbar {
+  width: 440px;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.navLink {
+  color: grey;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  width: 120px;
+}
+
+.activeLink {
+  font-weight: bold;
+}
+
+.logo {
+  height: 68px;
+  width: 116px;
+}

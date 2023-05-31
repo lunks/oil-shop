@@ -4,7 +4,7 @@ import axios from "axios"
 import useLocaleContext from "../../context/locale.context"
 
 const Sidebar = () => {
-  const {translate} = useLocaleContext();
+  const { translate } = useLocaleContext()
 
   function callYL() {
     const username = "your_username"
@@ -29,7 +29,7 @@ const Sidebar = () => {
   return (
     <div>
       <ul className={style.sidebar}>
-      <li className={style.sidebarItem}>{translate.sidebar.essentialOils}</li>
+        <li className={style.sidebarItem}>{translate.sidebar.essentialOils}</li>
         <li className={style.sidebarItem}>{translate.sidebar.difusers}</li>
         <li className={style.sidebarItem}>{translate.sidebar.bodyCare}</li>
         <li className={style.sidebarItem}>{translate.sidebar.hairCare}</li>
