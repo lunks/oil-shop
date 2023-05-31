@@ -10,7 +10,7 @@ const Navbar = () => {
     <div className={styles.container}>
     <div className={styles.navbarContainer}>
       <div className={styles.menuContainer}>
-      <span class='material-symbols-outlined'>menu</span>
+      <span className='material-symbols-outlined'>menu</span>
       </div>
       <div className={styles.logoContainer}>
         <img
@@ -22,13 +22,13 @@ const Navbar = () => {
       <div className={styles.logoContainer}>
         <div className={styles.inputIconContainer}>
           <input className={styles.textInput}></input>
-          <span class='material-symbols-outlined'>search</span>
+          <span className='material-symbols-outlined'>search</span>
         </div>
         <div className={styles.gap}></div>
         <nav className={styles.iconsNav}>
-          <span class='material-symbols-outlined'>shopping_cart</span>
-          <span class='material-symbols-outlined'>account_circle</span>
-          <span class='material-symbols-outlined'>language</span>
+          <span className='material-symbols-outlined'>shopping_cart</span>
+          <span className='material-symbols-outlined'>account_circle</span>
+          <span className='material-symbols-outlined'>language</span>
         </nav>
       </div>
     </div>

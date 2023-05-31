@@ -17,6 +17,9 @@ module.exports = (sequelize, DataTypes) => {
     size: {
       type: DataTypes.INTEGER,
     },
+    category: {
+      type: DataTypes.STRING,
+    },
     price: {
       type: DataTypes.DECIMAL(10, 2),
     },

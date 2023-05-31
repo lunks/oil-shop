@@ -2,9 +2,8 @@ import React from "react"
 import style from "./Product.module.css"
 import useLocaleContext from "../../context/locale.context"
 
-const Product = ({ name, image, size, price, description }) => {
+const Product = ({ name, image, size, price, description, category }) => {
   const { translate } = useLocaleContext()
-  console.log(image)
 
   return (
     <div className={style.product}>
@@ -16,6 +15,7 @@ const Product = ({ name, image, size, price, description }) => {
       <p className={style.productPrice}>
         {translate.products.oil.price} ${price}
       </p>
+      <p className={style.productDescription}>{category}</p>
       <p className={style.productDescription}>{description}</p>
     </div>
   )
