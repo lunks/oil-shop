@@ -24,6 +24,7 @@
     }
   },
   "sidebar": {
+    "allProducts": "All Products",
     "essentialOils": "Essential Oils",
     "difusers": "Difusers",
     "bodyCare": "Body Care",

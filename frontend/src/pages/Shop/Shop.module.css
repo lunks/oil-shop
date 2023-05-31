@@ -1,5 +1,7 @@
 .content {
   display: flex;
+  position: relative;
+  top: 164px;
 }
 
 .mainContent {

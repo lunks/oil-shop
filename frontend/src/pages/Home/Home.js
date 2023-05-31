@@ -14,7 +14,6 @@ const Home = () => {
       <p className={styles.homesubtitle}>{translate.pages.welcome.teaser}</p>
       <ProductsSlider />
     </div>
-  
   )
 }
 

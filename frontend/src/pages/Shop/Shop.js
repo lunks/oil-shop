@@ -7,7 +7,7 @@ import style from "./Shop.module.css"
 
 const Shop = () => {
   const [products, setProducts] = useState([])
-  const [category, setCategory] = useState('none');
+  const [category, setCategory] = useState("all")
 
   useEffect(() => {
     axios
@@ -21,27 +21,30 @@ const Shop = () => {
       })
   }, [])
 
-  const filteredProducts = (category) => products.filter((product) => {
-    if (product.category === category) {
-      return true;
-    }
-    if (category === 'all') {
-      return true;
-    }
-     return false;
- });
+  const filteredProducts = (category) =>
+    products.filter((product) => {
+      if (product.category === category) {
+        return true
+      }
+      if (category === "all") {
+        return true
+      }
+      return false
+    })
 
+  const sortedRegions = filteredProducts(category)
 
+  console.log("sorted ", sortedRegions)
 
-const sortedRegions = filteredProducts(category);
-
-console.log('sorted ', sortedRegions)
- 
-const { translate } = useLocaleContext()
+  const { translate } = useLocaleContext()
 
   return (
     <div className={style.content}>
-      <Sidebar products={products} filteredProducts={filteredProducts} setCategory={setCategory}/>
+      <Sidebar
+        products={products}
+        filteredProducts={filteredProducts}
+        setCategory={setCategory}
+      />
       <div className={style.mainContent}>
         {sortedRegions.map((product, index) => (
           <Product
