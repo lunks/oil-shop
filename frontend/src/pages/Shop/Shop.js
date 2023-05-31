@@ -7,7 +7,7 @@ import style from "./Shop.module.css"
 
 const Shop = () => {
   const [products, setProducts] = useState([])
-  const [category, setCategory] = useState('none');
+  const [category, setCategory] = useState('all');
 
   useEffect(() => {
     axios
