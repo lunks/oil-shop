@@ -7,6 +7,7 @@ import useLocaleContext from "../../context/locale.context"
 const Navbar = () => {
   const { translate } = useLocaleContext()
   return (
+    <div className={styles.wrapper}>
     <div className={styles.container}>
     <div className={styles.navbarContainer}>
       <div className={styles.menuContainer}>
@@ -34,6 +35,8 @@ const Navbar = () => {
     </div>
     <SubNavbar />
     </div>
+    </div>
+    
   )
 }
 
