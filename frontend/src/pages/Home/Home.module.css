@@ -21,3 +21,8 @@
   line-height: 128%;
   text-align: center;
 }
+
+.productSliderContainer {
+  display: flex;
+  justify-content: center;
+}
