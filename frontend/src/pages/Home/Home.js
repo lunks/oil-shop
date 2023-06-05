@@ -31,6 +31,29 @@ const Home = () => {
       <div className={styles.productSliderContainer}>
         <ProductsSlider />
       </div>
+      <div>
+        <div className={styles.teaserText}>
+          <h1 className={styles.hometitle}>
+            {translate.pages.welcome.subTeaser.title}
+          </h1>
+          <p className={styles.homesubtitle}>
+            {translate.pages.welcome.subTeaser.teaserFirstSubtitle}
+            {translate.pages.welcome.subTeaser.teaserFirstSentence}
+          </p>
+          <p className={styles.homesubtitle}>
+            {translate.pages.welcome.subTeaser.teaserSecondSubtitle}
+            {translate.pages.welcome.subTeaser.teaserSecondSentence}
+          </p>
+          <p className={styles.homesubtitle}>
+            {translate.pages.welcome.subTeaser.teaserThirthSubtitle}
+            {translate.pages.welcome.subTeaser.teaserThirthSentence}
+          </p>
+          <p className={styles.homesubtitle}>
+            {translate.pages.welcome.subTeaser.teaserFourthSubtitle}
+            {translate.pages.welcome.subTeaser.teaserFourthSentence}
+          </p>
+        </div>
+      </div>
     </div>
   )
 }
