@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   overflow-x: auto;
-  width: 100%;
+  width: 90%;
   padding: 20px 0;
   white-space: nowrap;
   scrollbar-width: none; /* For Firefox */
@@ -55,4 +55,14 @@
 
 .sliderButton:hover {
   color: #333;
+}
+
+.iconCarousel {
+  cursor: pointer;
+  background-color: white;
+}
+
+.iconCarousel:active,
+.iconCarousel:focus {
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5);
 }

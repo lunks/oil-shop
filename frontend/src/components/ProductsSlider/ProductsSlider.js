@@ -36,7 +36,10 @@ const ProductSlider = () => {
 
   return (
     <div className={styles.carousel}>
-      <span className={"material-symbols-outlined"} onClick={previousProduct}>
+      <span
+        className={`material-symbols-outlined ${styles.iconCarousel}`}
+        onClick={previousProduct}
+      >
         arrow_back_ios
       </span>
       {products
@@ -51,7 +54,10 @@ const ProductSlider = () => {
             description={product.description}
           />
         ))}
-      <span onClick={nextProduct} className={"material-symbols-outlined"}>
+      <span
+        onClick={nextProduct}
+        className={`material-symbols-outlined ${styles.iconCarousel}`}
+      >
         arrow_forward_ios
       </span>
     </div>

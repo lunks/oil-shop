@@ -10,12 +10,15 @@
   align-items: center;
   margin: 26px 26px;
   padding: 16px;
+  font-family: "GFS Neohellenic", sans-serif;
 }
 
 .productName {
   margin: 0;
-  font-size: 20px;
-  color: #3f51b5;
+  font-size: 18px;
+  font-weight: 500;
+  color: #000;
+  font-family: "GFS Neohellenic", sans-serif;
 }
 
 .productImage {

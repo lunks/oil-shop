@@ -11,47 +11,79 @@ const Home = () => {
     <div className={styles.homeContainer}>
       <Carousel />
       <div className={styles.teaserText}>
-        <h1 className={styles.hometitle}>{translate.pages.welcome.title}</h1>
-        <p className={styles.homesubtitle}>
+        <h2 className={styles.homeTitle}>{translate.pages.welcome.title}</h2>
+        <h3 className={styles.homeSubtitleText}>
           {translate.pages.welcome.teaserSentence}
-        </p>
-        <p className={styles.homesubtitle}>
+        </h3>
+        <h3 className={styles.homeSubtitleText}>
           {translate.pages.welcome.teaserSubSentenceOne}
-        </p>
-        <p className={styles.homesubtitle}>
+        </h3>
+        <h3 className={styles.homeSubtitleText}>
           {translate.pages.welcome.teaserSubSentenceTwo}
-        </p>
-        <p className={styles.homesubtitle}>
+        </h3>
+        <h3 className={styles.homeSubtitleText}>
           {translate.pages.welcome.teaserSubSentenceThree}
-        </p>
-        <p className={styles.homesubtitle}>
+        </h3>
+        <h3 className={styles.homeSubtitleText}>
           {translate.pages.welcome.teaserSubSentenceFour}
-        </p>
+        </h3>
       </div>
       <div className={styles.productSliderContainer}>
         <ProductsSlider />
       </div>
       <div>
         <div className={styles.teaserText}>
-          <h1 className={styles.hometitle}>
-            {translate.pages.welcome.subTeaser.title}
-          </h1>
-          <p className={styles.homesubtitle}>
-            {translate.pages.welcome.subTeaser.teaserFirstSubtitle}
-            {translate.pages.welcome.subTeaser.teaserFirstSentence}
-          </p>
-          <p className={styles.homesubtitle}>
-            {translate.pages.welcome.subTeaser.teaserSecondSubtitle}
-            {translate.pages.welcome.subTeaser.teaserSecondSentence}
-          </p>
-          <p className={styles.homesubtitle}>
-            {translate.pages.welcome.subTeaser.teaserThirthSubtitle}
-            {translate.pages.welcome.subTeaser.teaserThirthSentence}
-          </p>
-          <p className={styles.homesubtitle}>
-            {translate.pages.welcome.subTeaser.teaserFourthSubtitle}
-            {translate.pages.welcome.subTeaser.teaserFourthSentence}
-          </p>
+          <div>
+            <p className={styles.homeTitle}>
+              {translate.pages.welcome.subTeaser.title}
+            </p>
+          </div>
+          <div className={styles.teaserCards}>
+            <div className={styles.teaserSingleCard}>
+              <p className={styles.homeSubtitle}>
+                {translate.pages.welcome.subTeaser.teaserFirstSubtitle}
+              </p>
+              <p className={styles.homeSubtitleText}>
+                {translate.pages.welcome.subTeaser.teaserFirstSentence}
+              </p>
+              <span className={`material-symbols-outlined ${styles.icon}`}>
+                nature_people
+              </span>
+            </div>
+            <div className={styles.teaserSingleCard}>
+              <p className={styles.homeSubtitle}>
+                {translate.pages.welcome.subTeaser.teaserSecondSubtitle}
+              </p>
+              <p className={styles.homeSubtitleText}>
+                {translate.pages.welcome.subTeaser.teaserSecondSentence}
+              </p>
+              <span className={`material-symbols-outlined ${styles.icon}`}>
+                spa
+              </span>
+            </div>
+            <div className={styles.teaserSingleCard}>
+              <p className={styles.homeSubtitle}>
+                {translate.pages.welcome.subTeaser.teaserThirthSubtitle}
+              </p>
+              <p className={styles.homeSubtitleText}>
+                {translate.pages.welcome.subTeaser.teaserThirthSentence}
+              </p>
+              <span className={`material-symbols-outlined ${styles.icon}`}>
+                send
+              </span>
+            </div>
+            <div className={styles.teaserSingleCard}>
+              <p className={styles.homeSubtitle}>
+                {translate.pages.welcome.subTeaser.teaserFourthSubtitle}
+              </p>
+              <p className={styles.homeSubtitleText}>
+                {translate.pages.welcome.subTeaser.teaserFourthSentence}
+              </p>
+              <span className={`material-symbols-outlined ${styles.icon}`}>
+                diversity_1
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
