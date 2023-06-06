@@ -9,25 +9,13 @@ const SubNavbar = () => {
     <div className={styles.navbarContainer}>
       <div>
         <nav className={styles.navbar}>
-          <NavLink
-            className={styles.navLink}
-            to='/'
-            activeClassName={styles.activeLink}
-          >
+          <NavLink className={styles.navLink} to='/'>
             {translate.navbar.home}
           </NavLink>
-          <NavLink
-            className={styles.navLink}
-            to='/shop'
-            activeClassName={styles.activeLink}
-          >
+          <NavLink className={styles.navLink} to='/shop'>
             {translate.navbar.shop}
           </NavLink>
-          <NavLink
-            className={styles.navLink}
-            to='/about'
-            activeClassName={styles.activeLink}
-          >
+          <NavLink className={styles.navLink} to='/about'>
             {translate.navbar.about}
           </NavLink>
         </nav>

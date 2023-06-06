@@ -5,8 +5,9 @@ import Product from "../Product/Product"
 
 const ProductSlider = () => {
   const [products, setProducts] = useState([])
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  
+  const [currentProductIndex, setcurrentProductIndex] = useState(0)
+  const displayCount = 6
+
   useEffect(() => {
     axios
       .get("http://localhost:3001/api/products")
@@ -19,32 +20,44 @@ const ProductSlider = () => {
       })
   }, [])
 
-  const nextImage = () => {
-    const newIndex = currentImageIndex + 1
-    setCurrentImageIndex(newIndex >= products.length ? 0 : newIndex)
+  const nextProduct = () => {
+    const newIndex = currentProductIndex + 1
+    setcurrentProductIndex(
+      newIndex >= products.length - displayCount + 1 ? 0 : newIndex,
+    )
   }
 
-  const previousImage = () => {
-    const newIndex = currentImageIndex - 1
-    setCurrentImageIndex(newIndex < 0 ? products.length - 1 : newIndex)
+  const previousProduct = () => {
+    const newIndex = currentProductIndex - 1
+    setcurrentProductIndex(
+      newIndex < 0 ? products.length - displayCount : newIndex,
+    )
   }
 
   return (
     <div className={styles.carousel}>
-      <span className={'material-symbols-outlined'} onClick={previousImage}>
+      <span
+        className={`material-symbols-outlined ${styles.iconCarousel}`}
+        onClick={previousProduct}
+      >
         arrow_back_ios
       </span>
-      {products.map((product, index) => (
-        <Product
-          key={index}
-          name={product.name}
-          image={process.env.PUBLIC_URL + "/" + product.image}
-          size={product.size}
-          price={product.price}
-          description={product.description}
-        />
-      ))}
-      <span onClick={nextImage} className={'material-symbols-outlined'}>
+      {products
+        .slice(currentProductIndex, currentProductIndex + displayCount)
+        .map((product, index) => (
+          <Product
+            key={index}
+            name={product.name}
+            image={process.env.PUBLIC_URL + "/" + product.image}
+            size={product.size}
+            price={product.price}
+            description={product.description}
+          />
+        ))}
+      <span
+        onClick={nextProduct}
+        className={`material-symbols-outlined ${styles.iconCarousel}`}
+      >
         arrow_forward_ios
       </span>
     </div>
