@@ -256,6 +256,10 @@
   justify-content: center;
 }
 
+.footerUnderSectionTextIcon {
+  font-size: 16px;
+}
+
 .footerUnderSectionText {
   font-size: 20px;
   font-weight: 600;
@@ -263,6 +267,7 @@
   justify-content: center;
   flex-direction: row;
   width: 90%;
+  font-size: 40px;
 }
 
 .footerUnderSectionText:before,

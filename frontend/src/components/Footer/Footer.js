@@ -250,7 +250,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className={styles.footerUnderSection}>
-          <div className={styles.footerUnderSectionText}>® OYLO OILS</div>
+          <div className={styles.footerUnderSectionText}>
+            <small className={styles.footerUnderSectionTextIcon}>®</small> OYLO
+            OILS
+          </div>
         </div>
         <div className='footerCopyrightSection'>
           © 2023 OYLO OILS - All rights reserved
