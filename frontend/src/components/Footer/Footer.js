@@ -7,12 +7,14 @@ const Footer = () => {
     <footer className={styles.pageFooter}>
       <div className={styles.footerContent}>
         <div className={styles.footerStartSection}>
-          <span>Your regular Oylo update</span>
+          <span className={styles.footerStartSectionText}>
+            Your regular Oylo update
+          </span>
         </div>
         <div className={styles.footerNewsletterSection}>
           <div className={styles.registrationFormWrapper}>
             <div className={styles.registrationFormTitle}>
-              <strong>Newsletter</strong>
+              <span>Newsletter</span>
             </div>
             <div className={styles.registrationFormContent}>
               <form className={styles.registrationForm}>
@@ -21,6 +23,7 @@ const Footer = () => {
                     <span>Registration for the newsletter:</span>
                   </label>
                 </div>
+
                 <div className={styles.registrationEmailInputAndButtonWrapper}>
                   <div className={styles.registrationEmailInputWrapper}>
                     <input
@@ -38,7 +41,7 @@ const Footer = () => {
                   </button>
                 </div>
               </form>
-              <p className='notice'>
+              <p className={styles.registrationDataConsentText}>
                 The data you enter here will only be used to send the
                 Newsletters used and not passed on to third parties. You You can
                 unsubscribe from the newsletter at any time withdraw your
@@ -246,14 +249,11 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className='footerUnderSection'>
-          <sup>®</sup>
-          OYLO
+        <div className={styles.footerUnderSection}>
+          <div className={styles.footerUnderSectionText}>® OYLO OILS</div>
         </div>
         <div className='footerCopyrightSection'>
-          <small>
-            © 2023 OYLO OILS - All rights reserved<small></small>
-          </small>
+          © 2023 OYLO OILS - All rights reserved
         </div>
       </div>
     </footer>
