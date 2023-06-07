@@ -1,0 +1,119 @@
+.pageFooter {
+  background-color: white;
+  color: grey;
+  text-align: center;
+  width: 100%;
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.pageFooter li {
+  list-style: none;
+}
+
+.pageFooter ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columnsSection {
+  display: flex;
+  height: 280px;
+}
+
+.columnsSectionElements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: baseline;
+  padding: 0;
+  margin: 0;
+}
+
+.columnsSectionItemTitle {
+  height: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.iconsSection {
+  display: flex;
+  height: 160px;
+}
+
+.iconsSectionElements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: baseline;
+  padding: 0;
+  margin: 0;
+}
+
+.iconsSectionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+}
+
+.iconsSectionItemTitle {
+  height: 40px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.iconsSectionItemIcons {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.columnsSection {
+  display: flex;
+  height: 260px;
+}
+
+.columnsSectionElements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: baseline;
+  padding: 0;
+  margin: 0;
+}
+
+.columnsSectionItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25%;
+  height: 240px;
+}
+
+.columnsSectionItemTitle {
+  height: 60px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+
+.columnsSectionItemLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 160px;
+  width: 100%;
+  justify-content: space-evenly;
+}
