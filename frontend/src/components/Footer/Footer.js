@@ -58,7 +58,7 @@ const Footer = () => {
           <ul className={styles.columnsSectionElements}>
             <li className={styles.columnsSectionItem}>
               <div className={styles.columnsSectionItemTitle}>
-                <h3>Your way to us</h3>
+                Your way to us
               </div>
               <div className={styles.columnsSectionItemLinks}>
                 <div>Oil Paradise 1</div>
@@ -78,9 +78,7 @@ const Footer = () => {
             </li>
 
             <li className={styles.columnsSectionItem}>
-              <div className={styles.columnsSectionItemTitle}>
-                <h3>For you</h3>
-              </div>
+              <div className={styles.columnsSectionItemTitle}>For you</div>
               <div className={styles.columnsSectionItemLinks}>
                 <a href='/shop' title='Online-Shop'>
                   Online Shop
@@ -105,9 +103,7 @@ const Footer = () => {
             </li>
 
             <li className={styles.columnsSectionItem}>
-              <div className={styles.columnsSectionItemTitle}>
-                <h3>Legal</h3>
-              </div>
+              <div className={styles.columnsSectionItemTitle}>Legal</div>
               <div className={styles.columnsSectionItemLinks}>
                 <a href='/impressum' title='Impressum'>
                   Impressum
@@ -125,7 +121,7 @@ const Footer = () => {
 
             <li className={styles.columnsSectionItem}>
               <div className={styles.columnsSectionItemTitle}>
-                <h3>Already Shop Customers</h3>
+                Already Shop Customers
               </div>
               <div className={styles.columnsSectionItemLinks}>
                 <a href='/login' title='Shop Customers Account &amp; Login'>

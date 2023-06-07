@@ -27,7 +27,7 @@
 }
 
 .footerStartSectionText {
-  font-size: 20px;
+  font-size: 26px;
   font-weight: 600;
   display: flex;
   justify-content: center;
@@ -153,6 +153,12 @@
   height: 280px;
 }
 
+.columnsSectionItemTitle {
+  font-family: "GFS Neohellenic", sans-serif;
+  font-weight: bolder;
+  font-size: 24px;
+}
+
 .columnsSectionItemLinks a {
   color: grey;
   text-decoration: none;
@@ -166,13 +172,6 @@
   align-items: baseline;
   padding: 0;
   margin: 0;
-}
-
-.columnsSectionItemTitle {
-  height: 60px;
-  text-align: center;
-  display: flex;
-  align-items: center;
 }
 
 .iconsSection {
@@ -202,6 +201,8 @@
   text-align: center;
   display: flex;
   align-items: center;
+  font-size: 18px;
+  font-weight: 300;
 }
 
 .iconsSectionItemIcons {
@@ -267,7 +268,7 @@
   justify-content: center;
   flex-direction: row;
   width: 90%;
-  font-size: 40px;
+  font-size: 28px;
 }
 
 .footerUnderSectionText:before,
