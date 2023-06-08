@@ -1,5 +1,6 @@
 import React from "react"
 import style from "./Product.module.css"
+import { Link } from "react-router-dom"
 import useLocaleContext from "../../context/locale.context"
 
 const Product = ({ name, image, size, price, description, category }) => {
@@ -7,16 +8,20 @@ const Product = ({ name, image, size, price, description, category }) => {
 
   return (
     <div className={style.product}>
-      <h2 className={style.productName}>{name}</h2>
+      <div className={style.productName}>{name}</div>
       <img className={style.productImage} src={image} alt={name} />
-      <p className={style.productSize}>
+      <div className={style.productSize}>
         {translate.products.oil.size}: {size} ml
-      </p>
-      <p className={style.productPrice}>
+      </div>
+      <div className={style.productPrice}>
         {translate.products.oil.price} ${price}
-      </p>
-      <p className={style.productDescription}>{category}</p>
-      <p className={style.productDescription}>{description}</p>
+      </div>
+      <div className={style.productDescription}>{description}</div>
+      <div className={style.buttonContainer}>
+        <button className={style.productButton}>
+          <Link to={`/products/${name}`}>Add to Cart</Link>
+        </button>
+      </div>
     </div>
   )
 }

@@ -2,40 +2,44 @@ const db = require('./models');
 
 const products = [
   {
-    name: 'essential oil 1',
+    name: 'essentialoil1',
     image: 'assets/essentialOil1.png',
     description: 'description',
     size: 15,
     measure: 'ml',
     price: 15.88,
     category: 'essentialOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
-    name: 'essential oil 2',
+    name: 'essentialoil2',
     image: 'assets/essentialOil2.png',
     description: 'description',
     size: 14,
     measure: 'ml',
     price: 16.45,
     category: 'essentialOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
-    name: 'essential oil 3',
+    name: 'essentialoil3',
     image: 'assets/essentialOil3.png',
     description: 'description',
     size: 17,
     measure: 'ml',
     price: 17.25,
     category: 'essentialOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
-    name: 'essential oil 4',
+    name: 'essentialoil4',
     image: 'assets/essentialOil4.png',
     description: 'description',
     size: 15,
     measure: 'ml',
     price: 18.33,
     category: 'essentialOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'bodyCare1',
@@ -45,6 +49,7 @@ const products = [
     measure: 'ml',
     price: 22.44,
     category: 'bodyCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'bodyCare2',
@@ -54,6 +59,7 @@ const products = [
     measure: 'ml',
     price: 23.65,
     category: 'bodyCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'bodyCare3',
@@ -63,6 +69,7 @@ const products = [
     measure: 'ml',
     price: 24.74,
     category: 'bodyCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'bodyCare4',
@@ -72,6 +79,7 @@ const products = [
     measure: 'ml',
     price: 17.22,
     category: 'bodyCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'bodyCare5',
@@ -81,6 +89,7 @@ const products = [
     measure: 'ml',
     price: 24.21,
     category: 'bodyCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'difuser1',
@@ -90,6 +99,7 @@ const products = [
     measure: 'ml',
     price: 150.44,
     category: 'difuser',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'difuser2',
@@ -99,6 +109,7 @@ const products = [
     measure: 'ml',
     price: 111.55,
     category: 'difuser',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'difuser3',
@@ -108,6 +119,7 @@ const products = [
     measure: 'ml',
     price: 132.33,
     category: 'difuser',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'difuser4',
@@ -117,6 +129,7 @@ const products = [
     measure: 'ml',
     price: 90.55,
     category: 'difuser',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'difuser5',
@@ -126,6 +139,7 @@ const products = [
     measure: 'ml',
     price: 80.22,
     category: 'difuser',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'hairCare1',
@@ -135,6 +149,7 @@ const products = [
     measure: 'ml',
     price: 15.12,
     category: 'hairCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'hairCare2',
@@ -144,6 +159,7 @@ const products = [
     measure: 'ml',
     price: 19.21,
     category: 'hairCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'hairCare3',
@@ -153,6 +169,7 @@ const products = [
     measure: 'ml',
     price: 15.12,
     category: 'hairCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'hairCare4',
@@ -162,6 +179,7 @@ const products = [
     measure: 'ml',
     price: 22.55,
     category: 'hairCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'hairCare5',
@@ -171,6 +189,7 @@ const products = [
     measure: 'ml',
     price: 22.55,
     category: 'hairCare',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
 
   {
@@ -181,6 +200,7 @@ const products = [
     measure: 'ml',
     price: 35.48,
     category: 'massageOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'massageOil2',
@@ -190,6 +210,7 @@ const products = [
     measure: 'ml',
     price: 44.66,
     category: 'massageOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'massageOil3',
@@ -199,6 +220,7 @@ const products = [
     measure: 'ml',
     price: 24.21,
     category: 'massageOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'massageOil4',
@@ -208,6 +230,7 @@ const products = [
     measure: 'ml',
     price: 28.78,
     category: 'massageOil',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
 
   {
@@ -218,6 +241,7 @@ const products = [
     measure: 'ml',
     price: 18.78,
     category: 'roll',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'roll2',
@@ -227,6 +251,7 @@ const products = [
     measure: 'ml',
     price: 25.55,
     category: 'roll',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'roll3',
@@ -236,6 +261,7 @@ const products = [
     measure: 'ml',
     price: 12.33,
     category: 'roll',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
     name: 'roll4',
@@ -245,6 +271,7 @@ const products = [
     measure: 'ml',
     price: 28.84,
     category: 'roll',
+    details: 'Reduces the wrinkles, increases skin firmness.',
   },
 ];
 

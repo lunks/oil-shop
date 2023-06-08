@@ -5,6 +5,7 @@ import Footer from "../../components/Footer/Footer"
 import About from "../../pages/About/About"
 import Shop from "../../pages/Shop/Shop"
 import Home from "../../pages/Home/Home"
+import ProductDetails from "../../pages/ProductDetails/ProductDetails"
 import styles from "./AppRoutes.module.css"
 
 const AppRoutes = () => {
@@ -16,6 +17,7 @@ const AppRoutes = () => {
           <Route path='/about' element={<About />} />
           <Route path='/shop' element={<Shop />} />
           <Route path='/' element={<Home />} />
+          <Route path='/products/:productName' element={<ProductDetails />} />
         </Routes>
       </div>
       <Footer />
