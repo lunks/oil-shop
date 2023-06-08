@@ -20,9 +20,9 @@ const ProductQuantitySelector = () => {
     <div className={styles.quantitySelector}>
       <div className={styles.quantityInputContainer}>
         <input
-          type='number'
+          type='text'
           min='1'
-          max='10000'
+          max='20'
           value={quantity}
           readOnly
           className={styles.quantityInput}

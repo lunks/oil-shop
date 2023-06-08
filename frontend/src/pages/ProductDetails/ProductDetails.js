@@ -70,12 +70,12 @@ const ProductDetails = () => {
         </div>
         <div className={styles.rightContainer}>
           <div className={styles.rightContainerDetails}>
-            <div>
-              <h1>{name}</h1>
+            <div>{name}</div>
+            <div className={styles.rightContainerDetailsPoints}>
+              <div>{category}</div>
+              <div>{details}</div>
+              <div>{description}</div>
             </div>
-            <p>{category}</p>
-            <p>{details}</p>
-            <p>{description}</p>
           </div>
           <div className={styles.rightContainerPriceDetails}>
             <div>{size} ml</div>

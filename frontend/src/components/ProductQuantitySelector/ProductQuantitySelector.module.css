@@ -1,22 +1,25 @@
 .quantitySelector {
   display: flex;
-  align-items: stretch;
-  height: 52px;
+  justify-content: stretch;
+  height: 100%;
+  background-color: rgb(244, 244, 244);
 }
 
 .quantityInput {
   height: 100%;
   text-align: center;
   margin: 0;
+  width: 30px;
+  border: none;
+  background-color: rgb(244, 244, 244);
 }
 
 .quantityInputContainer {
-  width: 56px;
   height: 100%;
   text-align: center;
   margin: 0;
-  display: flex; /* added to center the input vertically */
-  align-items: center; /* added to center the input vertically */
+  display: flex;
+  align-items: center;
 }
 
 .quantityButtonsContainer {
