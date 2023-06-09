@@ -11,13 +11,20 @@
   margin: 26px 26px;
   padding: 16px;
   font-family: "GFS Neohellenic", sans-serif;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product:hover {
+  transform: scale(1.2); /* New line */
 }
 
 .productName {
   margin: 0;
   font-size: 18px;
   font-weight: 500;
-  color: #000;
+  color: #757575;
   font-family: "GFS Neohellenic", sans-serif;
 }
 
@@ -32,34 +39,44 @@
 .productPrice {
   margin: 0;
   font-size: 16px;
+  color: #757575;
 }
 
 .productDescription {
-  margin-top: 10px;
   font-size: 14px;
+  margin-bottom: 10px;
   color: #757575;
   height: auto;
 }
 
-.product-button {
-  background-color: #3f51b5;
-  color: white;
-  border: none;
-  padding: 10px 20px;
+.productButton {
+  display: none;
+  height: 30px;
+  width: 90px;
+  background: #b5dec6;
+  color: grey;
+  border: grey solid 1px;
+  border-radius: 3px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
-  border-radius: 4px;
-  width: 66px;
+}
+.product:hover .buttonContainer {
+  display: flex;
+}
+.product:hover .productButton {
+  display: block;
+}
+.buttonContainer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px; /* Adjust height as necessary */
 }
 
-.button-hidden {
-  opacity: 0;
-}
-
-.product:hover .product-button {
-  opacity: 1;
+.productButton:focus {
+  background-color: #82d3a4;
 }
