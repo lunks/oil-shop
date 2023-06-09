@@ -11,14 +11,14 @@
 .leftContainer {
   display: flex;
 
-  width: 70%;
+  width: 65%;
 }
 
 .imagesColumn {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30%;
+  width: 25%;
 }
 
 .imageContainer {
@@ -37,7 +37,7 @@
 }
 
 .middleContainer {
-  width: 70%;
+  width: 75%;
 
   display: flex;
   justify-content: center;
@@ -61,7 +61,7 @@
 }
 
 .rightContainer {
-  width: 30%;
+  width: 35%;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   height: auto;
@@ -76,12 +76,22 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.rightContainerDetails {
+.productName {
   text-align: center;
-  width: 80%;
+  margin-bottom: 40px;
+}
+
+.rightContainerDetailsPoints {
   display: flex;
+
+  width: 90%;
+  margin-bottom: 40px;
   flex-direction: column;
-  align-items: center;
+}
+
+.productName {
+  font-size: 36px;
+  line-height: 128%;
 }
 
 .rightContainerPriceDetails {
@@ -103,6 +113,12 @@
   font-size: 12px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  margin-left: 10px;
+}
+
+.addToCartButton:hover {
+  background: #96ffc2;
+  font-size: 16px;
 }
 
 .selectorAndButtonContainer {
@@ -113,4 +129,47 @@
 .buttonIcon {
   width: 16px;
   height: 16px;
+}
+
+.descriptionPoints {
+  font-size: 18px;
+}
+
+.quantitySelector {
+  display: flex;
+  justify-content: stretch;
+  height: 100%;
+  background-color: rgb(244, 244, 244);
+}
+
+.quantityInput {
+  height: 100%;
+  text-align: center;
+  margin: 0;
+  width: 30px;
+  border: none;
+  background-color: rgb(244, 244, 244);
+}
+
+.quantityInputContainer {
+  height: 100%;
+  text-align: center;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.quantityButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.quantityButtonsContainer span:hover {
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
 }

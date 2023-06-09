@@ -2,11 +2,14 @@ import React, { useEffect, useState } from "react"
 import axios from "axios"
 import styles from "./ProductDetails.module.css"
 import { useParams } from "react-router-dom"
-import ProductQuantitySelector from "../../components/ProductQuantitySelector/ProductQuantitySelector"
+import { useContext } from "react"
+import { CartContext } from "../../context/cartContext"
 
 const ProductDetails = () => {
   const { productName } = useParams()
   const [product, setProduct] = useState(null)
+  const [quantity, setQuantity] = useState(1)
+  const { addProduct } = useContext(CartContext)
 
   useEffect(() => {
     const getProduct = async () => {
@@ -14,11 +17,9 @@ const ProductDetails = () => {
         const response = await axios.get(
           `http://localhost:3001/api/products/${productName}`,
         )
-        console.log("responseDeta", response)
-        console.log("responseDetaData", response.data)
         setProduct(response.data)
       } catch (error) {
-        console.error("Error fetching data: ", error)
+        console.error("Error fetching product: ", error)
       }
     }
 
@@ -30,6 +31,25 @@ const ProductDetails = () => {
   }
 
   const { name, image, size, price, description, category, details } = product
+  // const { addProduct } = useContext(CartContext)
+
+  const addToCart = () => {
+    console.log("name ", productName)
+    console.log("quantity ", quantity)
+    addProduct(productName, quantity)
+  }
+
+  const increaseQuantity = () => {
+    if (quantity < 20) {
+      setQuantity((prevQuantity) => prevQuantity + 1)
+    }
+  }
+
+  const decreaseQuantity = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1)
+    }
+  }
 
   return (
     <div className={styles.productPageWrapper}>
@@ -70,11 +90,13 @@ const ProductDetails = () => {
         </div>
         <div className={styles.rightContainer}>
           <div className={styles.rightContainerDetails}>
-            <div>{name}</div>
+            <div className={styles.productName}>{name}</div>
             <div className={styles.rightContainerDetailsPoints}>
-              <div>{category}</div>
-              <div>{details}</div>
-              <div>{description}</div>
+              <ul className={styles.descriptionPoints}>
+                <li className={styles.descriptionPoint}>{category}</li>
+                <li className={styles.descriptionPoint}>{details}</li>
+                <li className={styles.descriptionPoint}>{description}</li>
+              </ul>
             </div>
           </div>
           <div className={styles.rightContainerPriceDetails}>
@@ -82,8 +104,43 @@ const ProductDetails = () => {
             <div>${price}</div>
           </div>
           <div className={styles.selectorAndButtonContainer}>
-            <ProductQuantitySelector />
-            <button className={styles.addToCartButton}>Add To Cart</button>
+            <div className={styles.quantitySelector}>
+              <div className={styles.quantityInputContainer}>
+                <input
+                  type='text'
+                  min='1'
+                  max='20'
+                  value={quantity}
+                  readOnly
+                  className={styles.quantityInput}
+                />
+              </div>
+              <div className={styles.quantityButtonsContainer}>
+                <div>
+                  <span
+                    onClick={increaseQuantity}
+                    className={`material-symbols-outlined ${styles.buttonIcon}`}
+                  >
+                    expand_less
+                  </span>
+                </div>
+                <div>
+                  <span
+                    onClick={decreaseQuantity}
+                    className={`material-symbols-outlined ${styles.buttonIcon}`}
+                  >
+                    expand_more
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <button
+              className={styles.addToCartButton}
+              onClick={() => addToCart(name, quantity)}
+            >
+              Add To Cart
+            </button>
           </div>
         </div>
       </div>
