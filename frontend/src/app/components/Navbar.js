@@ -2,6 +2,9 @@ import React, { Fragment } from "react"
 import styles from "./Navbar.module.css"
 import SubNavbar from "./SubNavbar"
 import useLocaleContext from "../../context/locale.context"
+import { useContext } from "react"
+import { CartContext } from "../../context/cartContext"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const { translate } = useLocaleContext()
@@ -26,7 +29,10 @@ const Navbar = () => {
             </div>
             <div className={styles.gap}></div>
             <nav className={styles.iconsNav}>
-              <span className='material-symbols-outlined'>shopping_cart</span>
+              <Link to='/cart'>
+                <span className='material-symbols-outlined'>shopping_cart</span>
+              </Link>
+
               <span className='material-symbols-outlined'>account_circle</span>
               <span className='material-symbols-outlined'>language</span>
             </nav>

@@ -17,6 +17,7 @@ const ProductDetails = () => {
         const response = await axios.get(
           `http://localhost:3001/api/products/${productName}`,
         )
+        console.log("response.data ", response.data)
         setProduct(response.data)
       } catch (error) {
         console.error("Error fetching product: ", error)
