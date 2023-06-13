@@ -5,29 +5,44 @@ export const CartContext = createContext()
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
 
-  const addProduct = (productName, quantity) => {
+  const addProduct = (product, quantity) => {
     const existingProduct = cart.find(
-      (item) => item.productName === productName,
+      (item) => item.product.name === product.name,
     )
 
     if (existingProduct) {
-      // update quantity if item already in cart
       setCart(
         cart.map((item) =>
-          item.productName === productName
+          item.product.name === product.name
             ? { ...item, quantity: item.quantity + quantity }
             : item,
         ),
       )
     } else {
-      setCart([...cart, { productName, quantity }])
+      setCart([...cart, { product, quantity }])
     }
   }
 
-  console.log("cart ", cart)
+  const updateProductQuantity = (productName, newQuantity) => {
+    setCart(
+      cart.map((item) =>
+        item.product.name === productName
+          ? { ...item, quantity: newQuantity }
+          : item,
+      ),
+    )
+  }
+
+  const removeProduct = (productName) => {
+    setCart(cart.filter((item) => item.product.name !== productName))
+  }
+
+  console.log("CartProvider cart ", cart)
 
   return (
-    <CartContext.Provider value={{ cart, addProduct }}>
+    <CartContext.Provider
+      value={{ cart, addProduct, updateProductQuantity, removeProduct }}
+    >
       {children}
     </CartContext.Provider>
   )
