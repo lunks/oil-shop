@@ -17,6 +17,7 @@ const ProductDetails = () => {
         const response = await axios.get(
           `http://localhost:3001/api/products/${productName}`,
         )
+        console.log("response.data ", response.data)
         setProduct(response.data)
       } catch (error) {
         console.error("Error fetching product: ", error)
@@ -34,9 +35,9 @@ const ProductDetails = () => {
   // const { addProduct } = useContext(CartContext)
 
   const addToCart = () => {
-    console.log("name ", productName)
-    console.log("quantity ", quantity)
-    addProduct(productName, quantity)
+    console.log("Details addToCart product ", product)
+    console.log("Details addToCart quantity ", quantity)
+    addProduct(product, quantity)
   }
 
   const increaseQuantity = () => {
