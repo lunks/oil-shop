@@ -21,6 +21,8 @@ export const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, { product, quantity }])
     }
+
+    alert(`${quantity} ${product.name} were added to cart`)
   }
 
   const updateProductQuantity = (productName, newQuantity) => {
@@ -37,11 +39,22 @@ export const CartProvider = ({ children }) => {
     setCart(cart.filter((item) => item.product.name !== productName))
   }
 
+  const getAllProductsQuantity = cart.reduce(
+    (total, item) => total + item.quantity,
+    0,
+  )
+
   console.log("CartProvider cart ", cart)
 
   return (
     <CartContext.Provider
-      value={{ cart, addProduct, updateProductQuantity, removeProduct }}
+      value={{
+        cart,
+        addProduct,
+        updateProductQuantity,
+        removeProduct,
+        getAllProductsQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>
