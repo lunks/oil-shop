@@ -1,5 +1,6 @@
 import React from "react"
 import styles from "./Cart.module.css"
+import { Link } from "react-router-dom"
 
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
@@ -75,7 +76,9 @@ const Cart = () => {
           <hr />
           <div>Total: {(totalCost + shippingCost).toFixed(2)} €</div>
         </div>
-        <button className={styles.confirmButton}>Confirm Purchase</button>
+        <Link to='/checkout/shipping'>
+          <button className={styles.confirmButton}>Confirm Purchase</button>
+        </Link>
       </div>
     </div>
   )

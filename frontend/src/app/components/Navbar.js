@@ -8,6 +8,8 @@ import { Link } from "react-router-dom"
 
 const Navbar = () => {
   const { translate } = useLocaleContext()
+
+  const { getAllProductsQuantity } = useContext(CartContext)
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -31,6 +33,9 @@ const Navbar = () => {
             <nav className={styles.iconsNav}>
               <Link to='/cart'>
                 <span className='material-symbols-outlined'>shopping_cart</span>
+                <span className={styles.productsQuantity}>
+                  {getAllProductsQuantity}
+                </span>
               </Link>
 
               <span className='material-symbols-outlined'>account_circle</span>
