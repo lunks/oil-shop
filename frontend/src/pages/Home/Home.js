@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "./Home.module.css"
 import useLocaleContext from "../../context/locale.context"
-import Carousel from "../../components/Carrousel/Carrousel"
+import Carousel from "../../components/Carousel/Carousel"
 import ProductsSlider from "../../components/ProductsSlider/ProductsSlider"
 
 const Home = () => {

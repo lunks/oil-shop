@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from "react"
-import styles from "./Carrousel.module.css"
 
 const Carousel = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
@@ -32,9 +31,9 @@ const Carousel = () => {
   const videoSrc = `https://www.youtube.com/embed/${currentVideo.id}?start=${currentVideo.start}&end=${currentVideo.end}&autoplay=1&loop=1&playlist=${currentVideo.id}&controls=0&modestbranding=1&mute=1`
 
   return (
-    <div className={styles.carousel}>
+    <div className='carousel'>
       <span
-        className={`material-symbols-outlined ${styles.iconCarousel}`}
+        className={`material-symbols-outlined iconCarousel`}
         onClick={previousVideo}
       >
         arrow_back_ios
@@ -51,7 +50,7 @@ const Carousel = () => {
 
       <span
         onClick={nextVideo}
-        className={`material-symbols-outlined ${styles.iconCarousel}`}
+        className={`material-symbols-outlined iconCarousel`}
       >
         arrow_forward_ios
       </span>
