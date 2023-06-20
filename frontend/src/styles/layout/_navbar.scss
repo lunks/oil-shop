@@ -1,0 +1,19 @@
+.wrapper {
+  width: 100%;
+  background-color: white;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #b5cfaa;
+  height: 84px;
+  margin-bottom: 20px;
+}
