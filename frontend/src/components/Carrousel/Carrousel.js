@@ -1,47 +1,56 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useRef } from "react"
 import styles from "./Carrousel.module.css"
 
-const images = [
-  process.env.PUBLIC_URL + "/assets/" + "bannerHomePage1.png",
-  process.env.PUBLIC_URL + "/assets/" + "bannerHomePage2.png",
-  process.env.PUBLIC_URL + "/assets/" + "bannerHomePage3.png",
-  process.env.PUBLIC_URL + "/assets/" + "bannerHomePage4.png",
-  process.env.PUBLIC_URL + "/assets/" + "bannerHomePage5.png",
-]
-
 const Carousel = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
+  const iframeRef = useRef(null)
 
   useEffect(() => {
     const timer = setInterval(() => {
-      nextImage()
-    }, 5000) // Change image every 5 seconds
+      nextVideo()
+    }, 15000)
 
-    // Cleanup timer on component unmount
     return () => clearInterval(timer)
-  }, [currentImageIndex])
+  }, [currentVideoIndex])
 
-  const nextImage = () => {
-    const newIndex = currentImageIndex + 1
-    setCurrentImageIndex(newIndex >= images.length ? 0 : newIndex)
+  const nextVideo = () => {
+    const newIndex = currentVideoIndex + 1
+    setCurrentVideoIndex(newIndex >= videos.length ? 0 : newIndex)
   }
 
-  const previousImage = () => {
-    const newIndex = currentImageIndex - 1
-    setCurrentImageIndex(newIndex < 0 ? images.length - 1 : newIndex)
+  const previousVideo = () => {
+    const newIndex = currentVideoIndex - 1
+    setCurrentVideoIndex(newIndex < 0 ? videos.length - 1 : newIndex)
   }
+
+  const videos = [
+    { id: "YHYuQFBrJVc", start: 170, end: 185 },
+    { id: "yicHmCVxmNQ", start: 16, end: 31 },
+  ]
+
+  const currentVideo = videos[currentVideoIndex]
+  const videoSrc = `https://www.youtube.com/embed/${currentVideo.id}?start=${currentVideo.start}&end=${currentVideo.end}&autoplay=1&loop=1&playlist=${currentVideo.id}&controls=0&modestbranding=1&mute=1`
 
   return (
     <div className={styles.carousel}>
       <span
         className={`material-symbols-outlined ${styles.iconCarousel}`}
-        onClick={previousImage}
+        onClick={previousVideo}
       >
         arrow_back_ios
       </span>
-      <img classeName={styles.image} src={images[currentImageIndex]} alt='' />
+      <iframe
+        width='1120'
+        height='630'
+        src={videoSrc}
+        title='YouTube video player'
+        frameborder='0'
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+        allowfullscreen
+      ></iframe>
+
       <span
-        onClick={nextImage}
+        onClick={nextVideo}
         className={`material-symbols-outlined ${styles.iconCarousel}`}
       >
         arrow_forward_ios
