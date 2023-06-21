@@ -38,15 +38,35 @@ const Carousel = () => {
       >
         arrow_back_ios
       </span>
-      <iframe
-        width='1120'
-        height='630'
-        src={videoSrc}
-        title='YouTube video player'
-        frameborder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-        allowfullscreen
-      ></iframe>
+      <div
+        style={{
+          position: "relative",
+          width: "1120px",
+          height: "630px",
+        }}
+      >
+        <iframe
+          width='1120'
+          height='630'
+          src={videoSrc}
+          title='YouTube video player'
+          frameborder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          allowfullscreen
+        ></iframe>
+        <div
+          style={{
+            content: '""',
+            position: "absolute",
+            top: "0",
+            right: "0",
+            bottom: "0",
+            left: "0",
+            border: "60px solid white",
+            pointerEvents: "none",
+          }}
+        ></div>
+      </div>
 
       <span
         onClick={nextVideo}

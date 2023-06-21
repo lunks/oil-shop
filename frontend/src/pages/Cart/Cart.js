@@ -15,23 +15,23 @@ const Cart = () => {
   )
 
   return (
-    <div className={styles.cartContainer}>
-      <div className={styles.productList}>
+    <div className='cartContainer'>
+      <div className='productList'>
         {cart.map((item, index) => (
-          <div key={index} className={styles.productItem}>
+          <div key={index} className='productItem'>
             <img
               src={item.product.image}
               alt={item.product.name}
-              className={styles.productImage}
+              className='productImage'
             />
-            <div className={styles.productDetails}>
+            <div className='productDetails'>
               <h3>{item.product.name}</h3>
               <p>{item.product.description}</p>
               <p>{item.product.size} ml</p>
             </div>
-            <div className={styles.productQuantity}>
+            <div className='productQuantity'>
               <button
-                className={styles.quantityButton}
+                className='quantityButton'
                 onClick={() =>
                   updateProductQuantity(item.product.name, item.quantity - 1)
                 }
@@ -42,10 +42,10 @@ const Cart = () => {
                 type='text'
                 readOnly
                 value={item.quantity}
-                className={styles.quantityInput}
+                className='quantityInput'
               />
               <button
-                className={styles.quantityButton}
+                className='quantityButton'
                 onClick={() =>
                   updateProductQuantity(item.product.name, item.quantity + 1)
                 }
@@ -53,12 +53,12 @@ const Cart = () => {
                 +
               </button>
             </div>
-            <div className={styles.productTotal}>
+            <div className='productTotal'>
               {(item.quantity * Number(item.product.price)).toFixed(2)} €
             </div>
-            <div className={styles.productDelete}>
+            <div className='productDelete'>
               <button
-                className={styles.deleteButton}
+                className='deleteButton'
                 onClick={() => removeProduct(item.product.name)}
               >
                 Delete
@@ -68,16 +68,16 @@ const Cart = () => {
         ))}
       </div>
 
-      <div className={styles.orderSummary}>
+      <div className='orderSummary'>
         <h2>Summary</h2>
-        <div className={styles.summaryDetails}>
+        <div className='summaryDetails'>
           <div>Subtotal: {totalCost.toFixed(2)} €</div>
           <div>Shipping: {shippingCost} €</div>
           <hr />
           <div>Total: {(totalCost + shippingCost).toFixed(2)} €</div>
         </div>
         <Link to='/checkout/shipping'>
-          <button className={styles.confirmButton}>Confirm Purchase</button>
+          <button className='confirmButton'>Confirm Purchase</button>
         </Link>
       </div>
     </div>
