@@ -2,25 +2,9 @@
 @import "base/variables";
 @import "base/typography";
 @import "base/reset";
+@import "helpers/mixins";
 @import "components/button";
 @import "components/card";
+@import "components/carousel";
 @import "layout/header";
 @import "layout/footer";
-@import "helpers/mixins";
-
-.carousel {
-  @include flex-center;
-  height: $carousel-height;
-  width: $carousel-width;
-  margin-bottom: $carousel-margin-bottom;
-}
-
-.carousel img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
-}
-
-.iconCarousel {
-  cursor: pointer;
-}
