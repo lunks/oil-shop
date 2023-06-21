@@ -21,8 +21,6 @@
 
 .carousel {
   @include flex-center;
-  height: $carousel-height;
-  width: $carousel-width;
   margin-bottom: $carousel-margin-bottom;
 }
 
