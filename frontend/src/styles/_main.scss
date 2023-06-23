@@ -4,9 +4,8 @@
 @import "base/reset";
 @import "helpers/mixins";
 @import "components/button";
-@import "components/Cart";
+@import "components/Cart.module";
 @import "components/Carousel";
-@import "components/Carousel";
-@import "pages/Home";
+@import "pages/Home.module";
 @import "layout/header";
 @import "layout/footer";

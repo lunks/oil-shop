@@ -1,4 +1,5 @@
 import React from "react"
+import styles from "../../styles/pages/Home.module.scss"
 import useLocaleContext from "../../context/locale.context"
 import Carousel from "../../components/Carousel/Carousel"
 import ProductsSlider from "../../components/ProductsSlider/ProductsSlider"
@@ -7,23 +8,23 @@ const Home = () => {
   const { translate } = useLocaleContext()
 
   return (
-    <div className='homeContainer'>
+    <div className={styles.pageContainer}>
       <Carousel />
-      <div className='teaserText'>
-        <h2 className='homeTitle'>{translate.pages.welcome.title}</h2>
-        <h3 className='homeSubtitleText'>
+      <div className={styles.teaserText}>
+        <h2 className={styles.title}>{translate.pages.welcome.title}</h2>
+        <h3 className={styles.subtitleText}>
           {translate.pages.welcome.teaserSentence}
         </h3>
-        <h3 className='homeSubtitleText'>
+        <h3 className={styles.subtitleText}>
           {translate.pages.welcome.teaserSubSentenceOne}
         </h3>
-        <h3 className='homeSubtitleText'>
+        <h3 className={styles.subtitleText}>
           {translate.pages.welcome.teaserSubSentenceTwo}
         </h3>
-        <h3 className='homeSubtitleText'>
+        <h3 className={styles.subtitleText}>
           {translate.pages.welcome.teaserSubSentenceThree}
         </h3>
-        <h3 className='homeSubtitleText'>
+        <h3 className={styles.subtitleText}>
           {translate.pages.welcome.teaserSubSentenceFour}
         </h3>
       </div>

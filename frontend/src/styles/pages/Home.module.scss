@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=GFS+Neohellenic&display=swap");
+@import "../helpers/mixins";
+@import "../base/variables";
+
+.pageContainer {
+  @include flex-center;
+  flex-direction: column;
+}
+
+.teaserText {
+  @include flex-column-text;
+}
+
+.teaserCards {
+  display: flex;
+}
+
+.title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-family: $main-font-family;
+}
+
+.homeSubtitle {
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  font-family: $main-font-family;
+}
+
+.subtitleText {
+  font-size: 18px;
+  line-height: 128%;
+  text-align: center;
+  font-weight: 500;
+  font-family: $main-font-family;
+}
+
+.productSliderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 200, "opsz" 48;
+}
+
+.icon {
+  font-size: 56px;
+}
+
+.teaserSingleCard {
+  @include flex-column;
+  padding: 20px;
+}
