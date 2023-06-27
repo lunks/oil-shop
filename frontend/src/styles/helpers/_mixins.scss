@@ -5,9 +5,8 @@
 }
 
 @mixin flex-column {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
+  flex-direction: column;
 }
 
 @mixin text-center {
@@ -23,4 +22,65 @@
 @mixin full-width-and-height {
   height: 100%;
   width: 100%;
+}
+
+@mixin product-cell {
+  border: $product-border;
+  width: 180px;
+  box-shadow: $product-box-shadow;
+  border-radius: 4px;
+  height: $product-height;
+  @include flex-column;
+  margin: $product-margin;
+  padding: $product-padding;
+  font-family: $main-font-family;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+@mixin product-name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: $thirth-color;
+  font-family: $main-font-family;
+}
+
+@mixin product-size-and-price {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: $thirth-color;
+  font-family: $main-font-family;
+}
+
+@mixin product-image {
+  width: 126px;
+  height: 180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@mixin product-button {
+  display: none;
+  height: 30px;
+  width: 90px;
+  background: #b5dec6;
+  color: grey;
+  border: grey solid 1px;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+@mixin product-button-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 40px;
 }
