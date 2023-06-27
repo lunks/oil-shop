@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-
+import styles from "../../styles/components/Carousel.module.scss"
 const Carousel = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const iframeRef = useRef(null)
@@ -46,6 +46,7 @@ const Carousel = () => {
         }}
       >
         <iframe
+          className={styles.video}
           width='1120'
           height='630'
           src={videoSrc}
@@ -54,18 +55,7 @@ const Carousel = () => {
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
           allowfullscreen
         ></iframe>
-        <div
-          style={{
-            content: '""',
-            position: "absolute",
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0",
-            border: "60px solid white",
-            pointerEvents: "none",
-          }}
-        ></div>
+        <div className={styles.borderDiv}></div>
       </div>
 
       <span
