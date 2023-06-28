@@ -6,14 +6,14 @@
 @import "helpers/mixins";
 
 @import "components/button";
-@import "components/Cart.module";
-@import "components/Carousel.module";
-@import "components/Product.module";
-@import "components/ProductSlider.module";
-@import "components/Sidebar.module";
 
-@import "pages/Home.module";
-@import "pages/ProductDetails.module";
+@import "components/carousel.module";
+@import "components/product.module";
+@import "components/productSlider.module";
+@import "components/sidebar.module";
 
-@import "layout/header";
+@import "pages/home.module";
+@import "pages/cart.module";
+@import "pages/productDetails.module";
+
 @import "layout/footer.module";

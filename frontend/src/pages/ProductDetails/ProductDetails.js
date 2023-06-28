@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react"
 import axios from "axios"
-import styles from "../../styles/pages/ProductDetails.module.scss"
+import styles from "../../styles/pages/_productDetails.module.scss"
 import { useParams } from "react-router-dom"
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"

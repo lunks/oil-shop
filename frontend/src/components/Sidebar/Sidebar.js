@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "../../styles/components/Sidebar.module.scss"
+import styles from "../../styles/components/_sidebar.module.scss"
 import axios from "axios"
 import useLocaleContext from "../../context/locale.context"
 

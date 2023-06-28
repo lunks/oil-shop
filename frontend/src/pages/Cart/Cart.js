@@ -2,6 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
+import styles from "../../styles/pages/_cart.module.scss"
 
 const Cart = () => {
   const { cart, removeProduct, updateProductQuantity } = useContext(CartContext)
@@ -13,23 +14,23 @@ const Cart = () => {
   )
 
   return (
-    <div className='cartContainer'>
-      <div className='productList'>
+    <div className={styles.cartContainer}>
+      <div className={styles.productList}>
         {cart.map((item, index) => (
-          <div key={index} className='productItem'>
+          <div key={index} className={styles.productItem}>
             <img
               src={item.product.image}
               alt={item.product.name}
-              className='productImage'
+              className={styles.productImage}
             />
-            <div className='productDetails'>
+            <div className={styles.productDetails}>
               <h3>{item.product.name}</h3>
               <p>{item.product.description}</p>
               <p>{item.product.size} ml</p>
             </div>
-            <div className='productQuantity'>
+            <div className={styles.productQuantity}>
               <button
-                className='quantityButton'
+                className={styles.quantityButton}
                 onClick={() =>
                   updateProductQuantity(item.product.name, item.quantity - 1)
                 }
@@ -40,10 +41,10 @@ const Cart = () => {
                 type='text'
                 readOnly
                 value={item.quantity}
-                className='quantityInput'
+                className={styles.quantityInput}
               />
               <button
-                className='quantityButton'
+                className={styles.quantityButton}
                 onClick={() =>
                   updateProductQuantity(item.product.name, item.quantity + 1)
                 }
@@ -51,12 +52,12 @@ const Cart = () => {
                 +
               </button>
             </div>
-            <div className='productTotal'>
+            <div className={styles.productTotal}>
               {(item.quantity * Number(item.product.price)).toFixed(2)} €
             </div>
-            <div className='productDelete'>
+            <div className={styles.productDelete}>
               <button
-                className='deleteButton'
+                className={styles.deleteButton}
                 onClick={() => removeProduct(item.product.name)}
               >
                 Delete
@@ -66,16 +67,16 @@ const Cart = () => {
         ))}
       </div>
 
-      <div className='orderSummary'>
+      <div className={styles.orderSummary}>
         <h2>Summary</h2>
-        <div className='summaryDetails'>
+        <div className={styles.summaryDetails}>
           <div>Subtotal: {totalCost.toFixed(2)} €</div>
           <div>Shipping: {shippingCost} €</div>
           <hr />
           <div>Total: {(totalCost + shippingCost).toFixed(2)} €</div>
         </div>
         <Link to='/checkout/shipping'>
-          <button className='confirmButton'>Confirm Purchase</button>
+          <button className={styles.confirmButton}>Confirm Purchase</button>
         </Link>
       </div>
     </div>
