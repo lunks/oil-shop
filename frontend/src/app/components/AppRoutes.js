@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom"
 
 import Navbar from "./Navbar"
-import Footer from "../../components/layout/Footer/Footer"
+import Footer from "../../components/Layout/Footer/Footer"
 import About from "../../pages/About/About"
 import Shop from "../../pages/Shop/Shop"
 import Home from "../../pages/Home/Home"
@@ -26,8 +26,8 @@ const AppRoutes = () => {
             <Route path='/checkout/shipping' element={<Shipping />} />
           </Routes>
         </div>
+        <Footer />
       </CartProvider>
-      <Footer />
     </div>
   )
 }
