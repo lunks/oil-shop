@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom"
 
 import Navbar from "./Navbar"
-import Footer from "../../components/Footer/Footer"
+import Footer from "../../layout/Footer/Footer"
 import About from "../../pages/About/About"
 import Shop from "../../pages/Shop/Shop"
 import Home from "../../pages/Home/Home"
 import ProductDetails from "../../pages/ProductDetails/ProductDetails"
 import Cart from "../../pages/Cart/Cart"
-import styles from "./AppRoutes.module.css"
+import styles from "../../styles/app/components/_AppRoutes.module.scss"
 import { CartProvider } from "../../context/cartContext"
 import Shipping from "../../components/Checkout/Shipping/Shipping"
 

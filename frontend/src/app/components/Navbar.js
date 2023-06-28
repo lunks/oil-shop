@@ -1,5 +1,5 @@
 import React, { Fragment } from "react"
-import styles from "./Navbar.module.css"
+import styles from "../../styles/app/components/_Navbar.module.scss"
 import SubNavbar from "./SubNavbar"
 import useLocaleContext from "../../context/locale.context"
 import { useContext } from "react"

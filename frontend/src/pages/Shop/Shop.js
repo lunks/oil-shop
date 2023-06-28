@@ -3,7 +3,7 @@ import axios from "axios"
 import Product from "../../components/Product/Product"
 import useLocaleContext from "../../context/locale.context"
 import Sidebar from "../../components/Sidebar/Sidebar"
-import style from "./Shop.module.css"
+import style from "../../styles/pages/Shop.module.scss"
 
 const Shop = () => {
   const [products, setProducts] = useState([])
