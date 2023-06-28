@@ -1,3 +1,6 @@
+@import "../helpers/mixins";
+@import "../base/variables";
+
 .cartContainer {
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -52,4 +55,8 @@
 }
 
 .summaryDetails {
+}
+
+.confirmButton {
+  @include product-purshase-button;
 }

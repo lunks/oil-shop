@@ -5,6 +5,10 @@
 
 @import "helpers/mixins";
 
+@import "app/components/navbar.module";
+@import "app/components/appRoutes.module";
+@import "app/components/navbar.module";
+
 @import "components/carousel.module";
 @import "components/product.module";
 @import "components/productSlider.module";

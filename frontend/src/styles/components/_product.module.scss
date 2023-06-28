@@ -1,10 +1,6 @@
 @import "../helpers/mixins";
 @import "../base/variables";
 
-.product {
-  @include product-cell;
-}
-
 .product:hover {
   transform: scale(1.2);
 }
@@ -29,19 +25,13 @@
   height: auto;
 }
 
-.productButton {
-  @include product-button;
-}
 .product:hover .buttonContainer {
   display: flex;
 }
 .product:hover .productButton {
   display: block;
 }
-.buttonContainer {
-  @include product-button-container;
-}
 
-.productButton:focus {
-  background-color: #82d3a4;
+.buttonContained {
+  @include product-purshase-button;
 }
