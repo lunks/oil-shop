@@ -1,5 +1,5 @@
 import React from "react"
-import style from "./Sidebar.module.css"
+import styles from "./Sidebar.module.css"
 import axios from "axios"
 import useLocaleContext from "../../context/locale.context"
 
@@ -38,46 +38,46 @@ const Sidebar = ({ setCategory }) => {
 
   return (
     <div>
-      <ul className={style.sidebar}>
+      <ul className={styles.sidebar}>
         <li
           onClick={() => setCategory(Categories.ALL)}
-          className={style.sidebarItem}
+          className={styles.sidebarItem}
         >
           {translate.sidebar.allProducts}
         </li>
         <li
           onClick={() => setCategory(Categories.ESSENTIAL_OIL)}
-          className={style.sidebarItem}
+          className={styles.sidebarItem}
         >
           {translate.sidebar.essentialOils}
         </li>
         <li
           onClick={() => setCategory(Categories.DIFUSER)}
-          className={style.sidebarItem}
+          className={styles.sidebarItem}
         >
           {translate.sidebar.difusers}
         </li>
         <li
           onClick={() => setCategory(Categories.BODY_CARE)}
-          className={style.sidebarItem}
+          className={styles.sidebarItem}
         >
           {translate.sidebar.bodyCare}
         </li>
         <li
           onClick={() => setCategory(Categories.HAIR_CARE)}
-          className={style.sidebarItem}
+          className={styles.sidebarItem}
         >
           {translate.sidebar.hairCare}
         </li>
         <li
           onClick={() => setCategory(Categories.ROLL)}
-          className={style.sidebarItem}
+          className={styles.sidebarItem}
         >
           {translate.sidebar.rollOn}
         </li>
         <li
           onClick={() => setCategory(Categories.MASSAGE_OIL)}
-          className={style.sidebarItem}
+          className={styles.sidebarItem}
         >
           {translate.sidebar.massageOils}
         </li>

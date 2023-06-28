@@ -38,17 +38,9 @@ const Carousel = () => {
       >
         arrow_back_ios
       </span>
-      <div
-        style={{
-          position: "relative",
-          width: "1120px",
-          height: "630px",
-        }}
-      >
+      <div className={styles.videoWrapper}>
         <iframe
           className={styles.video}
-          width='1120'
-          height='630'
           src={videoSrc}
           title='YouTube video player'
           frameborder='0'

@@ -35,3 +35,9 @@
   border: $carousel-video-border;
   pointer-events: none;
 }
+
+.videoWrapper {
+  position: relative;
+  width: 1120px;
+  height: 630px;
+}
