@@ -1,15 +1,13 @@
-import React, { Fragment } from "react"
+import React from "react"
 import styles from "../../styles/app/components/_navbar.module.scss"
 import SubNavbar from "./SubNavbar"
-import useLocaleContext from "../../context/locale.context"
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom"
 
 const Navbar = () => {
-  const { translate } = useLocaleContext()
-
   const { getAllProductsQuantity } = useContext(CartContext)
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
