@@ -1,5 +1,5 @@
 import React from "react"
-import style from "./Product.module.css"
+import style from "../../styles/components/_product.module.scss"
 import { Link } from "react-router-dom"
 import useLocaleContext from "../../context/locale.context"
 

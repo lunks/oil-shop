@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-
+import styles from "../../styles/components/_carousel.module.scss"
 const Carousel = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
   const iframeRef = useRef(null)
@@ -38,15 +38,17 @@ const Carousel = () => {
       >
         arrow_back_ios
       </span>
-      <iframe
-        width='1120'
-        height='630'
-        src={videoSrc}
-        title='YouTube video player'
-        frameborder='0'
-        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
-        allowfullscreen
-      ></iframe>
+      <div className={styles.videoWrapper}>
+        <iframe
+          className={styles.video}
+          src={videoSrc}
+          title='YouTube video player'
+          frameborder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+          allowfullscreen
+        ></iframe>
+        <div className={styles.borderDiv}></div>
+      </div>
 
       <span
         onClick={nextVideo}
