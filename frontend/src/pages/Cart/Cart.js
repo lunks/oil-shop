@@ -75,7 +75,7 @@ const Cart = () => {
           <hr />
           <div>Total: {(totalCost + shippingCost).toFixed(2)} €</div>
         </div>
-        <Link className={styles.confirmButton} to='/checkout/shipping'>
+        <Link className={styles.buttonContained} to='/checkout/shipping'>
           Confirm Purchase
         </Link>
       </div>
