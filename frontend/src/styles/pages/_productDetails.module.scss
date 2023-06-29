@@ -176,3 +176,9 @@
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 20;
 }
+
+.buttonContained {
+  @include product-purshase-button;
+  height: 100%;
+  margin-left: 0.3rem;
+}

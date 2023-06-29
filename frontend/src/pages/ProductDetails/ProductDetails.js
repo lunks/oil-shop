@@ -133,7 +133,7 @@ const ProductDetails = () => {
             </div>
 
             <button
-              className={styles.addToCartButton}
+              className={styles.buttonContained}
               onClick={() => addToCart(name, quantity)}
             >
               Add To Cart
