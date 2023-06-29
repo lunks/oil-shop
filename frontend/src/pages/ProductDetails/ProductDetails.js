@@ -94,12 +94,11 @@ const ProductDetails = () => {
             <div className={styles.productName}>
               {name} {size}ml
             </div>
-            <div className={styles.rightContainerDetailsPoints}>
-              <ul className={styles.descriptionPoints}>
-                <li className={styles.descriptionPoint}>{details}</li>
-                <li className={styles.descriptionPoint}>{description}</li>
-              </ul>
-            </div>
+
+            <ul className={styles.descriptionPoints}>
+              <li className={styles.descriptionPoint}>{details}</li>
+              <li className={styles.descriptionPoint}>{description}</li>
+            </ul>
           </div>
           <div className={styles.rightContainerPriceDetails}>
             <div className={styles.productSize}>{size} ml</div>
