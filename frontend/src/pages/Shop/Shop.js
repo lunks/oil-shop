@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react"
+import { useLocation } from "react-router-dom"
 import axios from "axios"
 import Product from "../../components/Product/Product"
 import useLocaleContext from "../../context/locale.context"
@@ -8,6 +9,10 @@ import style from "../../styles/pages/_shop.module.scss"
 const Shop = () => {
   const [products, setProducts] = useState([])
   const [category, setCategory] = useState("all")
+
+  const location = useLocation()
+  const params = new URLSearchParams(location.search)
+  const queryCategory = params.get("category")
 
   useEffect(() => {
     axios
@@ -20,6 +25,14 @@ const Shop = () => {
         console.error("Error fetching data: ", error)
       })
   }, [])
+
+  useEffect(() => {
+    if (queryCategory) {
+      setCategory(queryCategory)
+    } else {
+      setCategory("all")
+    }
+  }, [queryCategory])
 
   const filteredProducts = (category) =>
     products.filter((product) => {

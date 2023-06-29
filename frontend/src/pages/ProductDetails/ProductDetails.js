@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import axios from "axios"
 import styles from "../../styles/pages/_productDetails.module.scss"
 import { useParams } from "react-router-dom"
@@ -87,11 +88,14 @@ const ProductDetails = () => {
         </div>
         <div className={styles.rightContainer}>
           <div className={styles.rightContainerDetails}>
-            <div className={styles.productName}>{category}</div>
-            <div className={styles.productName}>{name}</div>
+            <div className={styles.productInfoCategory}>
+              <Link to={`/shop?category=${category}`}>{category}</Link>
+            </div>
+            <div className={styles.productName}>
+              {name} {size}ml
+            </div>
             <div className={styles.rightContainerDetailsPoints}>
               <ul className={styles.descriptionPoints}>
-                <li className={styles.descriptionPoint}>{category}</li>
                 <li className={styles.descriptionPoint}>{details}</li>
                 <li className={styles.descriptionPoint}>{description}</li>
               </ul>

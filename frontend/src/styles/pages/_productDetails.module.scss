@@ -95,8 +95,11 @@
 */
 
 .productName {
-  font-size: 36px;
+  font-weight: 600;
+  font-size: 22px;
+
   line-height: 128%;
+  margin-top: 24px;
 }
 
 .rightContainerPriceDetails {
@@ -187,4 +190,12 @@
   height: 100%;
   margin-left: 0.3rem;
   flex-grow: 1;
+}
+
+.productInfoCategory {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1;
+  text-transform: uppercase;
+  text-decoration: underline;
 }
