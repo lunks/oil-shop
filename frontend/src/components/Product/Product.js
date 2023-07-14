@@ -1,7 +1,7 @@
 import React from "react"
 import styles from "../../styles/components/_product.module.scss"
 import { Link } from "react-router-dom"
-import useLocaleContext from "../../context/locale.context"
+import useLocaleContext from "../../context/localeContext"
 
 const Product = ({ name, image, size, price, description, category }) => {
   const { translate } = useLocaleContext()

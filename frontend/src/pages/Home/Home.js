@@ -1,6 +1,6 @@
 import React from "react"
 import styles from "../../styles/pages/_home.module.scss"
-import useLocaleContext from "../../context/locale.context"
+import useLocaleContext from "../../context/localeContext"
 import Carousel from "../../components/Carousel/Carousel"
 import ProductsSlider from "../../components/ProductsSlider/ProductsSlider"
 

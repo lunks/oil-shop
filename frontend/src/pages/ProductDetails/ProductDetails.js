@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import axios from "axios"
+import useCartContext from "../../context/cartContext"
 import styles from "../../styles/pages/_productDetails.module.scss"
-import { useParams } from "react-router-dom"
-import { useContext } from "react"
-import { CartContext } from "../../context/cartContext"
 
 const ProductDetails = () => {
   const { productName } = useParams()
   const [product, setProduct] = useState(null)
   const [quantity, setQuantity] = useState(1)
-  const { addProduct } = useContext(CartContext)
+  const { addProduct } = useCartContext()
 
   useEffect(() => {
     const getProduct = async () => {
