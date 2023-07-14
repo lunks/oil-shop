@@ -9,10 +9,11 @@
   display: flex;
   align-items: center;
   overflow-x: auto;
-  width: 90%;
+  width: 100%;
   padding: 20px 0;
   white-space: nowrap;
   scrollbar-width: none; /* For Firefox */
+  gap: 16px;
 }
 
 .carousel::-webkit-scrollbar {

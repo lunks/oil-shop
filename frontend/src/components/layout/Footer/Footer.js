@@ -1,5 +1,5 @@
 import React from "react"
-import useLocaleContext from "../../../context/locale.context"
+import useLocaleContext from "../../../context/localeContext"
 import styles from "../../../styles/layout/_footer.module.scss"
 
 const Footer = () => {

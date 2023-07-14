@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
 import Product from "../../components/Product/Product"
-import useLocaleContext from "../../context/locale.context"
+import useLocaleContext from "../../context/localeContext"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import style from "../../styles/pages/_shop.module.scss"
 
