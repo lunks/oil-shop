@@ -1,5 +1,5 @@
 import { BrowserRouter } from "react-router-dom"
-import { LocaleContextProvider } from "../context/locale.context"
+import { LocaleContextProvider } from "../context/localeContext"
 import App from "./App"
 
 const AppWrapper = () => {
