@@ -1,14 +1,15 @@
 import { Route, Routes } from "react-router-dom"
+import { CartProvider } from "../../context/cartContext"
+
+import styles from "../../styles/app/components/_appRoutes.module.scss"
 
 import Navbar from "./Navbar"
 import Footer from "../../components/Layout/Footer/Footer"
 import About from "../../pages/About/About"
-import Shop from "../../pages/Shop/Shop"
-import Home from "../../pages/Home/Home"
-import ProductDetails from "../../pages/ProductDetails/ProductDetails"
 import Cart from "../../pages/Cart/Cart"
-import styles from "../../styles/app/components/_appRoutes.module.scss"
-import { CartProvider } from "../../context/cartContext"
+import Home from "../../pages/Home/Home"
+import Shop from "../../pages/Shop/Shop"
+import ProductDetails from "../../pages/ProductDetails/ProductDetails"
 import Shipping from "../../components/Checkout/Shipping/Shipping"
 
 const AppRoutes = () => {
