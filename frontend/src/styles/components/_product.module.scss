@@ -1,8 +1,23 @@
 @import "../helpers/mixins";
 @import "../base/variables";
 
-.product:hover {
-  transform: scale(1.1);
+.addToCartButton {
+  opacity: 0;
+  pointer-events: none;
+  @include product-purshase-button;
+}
+
+.productWrapper {
+  margin: 2rem;
+}
+
+.productWrapper:hover .addToCartButton {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.productWrapper:hover {
+  scale: 1.05;
 }
 
 .productName {

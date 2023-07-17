@@ -136,7 +136,7 @@ const ProductDetails = () => {
 
             <button
               className={styles.buttonContained}
-              onClick={() => addToCart(name, quantity)}
+              onClick={() => addToCart()}
             >
               Add To Cart
             </button>
