@@ -10,21 +10,25 @@ const Product = ({ name, image, size, price, description, category }) => {
   const product = { name, image, size, price, description, category }
 
   return (
-    <Link to={`/products/${name}`}>
-      <div className={styles.product}>
-        <div className={styles.productName}>{name}</div>
-        <img className={styles.productImage} src={image} alt={name} />
-        <div className={styles.productSize}>
-          {translate.products.oil.size}: {size} ml
+    <div className={styles.productWrapper}>
+      <Link to={`/products/${name}`}>
+        <div className={styles.product}>
+          <div className={styles.productName}>{name}</div>
+          <img className={styles.productImage} src={image} alt={name} />
+          <div className={styles.productSize}>
+            {translate.products.oil.size}: {size} ml
+          </div>
+          <div className={styles.productPrice}>
+            {translate.products.oil.price} ${price}
+          </div>
+          <div className={styles.productDescription}>{description}</div>
         </div>
-        <div className={styles.productPrice}>
-          {translate.products.oil.price} ${price}
-        </div>
-        <div className={styles.productDescription}>{description}</div>
-        <div></div>
-        <AddOneToCartButton product={product} />
-      </div>
-    </Link>
+      </Link>
+      <AddOneToCartButton
+        product={product}
+        className={styles.addToCartButton}
+      />
+    </div>
   )
 }
 
