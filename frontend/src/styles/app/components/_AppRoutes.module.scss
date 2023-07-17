@@ -9,3 +9,8 @@
   flex-grow: 1;
   min-height: 45vh;
 }
+
+.sidebarMenu {
+  z-index: 1000;
+  position: fixed;
+}

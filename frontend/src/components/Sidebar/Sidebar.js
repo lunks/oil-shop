@@ -1,30 +1,9 @@
 import React from "react"
 import styles from "../../styles/components/_sidebar.module.scss"
-import axios from "axios"
 import useLocaleContext from "../../context/localeContext"
 
 const Sidebar = ({ setCategory }) => {
   const { translate } = useLocaleContext()
-
-  function callYL() {
-    const username = "your_username"
-    const password = "your_password"
-
-    axios
-      .post("https://www.youngliving.com/api/accounts/token", {
-        userName: username,
-        email: username,
-        memberId: username,
-        password: password,
-        rememberMe: true,
-      })
-      .then((response) => {
-        console.log("response.data ", response.data)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  }
 
   const Categories = Object.freeze({
     ALL: "all",

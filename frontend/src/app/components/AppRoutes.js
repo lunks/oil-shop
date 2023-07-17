@@ -11,6 +11,7 @@ import Home from "../../pages/Home/Home"
 import Shop from "../../pages/Shop/Shop"
 import ProductDetails from "../../pages/ProductDetails/ProductDetails"
 import Shipping from "../../components/Checkout/Shipping/Shipping"
+import SidebarMenu from "../../components/SidebarMenu/SidebarMenu"
 
 const AppRoutes = () => {
   return (
@@ -18,6 +19,7 @@ const AppRoutes = () => {
       <CartProvider>
         <Navbar />
         <div className={styles.content}>
+          <SidebarMenu />
           <Routes>
             <Route path='/about' element={<About />} />
             <Route path='/shop' element={<Shop />} />
