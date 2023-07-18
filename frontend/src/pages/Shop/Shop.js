@@ -45,21 +45,15 @@ const Shop = () => {
       return false
     })
 
-  const sortedRegions = filteredProducts(category)
-
-  console.log("sorted ", sortedRegions)
+  const sortedProducts = filteredProducts(category)
 
   const { translate } = useLocaleContext()
 
   return (
     <div className={style.content}>
-      <Sidebar
-        products={products}
-        filteredProducts={filteredProducts}
-        setCategory={setCategory}
-      />
+      <Sidebar setCategory={setCategory} />
       <div className={style.mainContent}>
-        {sortedRegions.map((product, index) => (
+        {sortedProducts.map((product, index) => (
           <Product
             key={index}
             name={product.name}
