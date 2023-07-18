@@ -8,6 +8,7 @@ import Navbar from "./Navbar"
 import Footer from "../../components/Layout/Footer/Footer"
 import About from "../../pages/About/About"
 import Cart from "../../pages/Cart/Cart"
+import Faq from "../../pages/Faq/Faq"
 import Home from "../../pages/Home/Home"
 import Shop from "../../pages/Shop/Shop"
 import ProductDetails from "../../pages/ProductDetails/ProductDetails"
@@ -37,6 +38,7 @@ const AppRoutes = () => {
             <Route path='/shop' element={<Shop />} />
             <Route path='/' element={<Home />} />
             <Route path='/cart' element={<Cart />} />
+            <Route path='/faq' element={<Faq />} />
             <Route path='/products/:productName' element={<ProductDetails />} />
             <Route path='/checkout/shipping' element={<Shipping />} />
           </Routes>
