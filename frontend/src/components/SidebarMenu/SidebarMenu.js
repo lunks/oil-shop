@@ -3,8 +3,9 @@ import styles from "../../styles/components/_sidebarMenu.module.scss"
 import { Link } from "react-router-dom"
 import useLocaleContext from "../../context/localeContext"
 
-const SidebarMenu = ({ setCategory }) => {
+const SidebarMenu = ({ className }) => {
   const { translate } = useLocaleContext()
+  console.log("class ", className)
 
   const Categories = Object.freeze({
     ALL: "all",
@@ -17,7 +18,7 @@ const SidebarMenu = ({ setCategory }) => {
   })
 
   return (
-    <div>
+    <div className={styles[className]}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=all`}>{translate.sidebar.allProducts}</Link>

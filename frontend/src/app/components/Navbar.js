@@ -5,7 +5,7 @@ import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom"
 
-const Navbar = () => {
+const Navbar = ({ toggleSidebar }) => {
   const { getAllProductsQuantity } = useContext(CartContext)
 
   return (
@@ -13,7 +13,12 @@ const Navbar = () => {
       <div className={styles.container}>
         <div className={styles.navbarContainer}>
           <div className={styles.menuContainer}>
-            <span className='material-symbols-outlined'>menu</span>
+            <span
+              className='material-symbols-outlined'
+              onClick={() => toggleSidebar()}
+            >
+              menu
+            </span>
           </div>
           <div className={styles.logoContainer}>
             <img
