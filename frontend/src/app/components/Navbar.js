@@ -1,18 +1,35 @@
-import React from "react"
+import React, { useState, useContext, useEffect, useRef } from "react"
 import styles from "../../styles/app/components/_navbar.module.scss"
 import SubNavbar from "./SubNavbar"
 import useLocaleContext from "../../context/localeContext"
-import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom"
 
 const Navbar = ({ toggleSidebar }) => {
+  const [isDropdownOpen, setDropdownOpen] = useState(false)
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
+  const dropdownRef = useRef(null)
 
-  const handleLanguageChange = (lang) => {
+  const changeLanguage = (lang) => {
     setLanguage(lang)
+    setTimeout(() => setDropdownOpen(false))
   }
+
+  useEffect(() => {
+    const listenClickOutsideLanguageDropdown = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", listenClickOutsideLanguageDropdown)
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        listenClickOutsideLanguageDropdown,
+      )
+    }
+  }, [])
 
   return (
     <div className={styles.wrapper}>
@@ -48,13 +65,30 @@ const Navbar = ({ toggleSidebar }) => {
               </Link>
 
               <span className='material-symbols-outlined'>account_circle</span>
-              <span className='material-symbols-outlined'>language</span>
-              <button onClick={() => handleLanguageChange("en")}>
-                Change to English
-              </button>
-              <button onClick={() => handleLanguageChange("de")}>
-                Change to German
-              </button>
+              <span
+                className='material-symbols-outlined'
+                onClick={() => setDropdownOpen(!isDropdownOpen)}
+              >
+                language
+              </span>
+              <div>
+                {isDropdownOpen && (
+                  <div className={styles.dropdown} ref={dropdownRef}>
+                    <img
+                      src={
+                        process.env.PUBLIC_URL +
+                        "/assets/" +
+                        "united-kingdom.png"
+                      }
+                      onClick={() => changeLanguage("en")}
+                    ></img>
+                    <img
+                      src={process.env.PUBLIC_URL + "/assets/" + "germany.png"}
+                      onClick={() => changeLanguage("de")}
+                    ></img>
+                  </div>
+                )}
+              </div>
             </nav>
           </div>
         </div>
