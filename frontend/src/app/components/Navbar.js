@@ -1,12 +1,18 @@
 import React from "react"
 import styles from "../../styles/app/components/_navbar.module.scss"
 import SubNavbar from "./SubNavbar"
+import useLocaleContext from "../../context/localeContext"
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
 import { Link } from "react-router-dom"
 
 const Navbar = ({ toggleSidebar }) => {
   const { getAllProductsQuantity } = useContext(CartContext)
+  const { setLanguage } = useLocaleContext()
+
+  const handleLanguageChange = (lang) => {
+    setLanguage(lang)
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -43,6 +49,12 @@ const Navbar = ({ toggleSidebar }) => {
 
               <span className='material-symbols-outlined'>account_circle</span>
               <span className='material-symbols-outlined'>language</span>
+              <button onClick={() => handleLanguageChange("en")}>
+                Change to English
+              </button>
+              <button onClick={() => handleLanguageChange("de")}>
+                Change to German
+              </button>
             </nav>
           </div>
         </div>

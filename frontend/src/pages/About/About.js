@@ -5,6 +5,7 @@ import useLocaleContext from "../../context/localeContext"
 const About = () => {
   const { translate } = useLocaleContext()
   const text = translate.pages.about
+
   return (
     <div className={styles.rootDiv}>
       <div className={styles.text}>{text.title}</div>
