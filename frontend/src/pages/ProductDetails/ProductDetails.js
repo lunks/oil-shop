@@ -3,12 +3,15 @@ import { Link, useParams } from "react-router-dom"
 import axios from "axios"
 import useCartContext from "../../context/cartContext"
 import styles from "../../styles/pages/_productDetails.module.scss"
+import useLocaleContext from "../../context/localeContext"
 
 const ProductDetails = () => {
   const { productName } = useParams()
   const [product, setProduct] = useState(null)
   const [quantity, setQuantity] = useState(1)
   const { addProduct } = useCartContext()
+  const { translate } = useLocaleContext()
+  const text = translate.pages.productsDetails
 
   useEffect(() => {
     const getProduct = async () => {
@@ -26,7 +29,7 @@ const ProductDetails = () => {
   }, [productName])
 
   if (!product) {
-    return <div>Loading...</div>
+    return <div>{text.loading}...</div>
   }
 
   const { name, image, size, price, description, category, details } = product
@@ -138,7 +141,7 @@ const ProductDetails = () => {
               className={styles.buttonContained}
               onClick={() => addToCart()}
             >
-              Add To Cart
+              {text.addToCart}
             </button>
           </div>
         </div>
