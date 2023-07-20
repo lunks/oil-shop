@@ -47,9 +47,15 @@
       "ninthAnswer": " In the Pregnancy are some application and dosage instructions too observe. Please visit specialist literature about which ones Oils you can use in what dosage.",
       "tenthQuestion": " Can I also use essential oils on my pets?",
       "tenthAnswer": "Animals react differently than humans to essential oils. Please inform yourself in specialized literature on the subject of which oils you use in what dosage you can use. For this we can not own give recommendations for action."
+    },
+    "shipping": {
+      "text": "shipping page"
     }
   },
   "components": {
+    "addOneToCartButton": {
+      "text": "add to cart"
+    },
     "navbar": {
       "home": "Home",
       "shop": "Shop",
@@ -71,6 +77,11 @@
       "massageOils": "Massage Oils"
     },
     "footer": {
+      "newsletterSubscriptionText": "Your regular Oylo update",
+      "newsletterSubscriptionTeaser": "Subscribe to Newsletter",
+      "newsletterTitle": "Newsletter",
+      "newsletterRegistrationTitle": "Registration for the newsletter:",
+      "newsletterRegistrationDataConsentText": "The data you enter here will only be used to send the Newsletters used and not passed on to third parties. You can unsubscribe from the newsletter at any time withdraw your consent by sending us an email. Your data after completion of the newsletter receipt within 3 Months deleted, provided that the deletion is not legal conflict with retention requirements. By sending the entered data you agree to the data processing and confirm our privacy policy.",
       "copy": "Oylo Oils Online Shop. All Rights Reserved"
     }
   }
