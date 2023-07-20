@@ -19,7 +19,7 @@ const Product = ({ name, image, size, price, description, category }) => {
             {translate.components.products.oil.size}: {size} ml
           </div>
           <div className={styles.productPrice}>
-            {translate.components.products.oil.price} ${price}
+            {translate.components.products.oil.price} €{price}
           </div>
           <div className={styles.productDescription}>{description}</div>
         </div>
