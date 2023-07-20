@@ -1,8 +1,10 @@
 import React from "react"
+import useLocaleContext from "../../context/localeContext"
 import useCartContext from "../../context/cartContext"
 
 const AddOneToCartButton = ({ product, className }) => {
   const { addProduct } = useCartContext()
+  const { translate } = useLocaleContext()
 
   const addToCart = () => {
     addProduct(product, 1)
@@ -10,7 +12,7 @@ const AddOneToCartButton = ({ product, className }) => {
 
   return (
     <button className={className} onClick={() => addToCart()}>
-      Add To Cart
+      {translate.components.addOneToCartButton.text}
     </button>
   )
 }
