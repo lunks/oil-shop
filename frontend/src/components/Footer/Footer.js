@@ -51,7 +51,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div classNameName={styles.columnsSection}>
+        <div className={styles.columnsSection}>
           <ul className={styles.columnsSectionElements}>
             <li className={styles.columnsSectionItem}>
               <div className={styles.columnsSectionItemTitle}>

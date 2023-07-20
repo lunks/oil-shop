@@ -141,7 +141,7 @@ const ProductDetails = () => {
               className={styles.buttonContained}
               onClick={() => addToCart()}
             >
-              {text.addToCart}
+              {text.addToCartButton}
             </button>
           </div>
         </div>
