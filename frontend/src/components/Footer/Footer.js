@@ -5,8 +5,8 @@ import styles from "../../styles/components/_footer.module.scss"
 
 const Footer = () => {
   const { translate } = useLocaleContext()
-
   const text = translate.components.footer
+
   return (
     <footer className={styles.pageFooter}>
       <div className={styles.footerContent}>
@@ -180,8 +180,8 @@ const Footer = () => {
                 <a
                   href='https://www.facebook.com/'
                   target='_blank'
-                  title='Follow us on Facebook'
-                  alt='Follow Oylo on Facebook'
+                  title={text.iconsColumns.third.facebook}
+                  alt={text.iconsColumns.third.facebook}
                 >
                   <img
                     src={
@@ -194,8 +194,8 @@ const Footer = () => {
                 <a
                   href='https://www.instagram.com/'
                   target='_blank'
-                  title='Follow us on Instagram'
-                  alt='Follow Oylo on Instagram'
+                  title={text.iconsColumns.third.instagram}
+                  alt={text.iconsColumns.third.instagram}
                 >
                   <img
                     src={
@@ -208,8 +208,8 @@ const Footer = () => {
                 <a
                   href='https://www.youtube.com/user/'
                   target='_blank'
-                  title='Follow us on Youtube'
-                  alt='Follow Oylo on Youtube'
+                  title={text.iconsColumns.third.youtube}
+                  alt={text.iconsColumns.third.youtube}
                 >
                   <img
                     src={
@@ -229,7 +229,7 @@ const Footer = () => {
             OILS
           </div>
         </div>
-        <div className='footerCopyrightSection'>© {text.copy}</div>
+        <div>© {text.copy}</div>
       </div>
     </footer>
   )

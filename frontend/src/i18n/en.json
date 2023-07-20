@@ -128,7 +128,10 @@
         },
 
         "third": {
-          "title": "Follow us"
+          "title": "Follow us",
+          "facebook": "Follow us on Facebook",
+          "instagram": "Follow us on Instagram",
+          "youtube": "Follow us on Youtube"
         }
       },
       "copy": "OYLO OILS - All rights reserved"
