@@ -10,13 +10,13 @@ const SubNavbar = () => {
       <div>
         <nav className={styles.navbar}>
           <NavLink className={styles.navLink} to='/'>
-            {translate.navbar.home}
+            {translate.components.navbar.home}
           </NavLink>
           <NavLink className={styles.navLink} to='/shop'>
-            {translate.navbar.shop}
+            {translate.components.navbar.shop}
           </NavLink>
           <NavLink className={styles.navLink} to='/about'>
-            {translate.navbar.about}
+            {translate.components.navbar.about}
           </NavLink>
         </nav>
       </div>

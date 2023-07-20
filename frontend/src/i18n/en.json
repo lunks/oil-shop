@@ -1,30 +1,15 @@
 {
   "pages": {
-    "shop": {
-      "title": "All products"
-    },
-    "welcome": {
-      "subTeaser": {
-        "title": "At Oylo, our appreciation for nature's treasured gifts is boundless",
-        "teaserFirstSubtitle": "UTILIZING ESSENTIAL OILS",
-        "teaserFirstSentence": "From diffusers to massage oils, from invigorating baths to aromatic culinary infusions, essential oils serve various purposes. A simple whiff can ignite transformation. Oylo brings the perfect oil to cater to all your needs, promoting your well-being.",
-        "teaserSecondSubtitle": "THE POWER OF ESSENTIAL OILS",
-        "teaserSecondSentence": "Essential oils stir emotions, leading to a positive shift. Enhance your mood with citrus or sharpen your focus with rosemary. Recharge with laurel or unwind with the calming tones of silver fir.",
-        "teaserThirthSubtitle": "THE OYLO COLLECTION",
-        "teaserThirthSentence": "Our online store offers a range of aromatherapy oils, unique Ayurveda blends, wellness products, natural cosmetics, and enchanting gift sets. Discover top sellers like our divine rose water!",
-        "teaserFourthSubtitle": "OYLO'S QUALITY PROMISE",
-        "teaserFourthSentence": "Oylo ensures completely natural products, free of synthetic additives, parabens, or genetically modified substances. We prioritize quality, offering mostly organic certified products. At Oylo, natural essence shines."
-      },
-      "title": "Welcome to our world of natural wellness ",
-      "teaserSentence": "where we believe in the power of plants and our Essential Oil Shop is a place for those seeking to boost their health, improve their mood, or simply create a home that smells wonderful and fresh.",
-      "teaserSubSentenceOne": "Each drop of essential oils is derived from nature's most precious gifts, sustainably sourced and meticulously distilled to preserve the inherent life force of each plant. ",
-      "teaserSubSentenceTwo": "We carry a range of oils that can energize, calm, uplift, or purify, all depending on your unique needs.",
-      "teaserSubSentenceThree": "We invite you to explore our diverse collection, we also offer a selection of oil-infused products such as diffusers, haircare, and skincare.",
-      "teaserSubSentenceFour": "Whether you're an essential oil aficionado or just beginning your journey into the aromatic world, we're here to guide."
-    },
     "about": {
       "title": "about oylo",
       "teaser": "We are passionate about essential oils."
+    },
+    "cart": {
+      "orderSummary": "Summary",
+      "deleteButton": "delete",
+      "orderSubtotal": "Subtotal:",
+      "orderShipping": "Shipping:",
+      "orderTotal": "Total:"
     },
     "faq": {
       "firstQuestion": "Which difuser is suitable for which room size?",
@@ -47,29 +32,140 @@
       "ninthAnswer": " In the Pregnancy are some application and dosage instructions too observe. Please visit specialist literature about which ones Oils you can use in what dosage.",
       "tenthQuestion": " Can I also use essential oils on my pets?",
       "tenthAnswer": "Animals react differently than humans to essential oils. Please inform yourself in specialized literature on the subject of which oils you use in what dosage you can use. For this we can not own give recommendations for action."
+    },
+    "productsDetails": {
+      "loading": "Loading",
+      "addToCartButton": "Add To Cart"
+    },
+    "shipping": {
+      "text": "shipping page"
+    },
+    "shop": {
+      "title": "All products"
+    },
+    "welcome": {
+      "subTeaser": {
+        "title": "At Oylo, our appreciation for nature's treasured gifts is boundless",
+        "teaserFirstSubtitle": "UTILIZING ESSENTIAL OILS",
+        "teaserFirstSentence": "From diffusers to massage oils, from invigorating baths to aromatic culinary infusions, essential oils serve various purposes. A simple whiff can ignite transformation. Oylo brings the perfect oil to cater to all your needs, promoting your well-being.",
+        "teaserSecondSubtitle": "THE POWER OF ESSENTIAL OILS",
+        "teaserSecondSentence": "Essential oils stir emotions, leading to a positive shift. Enhance your mood with citrus or sharpen your focus with rosemary. Recharge with laurel or unwind with the calming tones of silver fir.",
+        "teaserThirthSubtitle": "THE OYLO COLLECTION",
+        "teaserThirthSentence": "Our online store offers a range of aromatherapy oils, unique Ayurveda blends, wellness products, natural cosmetics, and enchanting gift sets. Discover top sellers like our divine rose water!",
+        "teaserFourthSubtitle": "OYLO'S QUALITY PROMISE",
+        "teaserFourthSentence": "Oylo ensures completely natural products, free of synthetic additives, parabens, or genetically modified substances. We prioritize quality, offering mostly organic certified products. At Oylo, natural essence shines."
+      },
+      "title": "Welcome to our world of natural wellness ",
+      "teaserSentence": "where we believe in the power of plants and our Essential Oil Shop is a place for those seeking to boost their health, improve their mood, or simply create a home that smells wonderful and fresh.",
+      "teaserSubSentenceOne": "Each drop of essential oils is derived from nature's most precious gifts, sustainably sourced and meticulously distilled to preserve the inherent life force of each plant. ",
+      "teaserSubSentenceTwo": "We carry a range of oils that can energize, calm, uplift, or purify, all depending on your unique needs.",
+      "teaserSubSentenceThree": "We invite you to explore our diverse collection, we also offer a selection of oil-infused products such as diffusers, haircare, and skincare.",
+      "teaserSubSentenceFour": "Whether you're an essential oil aficionado or just beginning your journey into the aromatic world, we're here to guide."
     }
   },
-  "navbar": {
-    "home": "Home",
-    "shop": "Shop",
-    "about": "About us"
-  },
-  "products": {
-    "oil": {
-      "size": "size",
-      "price": "price"
+  "components": {
+    "addOneToCartButton": {
+      "text": "add to cart"
+    },
+    "navbar": {
+      "home": "Home",
+      "shop": "Shop",
+      "about": "About us"
+    },
+    "products": {
+      "oil": {
+        "size": "size",
+        "price": "price"
+      }
+    },
+    "sidebar": {
+      "allProducts": "All Products",
+      "essentialOils": "Essential Oils",
+      "difusers": "Difusers",
+      "bodyCare": "Body Care",
+      "hairCare": "Hair Care",
+      "rollOn": "Roll On",
+      "massageOils": "Massage Oils"
+    },
+    "footer": {
+      "linksColumns": {
+        "first": {
+          "title": "Your way to us",
+          "address": "Oil Paradise 1",
+          "postalCode": "12437",
+          "city": "Berlin",
+          "phoneTitle": "phone",
+          "contactPhone": "+49-6622-88334"
+        },
+        "second": {
+          "title": "For you",
+          "returnToShop": "Back to shop",
+          "returnToShopTitle": "Back to shopping",
+          "cancellationPolicy": "Cancellation",
+          "cancellationPolicyTitle": "Cancellation policy",
+          "returnProducts": "Return buyed products",
+          "returnProductsTitle": "Return buyed products policy",
+          "faq": "Frequently Asked Questions / FAQ",
+          "faqTitle": "Frequently Asked Questions"
+        },
+
+        "third": {
+          "title": "Legal",
+          "companyDetails": "Company Details",
+          "generalTerms": "General terms and conditions",
+          "dataProtection": "Data Protection"
+        },
+
+        "fourth": {
+          "title": "Already Shop Customers",
+          "accountAndLogin": "Account & Login",
+          "registration": "Be a Shop Customer"
+        }
+      },
+      "newsletter": {
+        "subscriptionText": "Your regular Oylo update",
+        "subscriptionTeaser": "Subscribe to Newsletter",
+        "title": "Newsletter",
+        "emailAddressPlaceholder": "Enter email address",
+        "registrationTitle": "Registration for the newsletter:",
+        "registrationDataConsentText": "The data you enter here will only be used to send the Newsletters used and not passed on to third parties. You can unsubscribe from the newsletter at any time withdraw your consent by sending us an email. Your data after completion of the newsletter receipt within 3 Months deleted, provided that the deletion is not legal conflict with retention requirements. By sending the entered data you agree to the data processing and confirm our privacy policy."
+      },
+      "iconsColumns": {
+        "first": {
+          "title": "Shop Safely"
+        },
+        "second": {
+          "title": "Fast Shipping"
+        },
+
+        "third": {
+          "title": "Follow us",
+          "facebook": "Follow us on Facebook",
+          "instagram": "Follow us on Instagram",
+          "youtube": "Follow us on Youtube"
+        }
+      },
+      "copy": "OYLO OILS - All rights reserved"
+    },
+    "sidebarMenu": {
+      "allProducts": "All Products",
+      "essentialOils": "Essential Oils",
+      "difusers": "Difusers",
+      "bodyCare": "Body Care",
+      "hairCare": "Hair Care",
+      "rollOn": "Roll On",
+      "massageOils": "Massage Oils",
+      "onlineShop": "Online Shop",
+      "contact": "Contact us",
+      "accountAndLogin": "Account & Login",
+      "registration": "Be a Shop Customer",
+      "shipmentAndPayment": "Shipment & Payment",
+      "cancellationPolicy": "Cancellation",
+      "cancellationPolicyTitle": "Cancellation policy",
+      "returnProducts": "Return buyed products",
+      "returnProductsTitle": "Return buyed products policy",
+      "faq": "Frequently Asked Questions / FAQ",
+      "faqTitle": "Frequently Asked Questions"
     }
-  },
-  "sidebar": {
-    "allProducts": "All Products",
-    "essentialOils": "Essential Oils",
-    "difusers": "Difusers",
-    "bodyCare": "Body Care",
-    "hairCare": "Hair Care",
-    "rollOn": "Roll On",
-    "massageOils": "Massage Oils"
-  },
-  "footer": {
-    "copy": "Oylo Oils Online Shop. All Rights Reserved"
   }
 }

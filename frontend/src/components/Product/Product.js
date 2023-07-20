@@ -16,10 +16,10 @@ const Product = ({ name, image, size, price, description, category }) => {
           <div className={styles.productName}>{name}</div>
           <img className={styles.productImage} src={image} alt={name} />
           <div className={styles.productSize}>
-            {translate.products.oil.size}: {size} ml
+            {translate.components.products.oil.size}: {size} ml
           </div>
           <div className={styles.productPrice}>
-            {translate.products.oil.price} ${price}
+            {translate.components.products.oil.price} €{price}
           </div>
           <div className={styles.productDescription}>{description}</div>
         </div>

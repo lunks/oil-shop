@@ -3,9 +3,12 @@ import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { CartContext } from "../../context/cartContext"
 import styles from "../../styles/pages/_cart.module.scss"
+import useLocaleContext from "../../context/localeContext"
 
 const Cart = () => {
   const { cart, removeProduct, updateProductQuantity } = useContext(CartContext)
+  const { translate } = useLocaleContext()
+  const text = translate.pages.cart
   const shippingCost = 10
 
   const totalCost = cart.reduce(
@@ -60,7 +63,7 @@ const Cart = () => {
                 className={styles.deleteButton}
                 onClick={() => removeProduct(item.product.name)}
               >
-                Delete
+                {text.deleteButton}
               </button>
             </div>
           </div>
@@ -68,12 +71,19 @@ const Cart = () => {
       </div>
 
       <div className={styles.orderSummary}>
-        <h2>Summary</h2>
+        <h2>{text.orderSummary}</h2>
         <div className={styles.summaryDetails}>
-          <div>Subtotal: {totalCost.toFixed(2)} €</div>
-          <div>Shipping: {shippingCost} €</div>
+          <div>
+            {text.orderSubtotal} {totalCost.toFixed(2)} €
+          </div>
+          <div>
+            {text.orderShipping} {shippingCost} €
+          </div>
           <hr />
-          <div>Total: {(totalCost + shippingCost).toFixed(2)} €</div>
+          <div>
+            {text.orderTotal}
+            {(totalCost + shippingCost).toFixed(2)} €
+          </div>
         </div>
 
         <Link className={styles.buttonContained} to='/checkout/shipping'>

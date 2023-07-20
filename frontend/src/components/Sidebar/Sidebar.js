@@ -22,43 +22,43 @@ const Sidebar = ({ setCategory }) => {
           onClick={() => setCategory(Categories.ALL)}
           className={styles.sidebarItem}
         >
-          {translate.sidebar.allProducts}
+          {translate.components.sidebar.allProducts}
         </li>
         <li
           onClick={() => setCategory(Categories.ESSENTIAL_OIL)}
           className={styles.sidebarItem}
         >
-          {translate.sidebar.essentialOils}
+          {translate.components.sidebar.essentialOils}
         </li>
         <li
           onClick={() => setCategory(Categories.DIFUSER)}
           className={styles.sidebarItem}
         >
-          {translate.sidebar.difusers}
+          {translate.components.sidebar.difusers}
         </li>
         <li
           onClick={() => setCategory(Categories.BODY_CARE)}
           className={styles.sidebarItem}
         >
-          {translate.sidebar.bodyCare}
+          {translate.components.sidebar.bodyCare}
         </li>
         <li
           onClick={() => setCategory(Categories.HAIR_CARE)}
           className={styles.sidebarItem}
         >
-          {translate.sidebar.hairCare}
+          {translate.components.sidebar.hairCare}
         </li>
         <li
           onClick={() => setCategory(Categories.ROLL)}
           className={styles.sidebarItem}
         >
-          {translate.sidebar.rollOn}
+          {translate.components.sidebar.rollOn}
         </li>
         <li
           onClick={() => setCategory(Categories.MASSAGE_OIL)}
           className={styles.sidebarItem}
         >
-          {translate.sidebar.massageOils}
+          {translate.components.sidebar.massageOils}
         </li>
       </ul>
     </div>

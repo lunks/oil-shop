@@ -8,6 +8,15 @@
   justify-content: center;
   margin-bottom: 20px;
 }
+.dropdown {
+  position: fixed;
+  top: 10px;
+  width: 28px;
+  img {
+    width: 28px;
+    height: 28px;
+  }
+}
 
 .navbarContainer {
   display: flex;
