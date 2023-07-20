@@ -1,0 +1,8 @@
+@import "../helpers/mixins";
+@import "../base/variables";
+
+.content {
+  display: flex;
+  min-height: 85vh;
+  font-size: 80px;
+}
