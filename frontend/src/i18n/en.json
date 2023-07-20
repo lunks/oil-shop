@@ -6,7 +6,7 @@
     },
     "cart": {
       "orderSummary": "Summary",
-      "deleteButton": "about oylo",
+      "deleteButton": "delete",
       "orderSubtotal": "Subtotal:",
       "orderShipping": "Shipping:",
       "orderTotal": "Total:"
