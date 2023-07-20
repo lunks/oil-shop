@@ -1,9 +1,11 @@
 import React, { useState, createContext, useContext } from "react"
+import NotificationCard from "../components/NotificationCard/NotificationCard"
 
 export const CartContext = createContext()
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([])
+  const [notification, setNotification] = useState(null)
 
   const addProduct = (product, quantity) => {
     console.log("product ", product)
@@ -23,7 +25,8 @@ export const CartProvider = ({ children }) => {
       setCart([...cart, { product, quantity }])
     }
 
-    alert(`${quantity} ${product.name} were added to cart`)
+    setNotification(`${quantity} ${product.name} were added to cart`)
+    setTimeout(() => setNotification(null), 3000)
   }
 
   const updateProductQuantity = (productName, newQuantity) => {
@@ -45,8 +48,6 @@ export const CartProvider = ({ children }) => {
     0,
   )
 
-  console.log("CartProvider cart ", cart)
-
   return (
     <CartContext.Provider
       value={{
@@ -58,6 +59,7 @@ export const CartProvider = ({ children }) => {
       }}
     >
       {children}
+      {notification && <NotificationCard message={notification} />}
     </CartContext.Provider>
   )
 }
