@@ -49,27 +49,29 @@
       "tenthAnswer": "Animals react differently than humans to essential oils. Please inform yourself in specialized literature on the subject of which oils you use in what dosage you can use. For this we can not own give recommendations for action."
     }
   },
-  "navbar": {
-    "home": "Home",
-    "shop": "Shop",
-    "about": "About us"
-  },
-  "products": {
-    "oil": {
-      "size": "size",
-      "price": "price"
+  "components": {
+    "navbar": {
+      "home": "Home",
+      "shop": "Shop",
+      "about": "About us"
+    },
+    "products": {
+      "oil": {
+        "size": "size",
+        "price": "price"
+      }
+    },
+    "sidebar": {
+      "allProducts": "All Products",
+      "essentialOils": "Essential Oils",
+      "difusers": "Difusers",
+      "bodyCare": "Body Care",
+      "hairCare": "Hair Care",
+      "rollOn": "Roll On",
+      "massageOils": "Massage Oils"
+    },
+    "footer": {
+      "copy": "Oylo Oils Online Shop. All Rights Reserved"
     }
-  },
-  "sidebar": {
-    "allProducts": "All Products",
-    "essentialOils": "Essential Oils",
-    "difusers": "Difusers",
-    "bodyCare": "Body Care",
-    "hairCare": "Hair Care",
-    "rollOn": "Roll On",
-    "massageOils": "Massage Oils"
-  },
-  "footer": {
-    "copy": "Oylo Oils Online Shop. All Rights Reserved"
   }
 }
