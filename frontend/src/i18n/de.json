@@ -35,7 +35,7 @@
     },
     "productsDetails": {
       "loading": "Wird geladen",
-      "addToCartButton": "In den Warenkorb legen"
+      "addToCartButton": "In den Warenkorb"
     },
     "shipping": {
       "text": "Versandseite"
@@ -65,7 +65,7 @@
   },
   "components": {
     "addOneToCartButton": {
-      "text": "in den Warenkorb legen"
+      "text": "in den Warenkorb"
     },
     "navbar": {
       "home": "Home",
