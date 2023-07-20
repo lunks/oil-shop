@@ -5,7 +5,7 @@ import { useState } from "react"
 import styles from "../../styles/app/components/_appRoutes.module.scss"
 
 import Navbar from "./Navbar"
-import Footer from "../../components/Layout/Footer/Footer"
+import Footer from "../../components/Footer/Footer"
 import About from "../../pages/About/About"
 import Cart from "../../pages/Cart/Cart"
 import Faq from "../../pages/Faq/Faq"
