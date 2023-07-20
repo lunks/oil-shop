@@ -135,6 +135,26 @@
         }
       },
       "copy": "OYLO OILS - All rights reserved"
+    },
+    "sidebarMenu": {
+      "allProducts": "All Products",
+      "essentialOils": "Essential Oils",
+      "difusers": "Difusers",
+      "bodyCare": "Body Care",
+      "hairCare": "Hair Care",
+      "rollOn": "Roll On",
+      "massageOils": "Massage Oils",
+      "onlineShop": "Online Shop",
+      "contact": "Contact us",
+      "accountAndLogin": "Account & Login",
+      "registration": "Be a Shop Customer",
+      "shipmentAndPayment": "Shipment & Payment",
+      "cancellationPolicy": "Cancellation",
+      "cancellationPolicyTitle": "Cancellation policy",
+      "returnProducts": "Return buyed products",
+      "returnProductsTitle": "Return buyed products policy",
+      "faq": "Frequently Asked Questions / FAQ",
+      "faqTitle": "Frequently Asked Questions"
     }
   }
 }

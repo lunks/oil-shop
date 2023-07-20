@@ -5,7 +5,7 @@ import useLocaleContext from "../../context/localeContext"
 
 const SidebarMenu = ({ className }) => {
   const { translate } = useLocaleContext()
-  console.log("class ", className)
+  const text = translate.components.sidebarMenu
 
   const Categories = Object.freeze({
     ALL: "all",
@@ -21,72 +21,66 @@ const SidebarMenu = ({ className }) => {
     <div className={styles[className]}>
       <div className={styles.sidebar}>
         <div className={styles.sidebarItem}>
-          <Link to={`/shop?category=all`}>{translate.sidebar.allProducts}</Link>
+          <Link to={`/shop?category=all`}>{text.allProducts}</Link>
         </div>
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=${Categories.ESSENTIAL_OIL}`}>
-            {translate.sidebar.essentialOils}
+            {text.essentialOils}
           </Link>
         </div>
 
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=${Categories.DIFUSER}`}>
-            {translate.sidebar.difusers}
+            {text.difusers}
           </Link>
         </div>
 
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=${Categories.BODY_CARE}`}>
-            {translate.sidebar.bodyCare}
+            {text.bodyCare}
           </Link>
         </div>
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=${Categories.HAIR_CARE}`}>
-            {translate.sidebar.hairCare}
+            {text.hairCare}
           </Link>
         </div>
         <div className={styles.sidebarItem}>
-          <Link to={`/shop?category=${Categories.ROLL}`}>
-            {translate.sidebar.rollOn}
-          </Link>
+          <Link to={`/shop?category=${Categories.ROLL}`}>{text.rollOn}</Link>
         </div>
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=${Categories.MASSAGE_OIL}`}>
-            {translate.sidebar.massageOils}
+            {text.massageOils}
           </Link>
         </div>
         <div className={styles.sidebarItem}>
           <a href='mailto:oylooils@gmail.com'>Contact us</a>
         </div>
         <div className={styles.sidebarItem}>
-          <a href='/login' title='Shop Customers Account &amp; Login'>
-            Account &amp; Login
-          </a>
-        </div>
-        <div>
-          <a className={styles.sidebarItem} href='/shop' title='Online-Shop'>
-            Online Shop
-          </a>
+          <Link to='/login' title={text.accountAndLogin}>
+            {text.accountAndLogin}
+          </Link>
         </div>
         <div className={styles.sidebarItem}>
-          <a href='/delivery-terms' title='shipment &amp; payment'>
-            shipment &amp; payment
-          </a>
+          <Link to='/shop' title={text.onlineShop}>
+            {text.onlineShop}
+          </Link>
+        </div>
+
+        <div className={styles.sidebarItem}>
+          <Link to='/cancellation' title={text.cancellationPolicyTitle}>
+            {text.cancellationPolicy}
+          </Link>
         </div>
         <div className={styles.sidebarItem}>
-          <a href='/cancellation' title='Cancellation'>
-            Cancellation
-          </a>
+          <Link to='/return' title={text.returnProductsTitle}>
+            {text.returnProducts}
+          </Link>
         </div>
         <div className={styles.sidebarItem}>
-          <a href='/return' title='return'>
-            Return buyed products
-          </a>
-        </div>
-        <div className={styles.sidebarItem}>
-          <a href='/faq' title='Frequently Asked Questions'>
-            Frequently Asked Questions / FAQ
-          </a>
+          <Link to='/faq' title={text.faqTitle}>
+            {text.faq}
+          </Link>
         </div>
       </div>
     </div>
