@@ -3,7 +3,7 @@ const db = require('./models');
 const products = [
   {
     name: 'essentialoil1',
-    image: 'assets/essentialOil1.png',
+    image: 'essentialOil1.png',
     description: 'description',
     size: 15,
     measure: 'ml',
@@ -13,7 +13,7 @@ const products = [
   },
   {
     name: 'essentialoil2',
-    image: 'assets/essentialOil2.png',
+    image: 'essentialOil2.png',
     description: 'description',
     size: 14,
     measure: 'ml',
@@ -23,7 +23,7 @@ const products = [
   },
   {
     name: 'essentialoil3',
-    image: 'assets/essentialOil3.png',
+    image: 'essentialOil3.png',
     description: 'description',
     size: 17,
     measure: 'ml',
@@ -33,7 +33,7 @@ const products = [
   },
   {
     name: 'essentialoil4',
-    image: 'assets/essentialOil4.png',
+    image: 'essentialOil4.png',
     description: 'description',
     size: 15,
     measure: 'ml',
@@ -43,7 +43,7 @@ const products = [
   },
   {
     name: 'bodyCare1',
-    image: 'assets/bodyCare1.png',
+    image: 'bodyCare1.png',
     description: 'description',
     size: 150,
     measure: 'ml',
@@ -53,7 +53,7 @@ const products = [
   },
   {
     name: 'bodyCare2',
-    image: 'assets/bodyCare2.png',
+    image: 'bodyCare2.png',
     description: 'description',
     size: 180,
     measure: 'ml',
@@ -63,7 +63,7 @@ const products = [
   },
   {
     name: 'bodyCare3',
-    image: 'assets/bodyCare3.png',
+    image: 'bodyCare3.png',
     description: 'description',
     size: 200,
     measure: 'ml',
@@ -73,7 +73,7 @@ const products = [
   },
   {
     name: 'bodyCare4',
-    image: 'assets/bodyCare4.png',
+    image: 'bodyCare4.png',
     description: 'description',
     size: 150,
     measure: 'ml',
@@ -83,7 +83,7 @@ const products = [
   },
   {
     name: 'bodyCare5',
-    image: 'assets/bodyCare5.png',
+    image: 'bodyCare5.png',
     description: 'description',
     size: 185,
     measure: 'ml',
@@ -93,7 +93,7 @@ const products = [
   },
   {
     name: 'difuser1',
-    image: 'assets/difuser1.png',
+    image: 'difuser1.png',
     description: 'description',
     size: 180,
     measure: 'ml',
@@ -103,7 +103,7 @@ const products = [
   },
   {
     name: 'difuser2',
-    image: 'assets/difuser2.png',
+    image: 'difuser2.png',
     description: 'description',
     size: 285,
     measure: 'ml',
@@ -113,7 +113,7 @@ const products = [
   },
   {
     name: 'difuser3',
-    image: 'assets/difuser3.png',
+    image: 'difuser3.png',
     description: 'description',
     size: 185,
     measure: 'ml',
@@ -123,7 +123,7 @@ const products = [
   },
   {
     name: 'difuser4',
-    image: 'assets/difuser4.png',
+    image: 'difuser4.png',
     description: 'description',
     size: 210,
     measure: 'ml',
@@ -133,7 +133,7 @@ const products = [
   },
   {
     name: 'difuser5',
-    image: 'assets/difuser5.png',
+    image: 'difuser5.png',
     description: 'description',
     size: 155,
     measure: 'ml',
@@ -143,7 +143,7 @@ const products = [
   },
   {
     name: 'hairCare1',
-    image: 'assets/hairCare1.png',
+    image: 'hairCare1.png',
     description: 'description',
     size: 255,
     measure: 'ml',
@@ -153,7 +153,7 @@ const products = [
   },
   {
     name: 'hairCare2',
-    image: 'assets/hairCare2.png',
+    image: 'hairCare2.png',
     description: 'description',
     size: 255,
     measure: 'ml',
@@ -163,7 +163,7 @@ const products = [
   },
   {
     name: 'hairCare3',
-    image: 'assets/hairCare3.png',
+    image: 'hairCare3.png',
     description: 'description',
     size: 255,
     measure: 'ml',
@@ -173,7 +173,7 @@ const products = [
   },
   {
     name: 'hairCare4',
-    image: 'assets/hairCare4.png',
+    image: 'hairCare4.png',
     description: 'description',
     size: 255,
     measure: 'ml',
@@ -183,7 +183,7 @@ const products = [
   },
   {
     name: 'hairCare5',
-    image: 'assets/hairCare5.png',
+    image: 'hairCare5.png',
     description: 'description',
     size: 255,
     measure: 'ml',
@@ -194,7 +194,7 @@ const products = [
 
   {
     name: 'massageOil1',
-    image: 'assets/massageOil1.png',
+    image: 'massageOil1.png',
     description: 'description',
     size: 155,
     measure: 'ml',
@@ -204,7 +204,7 @@ const products = [
   },
   {
     name: 'massageOil2',
-    image: 'assets/massageOil2.png',
+    image: 'massageOil2.png',
     description: 'description',
     size: 125,
     measure: 'ml',
@@ -214,7 +214,7 @@ const products = [
   },
   {
     name: 'massageOil3',
-    image: 'assets/massageOil3.png',
+    image: 'massageOil3.png',
     description: 'description',
     size: 145,
     measure: 'ml',
@@ -224,7 +224,7 @@ const products = [
   },
   {
     name: 'massageOil4',
-    image: 'assets/massageOil4.png',
+    image: 'massageOil4.png',
     description: 'description',
     size: 165,
     measure: 'ml',
@@ -235,7 +235,7 @@ const products = [
 
   {
     name: 'roll1',
-    image: 'assets/roll1.png',
+    image: 'roll1.png',
     description: 'description',
     size: 15,
     measure: 'ml',
@@ -245,7 +245,7 @@ const products = [
   },
   {
     name: 'roll2',
-    image: 'assets/roll2.png',
+    image: 'roll2.png',
     description: 'description',
     size: 15,
     measure: 'ml',
@@ -255,7 +255,7 @@ const products = [
   },
   {
     name: 'roll3',
-    image: 'assets/roll3.png',
+    image: 'roll3.png',
     description: 'description',
     size: 15,
     measure: 'ml',
@@ -265,7 +265,7 @@ const products = [
   },
   {
     name: 'roll4',
-    image: 'assets/roll4.png',
+    image: 'roll4.png',
     description: 'description',
     size: 15,
     measure: 'ml',
