@@ -1,19 +1,22 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
 import styles from "../../styles/app/components/_navbar.module.scss"
-import SubNavbar from "./SubNavbar"
+import SidebarMenu from "../../components/SidebarMenu/SidebarMenu"
 import useLocaleContext from "../../context/localeContext"
 import { CartContext } from "../../context/cartContext"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
+import SubNavbar from "./SubNavbar"
 
 const Navbar = ({ toggleSidebar }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
+  const [isSidebarMenuOpen, setSidebarMenuOpen] = useState(false)
   const [searchText, setSearchText] = useState("")
   const [products, setProducts] = useState([])
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
   const navigate = useNavigate()
   const dropdownRef = useRef(null)
+  const sidebarMenuRef = useRef(null)
 
   useEffect(() => {
     const listenClickOutsideLanguageDropdown = (event) => {
@@ -27,6 +30,22 @@ const Navbar = ({ toggleSidebar }) => {
         "mousedown",
         listenClickOutsideLanguageDropdown,
       )
+    }
+  }, [])
+
+  useEffect(() => {
+    const listenClickOutsideSidebarMenu = (event) => {
+      if (
+        sidebarMenuRef.current &&
+        !sidebarMenuRef.current.contains(event.target)
+      ) {
+        setSidebarMenuOpen(false)
+      }
+    }
+
+    document.addEventListener("mousedown", listenClickOutsideSidebarMenu)
+    return () => {
+      document.removeEventListener("mousedown", listenClickOutsideSidebarMenu)
     }
   }, [])
 
@@ -73,7 +92,9 @@ const Navbar = ({ toggleSidebar }) => {
           <div className={styles.menuContainer}>
             <span
               className='material-symbols-outlined'
-              onClick={() => toggleSidebar()}
+              onClick={() => {
+                toggleSidebar()
+              }}
             >
               menu
             </span>
@@ -132,6 +153,11 @@ const Navbar = ({ toggleSidebar }) => {
           </div>
         </div>
         <SubNavbar />
+        {isSidebarMenuOpen && (
+          <div ref={sidebarMenuRef}>
+            <SidebarMenu />
+          </div>
+        )}
       </div>
     </div>
   )
