@@ -38,7 +38,20 @@
       "addToCartButton": "In den Warenkorb"
     },
     "shipping": {
-      "text": "Versandseite"
+      "title": "Versand",
+      "inputPlacehoders": {
+        "firstName": "Name",
+        "lastName": "Nachname",
+        "email": "E-Mail",
+        "phone": "Telefonnummer",
+        "street": "Straße",
+        "streetNumber": "Nummer",
+        "postalCode": "PLZ",
+        "city": "Stadt",
+        "country": "Land"
+      },
+
+      "submitButton": "Zur Kasse"
     },
     "shop": {
       "title": "Alle Produkte"

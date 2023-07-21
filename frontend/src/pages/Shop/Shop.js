@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
 import Product from "../../components/Product/Product"
-import useLocaleContext from "../../context/localeContext"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import style from "../../styles/pages/_shop.module.scss"
 
@@ -18,7 +17,6 @@ const Shop = () => {
     axios
       .get("http://localhost:3001/api/products")
       .then((response) => {
-        console.log("res ", response)
         setProducts(response.data)
       })
       .catch((error) => {
@@ -47,8 +45,6 @@ const Shop = () => {
 
   const sortedProducts = filteredProducts(category)
 
-  const { translate } = useLocaleContext()
-
   return (
     <div className={style.content}>
       <Sidebar setCategory={setCategory} />
@@ -57,7 +53,7 @@ const Shop = () => {
           <Product
             key={index}
             name={product.name}
-            image={process.env.PUBLIC_URL + "/" + product.image}
+            image={product.image}
             size={product.size}
             price={product.price}
             description={product.description}

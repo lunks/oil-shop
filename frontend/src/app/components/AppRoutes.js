@@ -12,7 +12,9 @@ import Faq from "../../pages/Faq/Faq"
 import Home from "../../pages/Home/Home"
 import Shop from "../../pages/Shop/Shop"
 import ProductDetails from "../../pages/ProductDetails/ProductDetails"
-import Shipping from "../../components/Checkout/Shipping/Shipping"
+import Shipping from "../../pages/Shipping/Shipping"
+import Payment from "../../pages/Payment/Payment"
+import OrderSummary from "../../pages/OrderSummary/OrderSummary"
 import SidebarMenu from "../../components/SidebarMenu/SidebarMenu"
 
 const AppRoutes = () => {
@@ -41,6 +43,8 @@ const AppRoutes = () => {
             <Route path='/faq' element={<Faq />} />
             <Route path='/products/:productName' element={<ProductDetails />} />
             <Route path='/checkout/shipping' element={<Shipping />} />
+            <Route path='/checkout/payment' element={<Payment />} />
+            <Route path='/checkout/summary' element={<OrderSummary />} />
           </Routes>
         </div>
         <Footer />
