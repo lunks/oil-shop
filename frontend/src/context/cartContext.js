@@ -26,7 +26,7 @@ export const CartProvider = ({ children }) => {
     }
 
     setNotification(`${quantity} ${product.name} were added to cart`)
-    setTimeout(() => setNotification(null), 3000)
+    setTimeout(() => setNotification(null), 1000)
   }
 
   const updateProductQuantity = (productName, newQuantity) => {
