@@ -50,6 +50,8 @@ const ProductDetails = () => {
     }
   }
 
+  console.log("PD img src ", process.env.PUBLIC_URL + "/assets/" + image)
+
   return (
     <div className={styles.productPageWrapper}>
       <div className={styles.productPage}>
@@ -58,21 +60,21 @@ const ProductDetails = () => {
             <div className={styles.imageContainer}>
               <img
                 className={styles.imageSmall}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
             <div className={styles.imageContainer}>
               <img
                 className={styles.imageSmall}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
             <div className={styles.imageContainer}>
               <img
                 className={styles.imageSmall}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
@@ -81,7 +83,7 @@ const ProductDetails = () => {
             <div className={styles.imageMiddleContainer}>
               <img
                 className={styles.imageMiddle}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
