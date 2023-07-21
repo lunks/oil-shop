@@ -3,18 +3,17 @@ import styles from "../../styles/app/components/_navbar.module.scss"
 import SubNavbar from "./SubNavbar"
 import useLocaleContext from "../../context/localeContext"
 import { CartContext } from "../../context/cartContext"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
 
 const Navbar = ({ toggleSidebar }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
+  const [searchText, setSearchText] = useState("")
+  const [products, setProducts] = useState([])
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
+  const navigate = useNavigate()
   const dropdownRef = useRef(null)
-
-  const changeLanguage = (lang) => {
-    setLanguage(lang)
-    setTimeout(() => setDropdownOpen(false))
-  }
 
   useEffect(() => {
     const listenClickOutsideLanguageDropdown = (event) => {
@@ -30,6 +29,42 @@ const Navbar = ({ toggleSidebar }) => {
       )
     }
   }, [])
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/api/products")
+      .then((response) => {
+        setProducts(response.data)
+      })
+      .catch((e) => console.error("Error getting products data", e))
+  }, [])
+
+  const changeLanguage = (lang) => {
+    setLanguage(lang)
+    setTimeout(() => setDropdownOpen(false))
+  }
+
+  const getInputChange = (e) => {
+    setSearchText(e.target.value)
+    console.log(e.target.value)
+  }
+
+  const getPressedKey = (e) => {
+    if (e.key === "Enter") {
+      searchProduct()
+    }
+  }
+
+  const searchProduct = () => {
+    const match = products.find(
+      (product) => product.name.toLowerCase() === searchText.toLowerCase(),
+    )
+    if (match) {
+      navigate(`/products/${match.name}`)
+    } else {
+      console.error("not able to navigate to product page ")
+    }
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -52,7 +87,11 @@ const Navbar = ({ toggleSidebar }) => {
 
           <div className={styles.logoContainer}>
             <div className={styles.inputIconContainer}>
-              <input className={styles.textInput}></input>
+              <input
+                className={styles.textInput}
+                onChange={getInputChange}
+                onKeyDown={getPressedKey}
+              ></input>
               <span className='material-symbols-outlined'>search</span>
             </div>
             <div className={styles.gap}></div>

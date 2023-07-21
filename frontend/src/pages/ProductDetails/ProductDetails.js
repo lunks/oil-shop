@@ -50,8 +50,6 @@ const ProductDetails = () => {
     }
   }
 
-  console.log("PD img src ", process.env.PUBLIC_URL + "/assets/" + image)
-
   return (
     <div className={styles.productPageWrapper}>
       <div className={styles.productPage}>
