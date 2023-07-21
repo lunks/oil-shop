@@ -9,14 +9,15 @@ import SubNavbar from "./SubNavbar"
 
 const Navbar = ({ toggleSidebar }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
-  const [isSidebarMenuOpen, setSidebarMenuOpen] = useState(false)
+  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false)
+  const [isSidebarMenuOpen] = useState(false)
   const [searchText, setSearchText] = useState("")
   const [products, setProducts] = useState([])
+  const [matchedProducts, setMatchedProducts] = useState([])
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
   const navigate = useNavigate()
   const dropdownRef = useRef(null)
-  const sidebarMenuRef = useRef(null)
 
   useEffect(() => {
     const listenClickOutsideLanguageDropdown = (event) => {
@@ -48,6 +49,17 @@ const Navbar = ({ toggleSidebar }) => {
 
   const getInputChange = (e) => {
     setSearchText(e.target.value)
+    setIsSearchDropdownOpen(true)
+
+    const match = products.filter((product) =>
+      product.name.toLowerCase().includes(e.target.value.toLowerCase()),
+    )
+    setMatchedProducts(match.slice(0, 6))
+  }
+
+  const navigateToProduct = (name) => {
+    navigate(`/products/${name}`)
+    setIsSearchDropdownOpen(false)
   }
 
   const getPressedKey = (e) => {
@@ -95,6 +107,23 @@ const Navbar = ({ toggleSidebar }) => {
                 onChange={getInputChange}
                 onKeyDown={getPressedKey}
               ></input>
+              {isSearchDropdownOpen && matchedProducts.length > 0 && (
+                <div
+                  className={
+                    isSearchDropdownOpen ? styles.searchDropdown : styles.hidden
+                  }
+                >
+                  {matchedProducts.map((product) => (
+                    <div
+                      className={styles.matchedProductsItem}
+                      key={product.name}
+                      onClick={() => navigateToProduct(product.name)}
+                    >
+                      {product.name}
+                    </div>
+                  ))}
+                </div>
+              )}
               <span className='material-symbols-outlined'>search</span>
             </div>
             <div className={styles.gap}></div>
@@ -136,7 +165,7 @@ const Navbar = ({ toggleSidebar }) => {
         </div>
         <SubNavbar />
         {isSidebarMenuOpen && (
-          <div ref={sidebarMenuRef}>
+          <div>
             <SidebarMenu />
           </div>
         )}
