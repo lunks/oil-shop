@@ -33,6 +33,8 @@ const ProductSlider = () => {
     )
   }
 
+  console.log("productImageSlider ", products)
+
   return (
     <div className={styles.carousel}>
       <span
@@ -47,7 +49,7 @@ const ProductSlider = () => {
           <Product
             key={index}
             name={product.name}
-            image={process.env.PUBLIC_URL + "/" + product.image}
+            image={product.image}
             size={product.size}
             price={product.price}
             description={product.description}
