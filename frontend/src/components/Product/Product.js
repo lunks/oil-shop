@@ -8,7 +8,7 @@ const Product = ({ name, image, size, price, description, category }) => {
   const { translate } = useLocaleContext()
 
   const product = { name, image, size, price, description, category }
-  console.log("logImageProduct.js ", image)
+
   return (
     <div className={styles.productWrapper}>
       <Link to={`/products/${name}`}>

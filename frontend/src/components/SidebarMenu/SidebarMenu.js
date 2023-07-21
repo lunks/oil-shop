@@ -3,7 +3,7 @@ import styles from "../../styles/components/_sidebarMenu.module.scss"
 import { Link } from "react-router-dom"
 import useLocaleContext from "../../context/localeContext"
 
-const SidebarMenu = ({ className }) => {
+const SidebarMenu = ({ className, setSidebarMenuVisible }) => {
   const { translate } = useLocaleContext()
   const text = translate.components.sidebarMenu
 
@@ -20,6 +20,12 @@ const SidebarMenu = ({ className }) => {
   return (
     <div className={styles[className]}>
       <div className={styles.sidebar}>
+        <div
+          className={styles.sidebarItem}
+          onClick={() => setSidebarMenuVisible(false)}
+        >
+          <span class='material-symbols-outlined'>close</span>
+        </div>
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=all`}>{text.allProducts}</Link>
         </div>

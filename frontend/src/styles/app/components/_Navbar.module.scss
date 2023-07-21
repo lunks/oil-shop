@@ -18,6 +18,23 @@
   }
 }
 
+.hidden {
+  display: none;
+}
+
+.searchDropdown {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: black;
+}
+
+.matchedProductsItem {
+  width: 80px;
+  height: 40px;
+  font-size: 14px;
+}
+
 .navbarContainer {
   display: flex;
   justify-content: space-around;

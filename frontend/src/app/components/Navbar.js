@@ -1,20 +1,23 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
 import styles from "../../styles/app/components/_navbar.module.scss"
-import SubNavbar from "./SubNavbar"
+import SidebarMenu from "../../components/SidebarMenu/SidebarMenu"
 import useLocaleContext from "../../context/localeContext"
 import { CartContext } from "../../context/cartContext"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import axios from "axios"
+import SubNavbar from "./SubNavbar"
 
 const Navbar = ({ toggleSidebar }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
+  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false)
+  const [isSidebarMenuOpen] = useState(false)
+  const [searchText, setSearchText] = useState("")
+  const [products, setProducts] = useState([])
+  const [matchedProducts, setMatchedProducts] = useState([])
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
+  const navigate = useNavigate()
   const dropdownRef = useRef(null)
-
-  const changeLanguage = (lang) => {
-    setLanguage(lang)
-    setTimeout(() => setDropdownOpen(false))
-  }
 
   useEffect(() => {
     const listenClickOutsideLanguageDropdown = (event) => {
@@ -31,6 +34,51 @@ const Navbar = ({ toggleSidebar }) => {
     }
   }, [])
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/api/products")
+      .then((response) => {
+        setProducts(response.data)
+      })
+      .catch((e) => console.error("Error getting products data", e))
+  }, [])
+
+  const changeLanguage = (lang) => {
+    setLanguage(lang)
+  }
+
+  const getInputChange = (e) => {
+    setSearchText(e.target.value)
+    setIsSearchDropdownOpen(true)
+
+    const match = products.filter((product) =>
+      product.name.toLowerCase().includes(e.target.value.toLowerCase()),
+    )
+    setMatchedProducts(match.slice(0, 6))
+  }
+
+  const navigateToProduct = (name) => {
+    navigate(`/products/${name}`)
+    setIsSearchDropdownOpen(false)
+  }
+
+  const getPressedKey = (e) => {
+    if (e.key === "Enter") {
+      searchProduct()
+    }
+  }
+
+  const searchProduct = () => {
+    const match = products.find(
+      (product) => product.name.toLowerCase() === searchText.toLowerCase(),
+    )
+    if (match) {
+      navigate(`/products/${match.name}`)
+    } else {
+      console.error("not able to navigate to product page ")
+    }
+  }
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
@@ -38,7 +86,9 @@ const Navbar = ({ toggleSidebar }) => {
           <div className={styles.menuContainer}>
             <span
               className='material-symbols-outlined'
-              onClick={() => toggleSidebar()}
+              onClick={() => {
+                toggleSidebar()
+              }}
             >
               menu
             </span>
@@ -52,7 +102,28 @@ const Navbar = ({ toggleSidebar }) => {
 
           <div className={styles.logoContainer}>
             <div className={styles.inputIconContainer}>
-              <input className={styles.textInput}></input>
+              <input
+                className={styles.textInput}
+                onChange={getInputChange}
+                onKeyDown={getPressedKey}
+              ></input>
+              {isSearchDropdownOpen && matchedProducts.length > 0 && (
+                <div
+                  className={
+                    isSearchDropdownOpen ? styles.searchDropdown : styles.hidden
+                  }
+                >
+                  {matchedProducts.map((product) => (
+                    <div
+                      className={styles.matchedProductsItem}
+                      key={product.name}
+                      onClick={() => navigateToProduct(product.name)}
+                    >
+                      {product.name}
+                    </div>
+                  ))}
+                </div>
+              )}
               <span className='material-symbols-outlined'>search</span>
             </div>
             <div className={styles.gap}></div>
@@ -93,6 +164,11 @@ const Navbar = ({ toggleSidebar }) => {
           </div>
         </div>
         <SubNavbar />
+        {isSidebarMenuOpen && (
+          <div>
+            <SidebarMenu />
+          </div>
+        )}
       </div>
     </div>
   )

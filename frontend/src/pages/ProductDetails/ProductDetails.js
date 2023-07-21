@@ -58,21 +58,21 @@ const ProductDetails = () => {
             <div className={styles.imageContainer}>
               <img
                 className={styles.imageSmall}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
             <div className={styles.imageContainer}>
               <img
                 className={styles.imageSmall}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
             <div className={styles.imageContainer}>
               <img
                 className={styles.imageSmall}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
@@ -81,7 +81,7 @@ const ProductDetails = () => {
             <div className={styles.imageMiddleContainer}>
               <img
                 className={styles.imageMiddle}
-                src={process.env.PUBLIC_URL + "/" + image}
+                src={process.env.PUBLIC_URL + "/assets/" + image}
                 alt={name}
               />
             </div>
