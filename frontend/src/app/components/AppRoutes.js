@@ -22,16 +22,19 @@ const AppRoutes = () => {
 
   const toggleSidebar = () => {
     setSidebarMenuVisible((prevSidebarVisible) => !prevSidebarVisible)
-    console.log("isSidebarMenuVisible", isSidebarMenuVisible)
   }
 
   return (
     <div className={styles.wrapper}>
       <CartProvider>
-        <Navbar toggleSidebar={toggleSidebar} />
+        <Navbar
+          toggleSidebar={toggleSidebar}
+          setSidebarMenuVisible={setSidebarMenuVisible}
+        />
         <div className={styles.content}>
           {isSidebarMenuVisible && (
             <SidebarMenu
+              setSidebarMenuVisible={setSidebarMenuVisible}
               className={isSidebarMenuVisible ? "visible" : "hidden"}
             />
           )}

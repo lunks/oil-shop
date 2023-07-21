@@ -34,22 +34,6 @@ const Navbar = ({ toggleSidebar }) => {
   }, [])
 
   useEffect(() => {
-    const listenClickOutsideSidebarMenu = (event) => {
-      if (
-        sidebarMenuRef.current &&
-        !sidebarMenuRef.current.contains(event.target)
-      ) {
-        setSidebarMenuOpen(false)
-      }
-    }
-
-    document.addEventListener("mousedown", listenClickOutsideSidebarMenu)
-    return () => {
-      document.removeEventListener("mousedown", listenClickOutsideSidebarMenu)
-    }
-  }, [])
-
-  useEffect(() => {
     axios
       .get("http://localhost:3001/api/products")
       .then((response) => {
@@ -60,12 +44,10 @@ const Navbar = ({ toggleSidebar }) => {
 
   const changeLanguage = (lang) => {
     setLanguage(lang)
-    setTimeout(() => setDropdownOpen(false))
   }
 
   const getInputChange = (e) => {
     setSearchText(e.target.value)
-    console.log(e.target.value)
   }
 
   const getPressedKey = (e) => {
