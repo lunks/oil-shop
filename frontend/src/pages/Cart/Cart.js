@@ -22,7 +22,7 @@ const Cart = () => {
         {cart.map((item, index) => (
           <div key={index} className={styles.productItem}>
             <img
-              src={item.product.image}
+              src={process.env.PUBLIC_URL + "/assets/" + item.product.image}
               alt={item.product.name}
               className={styles.productImage}
             />
