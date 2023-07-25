@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import useLocaleContext from "../../context/localeContext"
 import { titleCase } from "../../utils/utils"
+import useLocaleContext from "../../context/localeContext"
 import AddOneToCartButton from "../AddOneToCartButton/AddOneToCartButton"
 import styles from "../../styles/components/_product.module.scss"
 
-const Product = ({ name, image, size, price, description, category }) => {
+const ProductCard = ({ name, image, size, price, description, category }) => {
   const { translate } = useLocaleContext()
   const product = { name, image, size, price, description, category }
 
@@ -30,10 +30,10 @@ const Product = ({ name, image, size, price, description, category }) => {
       </Link>
       <AddOneToCartButton
         product={product}
-        className={styles.productCardAddToCartButton}
+        classname={styles.productCardAddToCartButton}
       />
     </div>
   )
 }
 
-export default Product
+export default ProductCard
