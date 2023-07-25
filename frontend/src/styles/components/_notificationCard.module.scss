@@ -2,7 +2,7 @@
 @import "../base/variables";
 
 .notificationCard {
-  @include product-purshase-button;
+  @include product-cart-purshase-button;
   position: fixed;
   top: 20px;
   right: 20px;

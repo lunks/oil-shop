@@ -1,3 +1,16 @@
+$none: none;
+$auto: auto;
+$one: 1;
+$zero: 0;
+$flex: flex;
+$block: block;
+$column: column;
+$center: center;
+$hidden: hidden;
+$one-rem: 1rem;
+$hundred-percent: 100%;
+$font-weight-medium: 500;
+
 $primary-color: #686868;
 $secondary-color: #bdbdbd;
 $thirth-color: #757575;
@@ -19,14 +32,17 @@ $footer-width: 90%;
 $footer-text-transform: capitalize;
 
 $product-border: 1px solid #ccc;
-$product-width: 180px;
+$product-card-width: 16.25rem;
+$product-card-height: 23rem;
+$product-card-image-height: 12.5rem;
+$product-card-image-max-width: 80%;
 $product-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
 $product-border-radius: 4px;
 $product-height: 360px;
 $product-padding: 16px;
 $product-margin: 16px;
-
-$product-font-size: 18px;
+$product-card-name-font-size: 1.125rem;
+$product-card-description-font-size: 0.875rem;
 $product-font-weight: 500;
 $product-color: #757575;
 
@@ -35,3 +51,5 @@ $sidebar-background-color: #f5f5f5;
 $sidebar-padding: 20px;
 
 $background-soft-grey: #f4f4f4;
+
+$product-card-on-hover-scale: scale(1.05);

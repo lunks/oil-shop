@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
-import Product from "../../components/Product/Product"
+import ProductCard from "../../components/ProductCard/ProductCard"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import style from "../../styles/pages/_shop.module.scss"
 
@@ -50,7 +50,7 @@ const Shop = () => {
       <Sidebar setCategory={setCategory} />
       <div className={style.mainContent}>
         {sortedProducts.map((product, index) => (
-          <Product
+          <ProductCard
             key={index}
             name={product.name}
             image={product.image}

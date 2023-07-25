@@ -1,52 +1,38 @@
 @import "../helpers/mixins";
 @import "../base/variables";
 
-.addToCartButton {
-  opacity: 0;
-  pointer-events: none;
-  @include product-purshase-button;
+.productCardWrapper {
+  @include product-card-wrapper;
 }
 
-.productWrapper {
-  margin: 2rem;
+.productCardWrapper:hover {
+  transform: $product-card-on-hover-scale;
 }
 
-.productWrapper:hover .addToCartButton {
-  opacity: 1;
-  pointer-events: auto;
+.productCardAddToCartButton {
+  @include product-cart-purshase-button;
+  opacity: $zero;
+  pointer-events: $none;
 }
 
-.productWrapper:hover {
-  scale: 1.05;
+.productCardWrapper:hover .productCardAddToCartButton {
+  opacity: $one;
+  pointer-events: $auto;
 }
 
-.productName {
-  @include product-name;
+.productCardName {
+  @include product-card-name;
 }
 
-.productImage {
+.productCardImage {
   @include product-image;
 }
 
-.productSize,
-.productPrice {
-  @include product-size-and-price;
+.productCardSize,
+.productCardPrice {
+  @include product-card-size-and-price;
 }
 
-.productDescription {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #757575;
-  height: auto;
-}
-
-.product:hover .buttonContainer {
-  display: flex;
-}
-.product:hover .productButton {
-  display: block;
-}
-
-.buttonContained {
-  @include product-purshase-button;
+.productCardDescription {
+  @include product-card-description;
 }
