@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styles from "../../styles/components/_productSlider.module.scss"
 import axios from "axios"
-import Product from "../Product/Product"
+import ProductCard from "../ProductCard/ProductCard"
 
 const ProductSlider = () => {
   const [products, setProducts] = useState([])
@@ -46,7 +46,7 @@ const ProductSlider = () => {
       {products
         .slice(currentProductIndex, currentProductIndex + displayCount)
         .map((product, index) => (
-          <Product
+          <ProductCard
             key={index}
             name={product.name}
             image={product.image}
