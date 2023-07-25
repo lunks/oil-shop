@@ -2,27 +2,26 @@
 @import "../base/variables";
 
 .addToCartButton {
-  @include product-purshase-button;
-  opacity: 0;
-  pointer-events: none;
+  @include product-card-purshase-button;
+  opacity: $zero;
+  pointer-events: $none;
 }
 
 .productCardWrapper {
   @include product-card-wrapper;
-  border: red 1px solid;
 }
 
 .productCardWrapper:hover .addToCartButton {
-  opacity: 1;
-  pointer-events: auto;
+  opacity: $one;
+  pointer-events: $auto;
 }
 
 .productCardWrapper:hover {
-  transform: scale(1.05);
+  transform: $product-card-on-hover-scale;
 }
 
 .productCardName {
-  @include product-card-product-name;
+  @include product-card-name;
 }
 
 .productCardImage {
@@ -31,22 +30,20 @@
 
 .productCardSize,
 .productCardPrice {
-  @include product-size-and-price;
+  @include product-card-size-and-price;
 }
 
 .productCardDescription {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: $thirth-color;
+  @include product-card-description;
 }
 
 .product:hover .buttonContainer {
-  display: flex;
+  display: $flex;
 }
 .product:hover .productButton {
-  display: block;
+  display: $block;
 }
 
 .productCardAddToCartButton {
-  @include product-purshase-button;
+  @include product-card-purshase-button;
 }
