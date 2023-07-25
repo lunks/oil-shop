@@ -1,23 +1,23 @@
 @import "../helpers/mixins";
 @import "../base/variables";
 
-.addToCartButton {
-  @include product-card-purshase-button;
-  opacity: $zero;
-  pointer-events: $none;
-}
-
 .productCardWrapper {
   @include product-card-wrapper;
 }
 
-.productCardWrapper:hover .addToCartButton {
-  opacity: $one;
-  pointer-events: $auto;
-}
-
 .productCardWrapper:hover {
   transform: $product-card-on-hover-scale;
+}
+
+.productCardAddToCartButton {
+  @include product-cart-purshase-button;
+  opacity: $zero;
+  pointer-events: $none;
+}
+
+.productCardWrapper:hover .productCardAddToCartButton {
+  opacity: $one;
+  pointer-events: $auto;
 }
 
 .productCardName {
@@ -35,15 +35,4 @@
 
 .productCardDescription {
   @include product-card-description;
-}
-
-.product:hover .buttonContainer {
-  display: $flex;
-}
-.product:hover .productButton {
-  display: $block;
-}
-
-.productCardAddToCartButton {
-  @include product-card-purshase-button;
 }

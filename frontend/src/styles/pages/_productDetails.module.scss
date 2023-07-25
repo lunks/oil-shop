@@ -198,7 +198,7 @@
 }
 
 .buttonContained {
-  @include product-card-purshase-button;
+  @include product-cart-purshase-button;
   height: 100%;
   margin-left: 0.3rem;
   flex-grow: 1;
