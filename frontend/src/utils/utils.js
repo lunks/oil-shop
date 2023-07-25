@@ -8,3 +8,6 @@ export const titleCase = (str, separator) => {
 export const addOneProductToCart = (product, contextFunction) => {
   contextFunction(product, 1)
 }
+
+export const totalCost = (cart) =>
+  cart.reduce((total, item) => total + item.quantity * item.product.price, 0)

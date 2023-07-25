@@ -1,20 +1,15 @@
 import React from "react"
 import { Link } from "react-router-dom"
-import { useContext } from "react"
-import { CartContext } from "../../context/cartContext"
-import styles from "../../styles/pages/_cart.module.scss"
+import useCartContext from "../../context/cartContext"
 import useLocaleContext from "../../context/localeContext"
+import { SHIPPING_COST } from "../../utils/constants"
+import { totalCost } from "../../utils/utils"
+import styles from "../../styles/pages/_cart.module.scss"
 
 const Cart = () => {
-  const { cart, removeProduct, updateProductQuantity } = useContext(CartContext)
+  const { cart, removeProduct, updateProductQuantity } = useCartContext()
   const { translate } = useLocaleContext()
   const text = translate.pages.cart
-  const shippingCost = 10
-
-  const totalCost = cart.reduce(
-    (total, item) => total + item.quantity * item.product.price,
-    0,
-  )
 
   return (
     <div className={styles.cartContainer}>
@@ -74,15 +69,15 @@ const Cart = () => {
         <h2>{text.orderSummary}</h2>
         <div className={styles.summaryDetails}>
           <div>
-            {text.orderSubtotal} {totalCost.toFixed(2)} €
+            {text.orderSubtotal} {totalCost(cart).toFixed(2)} €
           </div>
           <div>
-            {text.orderShipping} {shippingCost} €
+            {text.orderShipping} {SHIPPING_COST} €
           </div>
           <hr />
           <div>
             {text.orderTotal}
-            {(totalCost + shippingCost).toFixed(2)} €
+            {(totalCost(cart) + SHIPPING_COST).toFixed(2)} €
           </div>
         </div>
 
