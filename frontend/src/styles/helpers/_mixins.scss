@@ -14,9 +14,9 @@
 }
 
 @mixin product-card-wrapper {
-  padding: 1rem;
+  margin: 1rem;
   width: 260px;
-  max-height: 460px;
+  max-height: 360px;
   display: flex;
   flex-direction: column;
   justify-content: center;
