@@ -64,7 +64,7 @@ const Cart = () => {
                   className={styles.cartItemButtonDeleteButton}
                   onClick={() => removeProduct(item.product.name)}
                 >
-                  x {text.deleteButton}
+                  {text.deleteButton}
                 </span>
               </div>
               <hr />
