@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { titleCase } from "../../utils/utils"
 import useLocaleContext from "../../context/localeContext"
-import AddOneToCartButton from "../AddOneToCartButton/AddOneToCartButton"
+import AddOneProductToCartButton from "../AddOneProductToCartButton/AddOneProductToCartButton"
 import styles from "../../styles/components/_product.module.scss"
 
 const ProductCard = ({ name, image, size, price, description, category }) => {
@@ -28,7 +28,7 @@ const ProductCard = ({ name, image, size, price, description, category }) => {
           <div className={styles.productCardDescription}>{description}</div>
         </div>
       </Link>
-      <AddOneToCartButton
+      <AddOneProductToCartButton
         product={product}
         classname={styles.productCardAddToCartButton}
       />

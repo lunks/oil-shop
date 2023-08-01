@@ -26,6 +26,7 @@
 
 .productCardImage {
   @include product-image;
+  object-fit: contain;
 }
 
 .productCardSize,

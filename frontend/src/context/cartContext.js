@@ -30,13 +30,15 @@ export const CartProvider = ({ children }) => {
   }
 
   const updateProductQuantity = (productName, newQuantity) => {
-    setCart(
-      cart.map((item) =>
-        item.product.name === productName
-          ? { ...item, quantity: newQuantity }
-          : item,
-      ),
-    )
+    if (newQuantity >= 0) {
+      setCart(
+        cart.map((item) =>
+          item.product.name === productName
+            ? { ...item, quantity: newQuantity }
+            : item,
+        ),
+      )
+    }
   }
 
   const removeProduct = (productName) => {

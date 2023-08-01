@@ -12,8 +12,8 @@ const products = [
     details: 'Reduces the wrinkles, increases skin firmness.',
   },
   {
-    name: 'eucaliptus_blue',
-    image: 'oil_eulyptusBlue_15_ml.jpg',
+    name: 'eucalyptus_blue',
+    image: 'oil_eucalyptusBlue_15_ml.jpg',
     description: 'description',
     size: 15,
     measure: 'ml',
