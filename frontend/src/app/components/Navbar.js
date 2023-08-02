@@ -1,13 +1,12 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
 import styles from "../../styles/app/components/_navbar.module.scss"
-import SidebarMenu from "../../components/SidebarMenu/SidebarMenu"
 import useLocaleContext from "../../context/localeContext"
 import { CartContext } from "../../context/cartContext"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import SubNavbar from "./SubNavbar"
 
-const Navbar = ({ toggleSidebar }) => {
+const Navbar = ({ toggleSidebarMenuVisibility }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false)
   const [isSidebarMenuOpen] = useState(false)
@@ -16,6 +15,7 @@ const Navbar = ({ toggleSidebar }) => {
   const [matchedProducts, setMatchedProducts] = useState([])
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
+
   const navigate = useNavigate()
   const dropdownRef = useRef(null)
 
@@ -85,9 +85,9 @@ const Navbar = ({ toggleSidebar }) => {
         <div className={styles.navbarContainer}>
           <div className={styles.menuContainer}>
             <span
-              className='material-symbols-outlined'
+              className={`${styles.toggleSidebarButton} material-symbols-outlined`}
               onClick={() => {
-                toggleSidebar()
+                toggleSidebarMenuVisibility()
               }}
             >
               menu
@@ -164,11 +164,6 @@ const Navbar = ({ toggleSidebar }) => {
           </div>
         </div>
         <SubNavbar />
-        {isSidebarMenuOpen && (
-          <div>
-            <SidebarMenu />
-          </div>
-        )}
       </div>
     </div>
   )

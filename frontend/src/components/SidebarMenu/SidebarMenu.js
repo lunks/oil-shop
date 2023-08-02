@@ -1,9 +1,21 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styles from "../../styles/components/_sidebarMenu.module.scss"
 import { Link } from "react-router-dom"
 import useLocaleContext from "../../context/localeContext"
 
-const SidebarMenu = ({ className, setSidebarMenuVisible }) => {
+const SidebarMenu = ({ setSidebarMenuVisible, isOpen }) => {
+  const [slideInOutClass, setSlideInOutClass] = useState(
+    isOpen ? "visible" : "hidden",
+  )
+
+  useEffect(() => {
+    if (isOpen) {
+      setSlideInOutClass("visible")
+    } else {
+      setSlideInOutClass("hidden")
+    }
+  }, [isOpen])
+
   const { translate } = useLocaleContext()
   const text = translate.components.sidebarMenu
 
@@ -17,7 +29,7 @@ const SidebarMenu = ({ className, setSidebarMenuVisible }) => {
   })
 
   return (
-    <div className={styles[className]}>
+    <div className={styles[slideInOutClass]}>
       <div className={styles.sidebar}>
         <div
           className={styles.sidebarItem}

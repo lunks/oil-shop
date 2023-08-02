@@ -18,10 +18,6 @@
   }
 }
 
-.hidden {
-  display: none;
-}
-
 .searchDropdown {
   display: flex;
   flex-direction: column;
@@ -42,6 +38,10 @@
   background-color: #b5cfaa;
   height: 84px;
   margin-bottom: 20px;
+}
+
+.toggleSidebarButton {
+  cursor: pointer;
 }
 
 .navLink {
