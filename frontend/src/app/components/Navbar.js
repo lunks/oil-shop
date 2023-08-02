@@ -9,7 +9,6 @@ import SubNavbar from "./SubNavbar"
 const Navbar = ({ toggleSidebarMenuVisibility }) => {
   const [isDropdownOpen, setDropdownOpen] = useState(false)
   const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false)
-  const [isSidebarMenuOpen] = useState(false)
   const [searchText, setSearchText] = useState("")
   const [products, setProducts] = useState([])
   const [matchedProducts, setMatchedProducts] = useState([])
@@ -55,6 +54,9 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
       product.name.toLowerCase().includes(e.target.value.toLowerCase()),
     )
     setMatchedProducts(match.slice(0, 6))
+    if (e.target.value === "") {
+      setIsSearchDropdownOpen(false)
+    }
   }
 
   const navigateToProduct = (name) => {
@@ -101,30 +103,64 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
           </div>
 
           <div className={styles.logoContainer}>
-            <div className={styles.inputIconContainer}>
-              <input
-                className={styles.textInput}
-                onChange={getInputChange}
-                onKeyDown={getPressedKey}
-              ></input>
-              {isSearchDropdownOpen && matchedProducts.length > 0 && (
-                <div
-                  className={
-                    isSearchDropdownOpen ? styles.searchDropdown : styles.hidden
-                  }
-                >
-                  {matchedProducts.map((product) => (
+            <span
+              onClick={() =>
+                setIsSearchDropdownOpen(
+                  (prevIsSearchDropdownOpen) => !prevIsSearchDropdownOpen,
+                )
+              }
+              className='material-symbols-outlined'
+            >
+              search
+            </span>
+            <div
+              className={
+                isSearchDropdownOpen ? styles.inputIconContainer : styles.hidden
+              }
+            >
+              {isSearchDropdownOpen && (
+                <div>
+                  <input
+                    className={styles.textInput}
+                    onChange={getInputChange}
+                    onKeyDown={getPressedKey}
+                  ></input>
+                  {isSearchDropdownOpen && matchedProducts.length > 0 && (
                     <div
-                      className={styles.matchedProductsItem}
-                      key={product.name}
-                      onClick={() => navigateToProduct(product.name)}
+                      className={
+                        isSearchDropdownOpen
+                          ? styles.searchDropdown
+                          : styles.hidden
+                      }
                     >
-                      {product.name}
+                      {matchedProducts.map((product) => (
+                        <div
+                          className={styles.sidebarItem}
+                          key={product.name}
+                          onClick={() => navigateToProduct(product.name)}
+                        >
+                          {
+                            <div>
+                              {
+                                <img
+                                  src={
+                                    process.env.PUBLIC_URL +
+                                    "/assets/" +
+                                    product.image
+                                  }
+                                  alt={product.name}
+                                  className={styles.listItemImage}
+                                />
+                              }
+                            </div>
+                          }
+                          {<div>{product.name}</div>}
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
               )}
-              <span className='material-symbols-outlined'>search</span>
             </div>
             <div className={styles.gap}></div>
             <nav className={styles.iconsNav}>

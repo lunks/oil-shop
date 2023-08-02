@@ -172,16 +172,7 @@ const products = [
     category: 'difuser',
     details: 'Reduces the wrinkles, increases skin firmness.',
   },
-  {
-    name: 'dragon_time',
-    image: 'oilMassage_dragonTime_236_ml.jpg',
-    description: 'Vegetable Oil for Woman',
-    size: 236,
-    measure: 'ml',
-    price: 35.48,
-    category: 'massageOil',
-    details: 'Vegetable Oil for Woman.',
-  },
+
   {
     name: 'v-6',
     image: 'oilMassage_v-6_944_ml.jpg',
