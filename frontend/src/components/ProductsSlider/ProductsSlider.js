@@ -33,8 +33,6 @@ const ProductSlider = () => {
     )
   }
 
-  console.log("productImageSlider ", products)
-
   return (
     <div className={styles.carousel}>
       <span

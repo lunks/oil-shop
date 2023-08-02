@@ -8,7 +8,6 @@ export const CartProvider = ({ children }) => {
   const [notification, setNotification] = useState(null)
 
   const addProduct = (product, quantity) => {
-    console.log("product ", product)
     const existingProduct = cart.find(
       (item) => item.product.name === product.name,
     )
