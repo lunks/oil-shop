@@ -1,3 +1,6 @@
+@import "../helpers/mixins";
+@import "../base/variables";
+
 @keyframes slideIn {
   from {
     transform: translateX(-100%);

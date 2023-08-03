@@ -1,13 +1,18 @@
+@import "../../helpers/mixins";
+@import "../../base/variables";
+
 .wrapper {
   width: 100%;
   background-color: white;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
 }
+
 .dropdown {
   position: fixed;
   top: 10px;
@@ -23,6 +28,10 @@
   height: 56px;
 }
 
+.searchIcon {
+  cursor: pointer;
+}
+
 /*TODO: Extract as mixins*/
 
 .searchDropdown {
@@ -32,15 +41,13 @@
   width: 100%;
   background-color: #f5f5f5;
   z-index: 200;
-  padding: 20px;
-  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
-.sidebarItem {
-  margin: 10px 0;
-  padding: 10px;
-  color: rgba(0, 0, 0, 0.87);
+.dropdownListItem {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #fff;
+
   font-size: 1rem;
   line-height: 1.5;
   letter-spacing: 0.00938em;
@@ -48,6 +55,17 @@
   transition: background-color 0.3s ease;
   list-style-type: none;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropdownListItemName {
+  font-weight: 500;
+  color: $primary-color;
+}
+
+.dropdownListItem img {
+  margin-right: 2rem;
 }
 
 .sidebarItem:hover {
@@ -75,8 +93,7 @@
   font-size: 18px;
 }
 
-.logoContainer,
-.menuContainer {
+.navbarColumn {
   width: 33.33%;
   display: flex;
   align-items: center;
@@ -84,13 +101,14 @@
 }
 
 .inputIconContainer {
-  width: 23.33%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  flex-grow: 1;
   left: 55%;
-  top: 2%;
+  top: 1%;
   background-color: #f5f5f5;
   position: fixed;
   padding: 20px;
@@ -99,9 +117,13 @@
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
-.textInput {
-  margin-right: 8px;
+.searchTextInput {
+  @include input-styles-reset;
+  margin: 0 0.5rem 0.6rem 0;
+  height: 2rem;
+  border-radius: 0.2rem;
   width: 100%;
+  background-color: #fff;
 }
 
 .logo {
@@ -122,4 +144,10 @@
 
 .gap {
   width: 40px;
+}
+
+.searchTextInputAndProductList {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
 }
