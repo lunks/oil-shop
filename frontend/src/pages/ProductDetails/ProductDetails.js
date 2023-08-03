@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import axios from "axios"
+import { titleCase } from "../../utils/utils"
 import useCartContext from "../../context/cartContext"
 import styles from "../../styles/pages/_productDetails.module.scss"
 import useLocaleContext from "../../context/localeContext"
@@ -90,10 +91,15 @@ const ProductDetails = () => {
         <div className={styles.rightContainer}>
           <div className={styles.rightContainerDetails}>
             <div className={styles.productInfoCategory}>
-              <Link to={`/shop?category=${category}`}>{category}</Link>
+              <Link
+                className={styles.productInfoCategoryLink}
+                to={`/shop?category=${category}`}
+              >
+                {category}
+              </Link>
             </div>
             <div className={styles.productName}>
-              {name} {size}ml
+              {titleCase(name, "_")} {size}ml
             </div>
 
             <ul className={styles.descriptionPoints}>
