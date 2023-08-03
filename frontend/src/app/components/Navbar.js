@@ -12,6 +12,9 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
   const [isSearchDropdownOpen, setSearchDropdownOpen] = useState(false)
   const [searchText, setSearchText] = useState("")
   const [products, setProducts] = useState([])
+  const [slideInOutClass, setSlideInOutClass] = useState(
+    isSearchDropdownOpen ? "visible" : "hidden",
+  )
   const [matchedProducts, setMatchedProducts] = useState([])
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
@@ -19,6 +22,14 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
   const navigate = useNavigate()
   const languageDropdownRef = useRef(null)
   const searchProductListDropdownRef = useRef(null)
+
+  useEffect(() => {
+    if (isSearchDropdownOpen) {
+      setSlideInOutClass("visible")
+    } else {
+      setSlideInOutClass("hidden")
+    }
+  }, [isSearchDropdownOpen])
 
   useEffect(() => {
     const listenClickOutsideLanguageDropdown = (event) => {
@@ -82,8 +93,8 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
     )
     setMatchedProducts(match.slice(0, 6))
     if (e.target.value === "") {
-      setSearchDropdownOpen(false)
       setMatchedProducts([])
+      setSearchText("")
     }
   }
 
@@ -91,6 +102,7 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
     navigate(`/products/${name}`)
     setSearchDropdownOpen(false)
     setMatchedProducts([])
+    setSearchText("")
   }
 
   const getPressedKey = (e) => {
@@ -133,66 +145,66 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
 
           <div className={styles.navbarColumn}>
             <span
-              onClick={() =>
+              onClick={() => {
                 setSearchDropdownOpen(
                   (prevIsSearchDropdownOpen) => !prevIsSearchDropdownOpen,
                 )
-              }
+                setMatchedProducts([])
+                setSearchText("")
+              }}
               className={`material-symbols-outlined ${styles.searchIcon}`}
             >
               search
             </span>
-            <div
-              className={
-                isSearchDropdownOpen ? styles.inputIconContainer : styles.hidden
-              }
-            >
-              {isSearchDropdownOpen && (
-                <div
-                  className={styles.searchTextInputAndProductList}
-                  ref={searchProductListDropdownRef}
-                >
-                  <input
-                    className={styles.searchTextInput}
-                    onChange={getInputChange}
-                    onKeyDown={getPressedKey}
-                    placeholder='Search Product'
-                  ></input>
-                  {isSearchDropdownOpen && matchedProducts.length > 0 && (
-                    <div
-                      className={
-                        isSearchDropdownOpen
-                          ? styles.searchDropdown
-                          : styles.hidden
-                      }
-                    >
-                      {matchedProducts.map((product) => (
-                        <div
-                          className={styles.dropdownListItem}
-                          key={product.name}
-                          onClick={() => navigateToProduct(product.name)}
-                        >
-                          <div className={styles.dropdownListItemImage}>
-                            <img
-                              src={
-                                process.env.PUBLIC_URL +
-                                "/assets/" +
-                                product.image
-                              }
-                              alt={product.name}
-                              className={styles.listItemImage}
-                            />
-                          </div>
 
-                          <div className={styles.dropdownListItemName}>
-                            {titleCase(product.name, "_")}
-                          </div>
+            <div
+              className={`${styles.inputIconContainer} ${styles[slideInOutClass]}`}
+            >
+              <div
+                className={styles.searchTextInputAndProductList}
+                ref={searchProductListDropdownRef}
+              >
+                <input
+                  className={styles.searchTextInput}
+                  onChange={getInputChange}
+                  onKeyDown={getPressedKey}
+                  placeholder='Search Product'
+                  value={searchText}
+                ></input>
+                {isSearchDropdownOpen && matchedProducts.length > 0 && (
+                  <div
+                    className={
+                      isSearchDropdownOpen
+                        ? styles.searchDropdown
+                        : styles.hidden
+                    }
+                  >
+                    {matchedProducts.map((product) => (
+                      <div
+                        className={styles.dropdownListItem}
+                        key={product.name}
+                        onClick={() => navigateToProduct(product.name)}
+                      >
+                        <div className={styles.dropdownListItemImage}>
+                          <img
+                            src={
+                              process.env.PUBLIC_URL +
+                              "/assets/" +
+                              product.image
+                            }
+                            alt={product.name}
+                            className={styles.listItemImage}
+                          />
                         </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              )}
+
+                        <div className={styles.dropdownListItemName}>
+                          {titleCase(product.name, "_")}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
             <div className={styles.gap}></div>
             <nav className={styles.iconsNav}>
