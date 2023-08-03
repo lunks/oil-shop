@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import styles from "../../styles/components/_productSlider.module.scss"
+import styles from "#styles/components/_productSlider.module.scss"
 import axios from "axios"
-import ProductCard from "../ProductCard/ProductCard"
+import ProductCard from "#components/ProductCard"
 
 const ProductSlider = () => {
   const [products, setProducts] = useState([])
