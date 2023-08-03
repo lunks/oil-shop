@@ -21,24 +21,20 @@ import Cancellation from "../../pages/Cancellation/Cancellation"
 const AppRoutes = () => {
   const [isSidebarMenuVisible, setSidebarMenuVisible] = useState(false)
 
-  const toggleSidebar = () => {
-    setSidebarMenuVisible((prevSidebarVisible) => !prevSidebarVisible)
+  const toggleSidebarMenuVisibility = () => {
+    setSidebarMenuVisible((prevIsSidebarVisible) => !prevIsSidebarVisible)
   }
 
   return (
     <div className={styles.wrapper}>
       <CartProvider>
-        <Navbar
-          toggleSidebar={toggleSidebar}
-          setSidebarMenuVisible={setSidebarMenuVisible}
-        />
+        <Navbar toggleSidebarMenuVisibility={toggleSidebarMenuVisibility} />
         <div className={styles.content}>
-          {isSidebarMenuVisible && (
-            <SidebarMenu
-              setSidebarMenuVisible={setSidebarMenuVisible}
-              className={isSidebarMenuVisible ? "visible" : "hidden"}
-            />
-          )}
+          <SidebarMenu
+            setSidebarMenuVisible={setSidebarMenuVisible}
+            isOpen={isSidebarMenuVisible}
+          />
+
           <Routes>
             <Route path='/about' element={<About />} />
             <Route path='/shop' element={<Shop />} />

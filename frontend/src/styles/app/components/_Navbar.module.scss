@@ -1,13 +1,44 @@
+@import "../../helpers/mixins";
+@import "../../base/variables";
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(200%);
+  }
+}
+
+.visible {
+  animation: slideIn 0.4s forwards;
+}
+
+.hidden {
+  animation: slideOut 0.6s forwards;
+}
+
 .wrapper {
   width: 100%;
   background-color: white;
 }
+
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 20px;
 }
+
 .dropdown {
   position: fixed;
   top: 10px;
@@ -18,22 +49,56 @@
   }
 }
 
-.hidden {
-  display: none;
+.listItemImage {
+  width: 56px;
+  height: 56px;
 }
+
+.searchIcon {
+  cursor: pointer;
+}
+
+/*TODO: Extract as mixins*/
 
 .searchDropdown {
   display: flex;
   flex-direction: column;
-  background-color: white;
   color: black;
+  width: 100%;
+  background-color: #f5f5f5;
+  z-index: 200;
+  margin-top: 0.6rem;
 }
 
-.matchedProductsItem {
-  width: 80px;
-  height: 40px;
-  font-size: 14px;
+.dropdownListItem {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background-color: #fff;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  list-style-type: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
+
+.dropdownListItemName {
+  font-weight: 500;
+  color: $primary-color;
+}
+
+.dropdownListItem img {
+  margin-right: 2rem;
+}
+
+.sidebarItem:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+/*TODO: Extract as mixins*/
 
 .navbarContainer {
   display: flex;
@@ -44,23 +109,48 @@
   margin-bottom: 20px;
 }
 
+.toggleSidebarButton {
+  cursor: pointer;
+}
+
 .navLink {
   color: grey;
   text-decoration: none;
   font-size: 18px;
 }
 
-.logoContainer,
-.menuContainer,
-.inputIconContainer {
+.navbarColumn {
   width: 33.33%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.textInput {
-  margin-right: 8px;
+.inputIconContainer {
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
+  left: 55%;
+  top: 1%;
+  background-color: #f5f5f5;
+  position: fixed;
+  padding: 20px;
+  z-index: 3000;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.searchTextInput {
+  @include input-styles-reset;
+
+  height: 2rem;
+  border-radius: 0.2rem;
+  width: 100%;
+  background-color: #fff;
+  padding-left: 10px;
 }
 
 .logo {
@@ -81,4 +171,10 @@
 
 .gap {
   width: 40px;
+}
+
+.searchTextInputAndProductList {
+  flex-grow: 1;
+  width: 100%;
+  border: none;
 }

@@ -1,28 +1,43 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
 import styles from "../../styles/app/components/_navbar.module.scss"
-import SidebarMenu from "../../components/SidebarMenu/SidebarMenu"
 import useLocaleContext from "../../context/localeContext"
+import { titleCase } from "../../utils/utils"
 import { CartContext } from "../../context/cartContext"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import SubNavbar from "./SubNavbar"
 
-const Navbar = ({ toggleSidebar }) => {
-  const [isDropdownOpen, setDropdownOpen] = useState(false)
-  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false)
-  const [isSidebarMenuOpen] = useState(false)
+const Navbar = ({ toggleSidebarMenuVisibility }) => {
+  const [isLanguageDropdownOpen, setLanguageDropdownOpen] = useState(false)
+  const [isSearchDropdownOpen, setSearchDropdownOpen] = useState(false)
   const [searchText, setSearchText] = useState("")
   const [products, setProducts] = useState([])
+  const [slideInOutClass, setSlideInOutClass] = useState(
+    isSearchDropdownOpen ? "visible" : "hidden",
+  )
   const [matchedProducts, setMatchedProducts] = useState([])
   const { getAllProductsQuantity } = useContext(CartContext)
   const { setLanguage } = useLocaleContext()
+
   const navigate = useNavigate()
-  const dropdownRef = useRef(null)
+  const languageDropdownRef = useRef(null)
+  const searchProductListDropdownRef = useRef(null)
+
+  useEffect(() => {
+    if (isSearchDropdownOpen) {
+      setSlideInOutClass("visible")
+    } else {
+      setSlideInOutClass("hidden")
+    }
+  }, [isSearchDropdownOpen])
 
   useEffect(() => {
     const listenClickOutsideLanguageDropdown = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setDropdownOpen(false)
+      if (
+        languageDropdownRef.current &&
+        !languageDropdownRef.current.contains(event.target)
+      ) {
+        setLanguageDropdownOpen(false)
       }
     }
     document.addEventListener("mousedown", listenClickOutsideLanguageDropdown)
@@ -30,6 +45,28 @@ const Navbar = ({ toggleSidebar }) => {
       document.removeEventListener(
         "mousedown",
         listenClickOutsideLanguageDropdown,
+      )
+    }
+  }, [])
+
+  useEffect(() => {
+    const listenClickOutsideSearchProductListDropdown = (event) => {
+      if (
+        searchProductListDropdownRef.current &&
+        !searchProductListDropdownRef.current.contains(event.target)
+      ) {
+        setSearchDropdownOpen(false)
+        setMatchedProducts([])
+      }
+    }
+    document.addEventListener(
+      "mousedown",
+      listenClickOutsideSearchProductListDropdown,
+    )
+    return () => {
+      document.removeEventListener(
+        "mousedown",
+        listenClickOutsideSearchProductListDropdown,
       )
     }
   }, [])
@@ -49,17 +86,23 @@ const Navbar = ({ toggleSidebar }) => {
 
   const getInputChange = (e) => {
     setSearchText(e.target.value)
-    setIsSearchDropdownOpen(true)
+    setSearchDropdownOpen(true)
 
     const match = products.filter((product) =>
       product.name.toLowerCase().includes(e.target.value.toLowerCase()),
     )
     setMatchedProducts(match.slice(0, 6))
+    if (e.target.value === "") {
+      setMatchedProducts([])
+      setSearchText("")
+    }
   }
 
   const navigateToProduct = (name) => {
     navigate(`/products/${name}`)
-    setIsSearchDropdownOpen(false)
+    setSearchDropdownOpen(false)
+    setMatchedProducts([])
+    setSearchText("")
   }
 
   const getPressedKey = (e) => {
@@ -83,48 +126,85 @@ const Navbar = ({ toggleSidebar }) => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.navbarContainer}>
-          <div className={styles.menuContainer}>
+          <div className={styles.navbarColumn}>
             <span
-              className='material-symbols-outlined'
+              className={`${styles.toggleSidebarButton} material-symbols-outlined`}
               onClick={() => {
-                toggleSidebar()
+                toggleSidebarMenuVisibility()
               }}
             >
               menu
             </span>
           </div>
-          <div className={styles.logoContainer}>
+          <div className={styles.navbarColumn}>
             <img
               className={styles.logo}
               src={process.env.PUBLIC_URL + "/assets/" + "logo.png"}
             />
           </div>
 
-          <div className={styles.logoContainer}>
-            <div className={styles.inputIconContainer}>
-              <input
-                className={styles.textInput}
-                onChange={getInputChange}
-                onKeyDown={getPressedKey}
-              ></input>
-              {isSearchDropdownOpen && matchedProducts.length > 0 && (
-                <div
-                  className={
-                    isSearchDropdownOpen ? styles.searchDropdown : styles.hidden
-                  }
-                >
-                  {matchedProducts.map((product) => (
-                    <div
-                      className={styles.matchedProductsItem}
-                      key={product.name}
-                      onClick={() => navigateToProduct(product.name)}
-                    >
-                      {product.name}
-                    </div>
-                  ))}
-                </div>
-              )}
-              <span className='material-symbols-outlined'>search</span>
+          <div className={styles.navbarColumn}>
+            <span
+              onClick={() => {
+                setSearchDropdownOpen(
+                  (prevIsSearchDropdownOpen) => !prevIsSearchDropdownOpen,
+                )
+                setMatchedProducts([])
+                setSearchText("")
+              }}
+              className={`material-symbols-outlined ${styles.searchIcon}`}
+            >
+              search
+            </span>
+
+            <div
+              className={`${styles.inputIconContainer} ${styles[slideInOutClass]}`}
+            >
+              <div
+                className={styles.searchTextInputAndProductList}
+                ref={searchProductListDropdownRef}
+              >
+                <input
+                  className={styles.searchTextInput}
+                  onChange={getInputChange}
+                  onKeyDown={getPressedKey}
+                  placeholder='Search Product'
+                  value={searchText}
+                ></input>
+                {isSearchDropdownOpen && matchedProducts.length > 0 && (
+                  <div
+                    className={
+                      isSearchDropdownOpen
+                        ? styles.searchDropdown
+                        : styles.hidden
+                    }
+                  >
+                    {matchedProducts.map((product) => (
+                      <div
+                        className={styles.dropdownListItem}
+                        key={product.name}
+                        onClick={() => navigateToProduct(product.name)}
+                      >
+                        <div className={styles.dropdownListItemImage}>
+                          <img
+                            src={
+                              process.env.PUBLIC_URL +
+                              "/assets/" +
+                              product.image
+                            }
+                            alt={product.name}
+                            className={styles.listItemImage}
+                          />
+                        </div>
+
+                        <div className={styles.dropdownListItemName}>
+                          {titleCase(product.name, "_")}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
             </div>
             <div className={styles.gap}></div>
             <nav className={styles.iconsNav}>
@@ -138,13 +218,13 @@ const Navbar = ({ toggleSidebar }) => {
               <span className='material-symbols-outlined'>account_circle</span>
               <span
                 className='material-symbols-outlined'
-                onClick={() => setDropdownOpen(!isDropdownOpen)}
+                onClick={() => setLanguageDropdownOpen(!isLanguageDropdownOpen)}
               >
                 language
               </span>
               <div>
-                {isDropdownOpen && (
-                  <div className={styles.dropdown} ref={dropdownRef}>
+                {isLanguageDropdownOpen && (
+                  <div className={styles.dropdown} ref={languageDropdownRef}>
                     <img
                       src={
                         process.env.PUBLIC_URL +
@@ -164,11 +244,6 @@ const Navbar = ({ toggleSidebar }) => {
           </div>
         </div>
         <SubNavbar />
-        {isSidebarMenuOpen && (
-          <div>
-            <SidebarMenu />
-          </div>
-        )}
       </div>
     </div>
   )

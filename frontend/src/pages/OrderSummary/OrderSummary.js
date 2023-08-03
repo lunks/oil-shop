@@ -12,7 +12,6 @@ const OrderSummary = () => {
     0,
   )
 
-  console.log(cart)
   return (
     <div>
       <h2>Shipping Details</h2>
