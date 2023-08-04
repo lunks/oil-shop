@@ -1,6 +1,6 @@
 import React from "react"
-import styles from "../../styles/pages/_about.module.scss"
-import useLocaleContext from "../../context/localeContext"
+import styles from "#styles/pages/_about.module.scss"
+import useLocaleContext from "../context/localeContext"
 
 const About = () => {
   const { translate } = useLocaleContext()

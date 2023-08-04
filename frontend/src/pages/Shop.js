@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom"
 import axios from "axios"
-import ProductCard from "../../components/ProductCard/ProductCard"
-import Sidebar from "../../components/Sidebar/Sidebar"
-import style from "../../styles/pages/_shop.module.scss"
+import ProductCard from "../components/ProductCard"
+import Sidebar from "../components/Sidebar/Sidebar"
+import style from "#styles/pages/_shop.module.scss"
 
 const Shop = () => {
   const [products, setProducts] = useState([])

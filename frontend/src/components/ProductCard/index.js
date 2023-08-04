@@ -2,8 +2,8 @@ import React from "react"
 import { Link } from "react-router-dom"
 import { titleCase } from "../../utils/utils"
 import useLocaleContext from "../../context/localeContext"
-import AddOneProductToCartButton from "../AddOneProductToCartButton/AddOneProductToCartButton"
-import styles from "../../styles/components/_product.module.scss"
+import AddOneProductToCartButton from "./AddOneProductToCartButton"
+import styles from "#styles/components/_product.module.scss"
 
 const ProductCard = ({ name, image, size, price, description, category }) => {
   const { translate } = useLocaleContext()

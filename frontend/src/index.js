@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import AppWrapper from "./app/AppWrapper"
+import AppWrapper from "./AppWrapper"
 import "../src/styles/_main.scss"
 
 const root = ReactDOM.createRoot(document.getElementById("root"))

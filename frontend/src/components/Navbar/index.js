@@ -1,11 +1,12 @@
 import React, { useState, useContext, useEffect, useRef } from "react"
-import styles from "../../styles/app/components/_navbar.module.scss"
-import useLocaleContext from "../../context/localeContext"
-import { titleCase } from "../../utils/utils"
-import { CartContext } from "../../context/cartContext"
+import styles from "#styles/app/components/_navbar.module.scss"
+import useLocaleContext from "#context/localeContext"
+import { titleCase } from "#utils/utils"
+import { CartContext } from "#context/cartContext"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
 import SubNavbar from "./SubNavbar"
+import LanguageDropdown from "./LanguageDropdown"
 
 const Navbar = ({ toggleSidebarMenuVisibility }) => {
   const [isLanguageDropdownOpen, setLanguageDropdownOpen] = useState(false)
@@ -79,10 +80,6 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
       })
       .catch((e) => console.error("Error getting products data", e))
   }, [])
-
-  const changeLanguage = (lang) => {
-    setLanguage(lang)
-  }
 
   const getInputChange = (e) => {
     setSearchText(e.target.value)
@@ -216,29 +213,9 @@ const Navbar = ({ toggleSidebarMenuVisibility }) => {
               </Link>
 
               <span className='material-symbols-outlined'>account_circle</span>
-              <span
-                className='material-symbols-outlined'
-                onClick={() => setLanguageDropdownOpen(!isLanguageDropdownOpen)}
-              >
-                language
-              </span>
+
               <div>
-                {isLanguageDropdownOpen && (
-                  <div className={styles.dropdown} ref={languageDropdownRef}>
-                    <img
-                      src={
-                        process.env.PUBLIC_URL +
-                        "/assets/" +
-                        "united-kingdom.png"
-                      }
-                      onClick={() => changeLanguage("en")}
-                    ></img>
-                    <img
-                      src={process.env.PUBLIC_URL + "/assets/" + "germany.png"}
-                      onClick={() => changeLanguage("de")}
-                    ></img>
-                  </div>
-                )}
+                <LanguageDropdown />
               </div>
             </nav>
           </div>

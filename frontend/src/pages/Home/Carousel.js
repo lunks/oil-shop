@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react"
-import styles from "../../styles/components/_carousel.module.scss"
+import styles from "#styles/components/_carousel.module.scss"
 const Carousel = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0)
 

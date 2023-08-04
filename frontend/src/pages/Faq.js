@@ -1,5 +1,5 @@
 import React from "react"
-import useLocaleContext from "../../context/localeContext"
+import useLocaleContext from "../context/localeContext"
 
 const Faq = () => {
   const { translate } = useLocaleContext()
