@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
-import styles from "../../styles/components/_sidebarMenu.module.scss"
+import styles from "#styles/components/_sidebarMenu.module.scss"
 import { Link } from "react-router-dom"
-import useLocaleContext from "../../context/localeContext"
+import useLocaleContext from "#context/localeContext"
 
 const SidebarMenu = ({ setSidebarMenuVisible, isOpen }) => {
   const [slideInOutClass, setSlideInOutClass] = useState(
