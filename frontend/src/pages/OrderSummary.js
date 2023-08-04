@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import { useLocation } from "react-router-dom"
-import { CartContext } from "../../context/cartContext"
+import { CartContext } from "../context/cartContext"
 
 const OrderSummary = () => {
   const location = useLocation()

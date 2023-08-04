@@ -5,7 +5,7 @@ import { titleCase } from "#utils/utils"
 import { CartContext } from "#context/cartContext"
 import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
-import SubNavbar from "../SubNavbar"
+import SubNavbar from "./SubNavbar"
 import LanguageDropdown from "./LanguageDropdown"
 
 const Navbar = ({ toggleSidebarMenuVisibility }) => {

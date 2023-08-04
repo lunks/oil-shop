@@ -1,8 +1,8 @@
 import React from "react"
 import styles from "../../styles/pages/_home.module.scss"
 import useLocaleContext from "../../context/localeContext"
-import Carousel from "./components/Carousel"
-import ProductsSlider from "./components/ProductsSlider"
+import Carousel from "./Carousel"
+import ProductsSlider from "./ProductsSlider"
 
 const Home = () => {
   const { translate } = useLocaleContext()

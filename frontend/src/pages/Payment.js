@@ -1,6 +1,6 @@
 import React from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-import useLocaleContext from "../../context/localeContext"
+import useLocaleContext from "../context/localeContext"
 
 const Payment = () => {
   const location = useLocation()

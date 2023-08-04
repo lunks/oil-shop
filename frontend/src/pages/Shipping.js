@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import useLocaleContext from "../../context/localeContext"
+import useLocaleContext from "../context/localeContext"
 
 const Shipping = () => {
   const [formData, setFormData] = useState({
