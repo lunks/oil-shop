@@ -3,7 +3,7 @@
 
 .carousel {
   @include flex-center;
-  margin-bottom: $carousel-margin-bottom;
+  margin-bottom: 3.8rem;
 }
 
 .material-symbols-outlined {
@@ -21,8 +21,8 @@
 }
 
 .video {
-  width: $carousel-video-width;
-  height: $carousel-video-height;
+  width: 1120px;
+  height: 630px;
 }
 
 .borderDiv {
@@ -32,7 +32,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border: $carousel-video-border;
+  border: 60px solid white;
   pointer-events: none;
 }
 
