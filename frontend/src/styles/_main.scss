@@ -5,9 +5,9 @@
 
 @import "helpers/mixins";
 
-@import "app/components/navbar.module";
-@import "app/components/appRoutes.module";
-@import "app/components/navbar.module";
+@import "navbar.module";
+@import "appRoutes.module";
+@import "navbar.module";
 
 @import "components/carousel.module";
 @import "components/product.module";
