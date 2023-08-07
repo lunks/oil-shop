@@ -1,6 +1,6 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
-import styles from "#styles/_subNavbar.module.scss"
+import styles from "./subNavbar.scss"
 import useLocaleContext from "../../context/localeContext"
 
 const SubNavbar = () => {

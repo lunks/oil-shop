@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "#styles/components/_notificationCard.module.scss"
+import styles from "./notificationCard.scss"
 
 const NotificationCard = ({ message }) => {
   return <div className={styles.notificationCard}>{message}</div>

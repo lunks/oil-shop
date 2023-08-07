@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import useLocaleContext from "#context/localeContext"
-import styles from "#styles/_navbar.module.scss"
+import styles from "./navbar.scss"
 
 const LanguageDropdown = () => {
   const [isLanguageDropdownOpen, setLanguageDropdownOpen] = useState(false)

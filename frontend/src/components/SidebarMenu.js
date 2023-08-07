@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import styles from "#styles/components/_sidebarMenu.module.scss"
+import styles from "./sidebarMenu.scss"
 import { Link } from "react-router-dom"
 import useLocaleContext from "#context/localeContext"
 
@@ -35,7 +35,7 @@ const SidebarMenu = ({ setSidebarMenuVisible, isOpen }) => {
           className={styles.sidebarItem}
           onClick={() => setSidebarMenuVisible(false)}
         >
-          <span class='material-symbols-outlined'>close</span>
+          <span className='material-symbols-outlined'>close</span>
         </div>
         <div className={styles.sidebarItem}>
           <Link to={`/shop?category=all`}>{text.allProducts}</Link>

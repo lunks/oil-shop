@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import { CartProvider } from "./context/cartContext"
 import { useState } from "react"
 
-import styles from "#styles/_appRoutes.module.scss"
+import styles from "./appRoutes.scss"
 
 import Navbar from "#components/Navbar"
 import Footer from "#components/Footer"

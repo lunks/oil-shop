@@ -1,5 +1,5 @@
 import React from "react"
-import styles from "#styles/components/_sidebar.module.scss"
+import styles from "./sidebar.scss"
 import useLocaleContext from "../context/localeContext"
 
 const Sidebar = ({ setCategory }) => {

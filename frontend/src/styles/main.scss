@@ -1,0 +1,14 @@
+@import "base/variables";
+@import "base/typography";
+@import "base/reset";
+
+@import "./helpers/mixins";
+
+@import "#components/Navbar/navbar";
+@import "../appRoutes";
+
+@import "#pages/Home/home";
+@import "#pages/cart";
+@import "#pages/productDetails";
+
+@import "#components/footer";
